@@ -23,7 +23,7 @@ const Sidebar: React.FC<sidebarProps> = ({
   const filteredMenuFooter = filterMenus(menuFooter, searchTerm);
 
   return (
-    <div className="sidebar">
+    <div className=" bg-grey100 sidebar w-[220px] h-[100vh] max-w-[220px]">
       <SidebarHeader header={header} />
       
       {showSearchBar && (

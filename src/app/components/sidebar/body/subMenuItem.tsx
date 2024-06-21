@@ -9,7 +9,7 @@ interface Props {
 }
 const SubMenuItem: React.FC<Props> = ({ subMenu }) => {
   return (
-    <Link href={subMenu.link}>
+    <Link href={subMenu.link} className='flex'>
       <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
         <Image
           className="select-none object-contain"

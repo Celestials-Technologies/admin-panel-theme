@@ -1,3 +1,5 @@
+
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -13,6 +15,21 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        transparent: 'transparent',
+        white: '#FFFFFF',
+        titleBlack: '#212121',
+        ryzeoBlue: '#3575D5',
+        titleGrey: '#757575',
+        textGrey: '#616161',
+        borderGrey: '#E0E0E0',
+        grey100: '#FAFAFA',
+        grey200: '#E0E0E0',
+        grey300: '#616161',
+      },
+      fontSize: {
+        '13': '13px',
+      }
     },
   },
   plugins: [],

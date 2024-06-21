@@ -10,13 +10,13 @@ const SidebarSubHeader: React.FC<Props> = ({ header }) => {
   return (
     <>
       {!!header.image && (
-        <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
+        <div className="h-[72px] flex pl-[22px] border-b border-borderGrey">
           <Image
             className="select-none object-contain"
             src={header.image}
             alt=""
-            width={24}
-            height={24}
+            width={150}
+            height={39}
           />
         </div>
       )}
@@ -24,9 +24,9 @@ const SidebarSubHeader: React.FC<Props> = ({ header }) => {
       {
         !!header.heading && (
           <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
-              {header.heading}
-            </p>
-          )
+            {header.heading}
+          </p>
+        )
       }
     </>
   );
