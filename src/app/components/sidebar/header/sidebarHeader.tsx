@@ -9,7 +9,7 @@ interface Props {
 const SidebarSubHeader: React.FC<Props> = ({ header }) => {
   return (
     <>
-      {header.image && (
+      {!!header.image && (
         <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
           <Image
             className="select-none object-contain"
@@ -20,9 +20,14 @@ const SidebarSubHeader: React.FC<Props> = ({ header }) => {
           />
         </div>
       )}
-      <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
-        {header.heading}
-      </p>
+
+      {
+        !!header.heading && (
+          <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
+              {header.heading}
+            </p>
+          )
+      }
     </>
   );
 };
