@@ -11,7 +11,7 @@ export const filterMenus = (menus: IMenu[], searchTerm: string): IMenu[] => {
         submenu.text.toLowerCase().includes(searchTerm.toLowerCase())
       );
 
-      if (menuMatchesSearchTerm || (subMenus && subMenus.length > 0)) {
+      if (menuMatchesSearchTerm || (subMenus && !!subMenus.length)) {
         const filteredMenu: IMenu = {
           ...menu,
           subMenus: subMenus || menu.subMenus,

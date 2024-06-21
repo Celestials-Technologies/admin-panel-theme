@@ -1,6 +1,6 @@
 // components/Sidebar.js
 import React from 'react';
-import InputComponent from '../../Input';
+import Input from '../../Input';
 
 interface Props {
   searchTerm: string;
@@ -9,13 +9,13 @@ interface Props {
 
 const SearchBar: React.FC<Props> = ({ searchTerm, handleSearchChange }) => {
   return (
-    <div className="mb-2 mt-4 mx-2.5">
-      <InputComponent
+    <div className="mb-2 mt-4">
+      <Input
         type="text"
         value={searchTerm}
         onChange={handleSearchChange}
         placeholder="Jump to..."
-        className="w-full rounded-md w-full border border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+        className="w-full"
       />
     </div>
   );
