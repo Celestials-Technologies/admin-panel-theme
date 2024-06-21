@@ -6,7 +6,7 @@ import SidebarBody from './body';
 
 const Sidebar: React.FC<sidebarProps> = ({ header, menuBody, menuFooter }) => {
   return (
-    <div className="sidebar">
+    <div className=" bg-grey100 sidebar w-[220px] h-[100vh] max-w-[220px]">
       <SidebarHeader header={header} />
       <SidebarBody menuBody={menuBody} />
       <SidebarBody menuBody={menuFooter} /> {/* for footer items */}

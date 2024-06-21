@@ -10,7 +10,7 @@ interface Props {
 }
 const SidebarMenu: React.FC<Props> = ({ menu }) => {
   return (
-    <div className="flex h-14 cursor-pointer border-l-2 text-center">
+    <div className="mx-2.5">
       {!!menu.subMenus ? (
         <SubMenu menu={menu} />
       ) : (

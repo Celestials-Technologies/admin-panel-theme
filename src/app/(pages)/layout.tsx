@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '@/app/globals.css';
 import Sidebar from '../components/sidebar';
-import Navbar from '../components/navbar';
+// import Navbar from '../components/navbar';
 import {
   header,
   sideMenusBody,
   sideMenusFooter,
 } from '../components/sidebar/sidebarMocks';
+import Navbar from '../components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body>
         {' '}
         <div className="layout">
-          <Navbar />
+          {/* <Navbar /> */}
           <Sidebar
             header={header}
             menuBody={sideMenusBody}

@@ -11,7 +11,7 @@ const SubMenu: React.FC<Props> = ({ menu }) => {
   return (
     <div className="relative">
       <MainMenu menu={menu} />
-      <div className="ml-8">
+      <div className="">
         {menu.subMenus &&
           menu.subMenus.map((subMenu, subIndex) => (
             <SubMenuItem subMenu={subMenu} key={`submenu-${subIndex}`} />

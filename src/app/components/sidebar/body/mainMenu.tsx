@@ -8,31 +8,32 @@ interface Props {
 }
 const MainMenu: React.FC<Props> = ({ menu }) => {
   return (
-    <>
-      <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
+    <div className='flex items-center justify-between px-3 min-h-[52px] border-b border-borderGrey'>
+      <div className="flex items-center">
         <Image
-          className="select-none object-contain"
+          className=""
           src={menu.image}
           alt=""
-          width={24}
-          height={24}
+          width={18}
+          height={18}
         />
+        <p className="mx-3 text-textGrey text-13 font-medium">
+          {menu.text}
+        </p>
       </div>
-      <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
-        {menu.text}
-      </p>
+
       {!!menu.optionalSvg && (
-        <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
+        <div className="">
           <Image
             className="select-none object-contain"
             src={menu.optionalSvg}
             alt=""
-            width={24}
-            height={24}
+            width={26}
+            height={18}
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default MainMenu;

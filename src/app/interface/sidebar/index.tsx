@@ -13,7 +13,7 @@ export interface ISubMenu {
   }
 
   export  interface IHeader {
-    heading: string;
+    heading?: string;
     link?: string;
     image: string;
   }
