@@ -1,5 +1,9 @@
-import { IMenu } from "@/app/interface/sidebar";
+import { IHeader, IMenu } from '@/app/interface/sidebar';
 
+const header: IHeader = {
+  heading: 'Ryzeo',
+  image: '/images/dashboard.svg',
+};
 
 const sideMenusBody: IMenu[] = [
   {
@@ -46,4 +50,4 @@ const sideMenusFooter: IMenu[] = [
   },
 ];
 
-export { sideMenusBody, sideMenusFooter };
+export { sideMenusBody, sideMenusFooter, header };

@@ -11,3 +11,9 @@ export interface ISubMenu {
     optionalSvg?: string;
     subMenus?: ISubMenu[];
   }
+
+  export  interface IHeader {
+    heading: string;
+    link?: string;
+    image: string;
+  }

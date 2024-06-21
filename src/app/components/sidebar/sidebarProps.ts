@@ -1,4 +1,7 @@
+import { IHeader, IMenu } from "@/app/interface/sidebar";
+
 export interface sidebarProps {
-  heading: string;
-  headingSvg?: string;
+  header: IHeader;
+  menuBody: IMenu[];
+  menuFooter: IMenu[];
 }

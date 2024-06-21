@@ -1,7 +1,5 @@
 // components/Sidebar.js
-import Link from 'next/link';
 import React from 'react';
-import Image from 'next/image';
 import { IMenu } from '@/app/interface/sidebar';
 import MainMenu from './mainMenu';
 import SubMenu from './subMenu';
