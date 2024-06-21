@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body> <div className="layout">
       <Navbar />
-        <Sidebar />
+        <Sidebar heading="Sidebar"/>
         
         <main >{children}</main>
       </div></body>

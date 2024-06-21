@@ -1,9 +1,24 @@
-const sideMenus = [
+import { IMenu } from "@/app/interface/sidebar";
+
+
+const sideMenusBody: IMenu[] = [
   {
     link: '/main',
     text: 'Dashboard',
     image: '/images/dashboard.svg',
     optionalSvg: 'images/sidebarOption.svg',
+    subMenus: [
+      {
+        link: '/sub1',
+        text: 'Submenu 1',
+        image: '/images/dashboard.svg',
+      },
+      {
+        link: '/sub2',
+        text: 'Submenu 2',
+        image: '/images/dashboard.svg',
+      },
+    ],
   },
   {
     link: '/campaigns',
@@ -18,7 +33,7 @@ const sideMenus = [
   },
 ];
 
-const sideMenusTwo = [
+const sideMenusFooter: IMenu[] = [
   {
     link: '/faq',
     text: 'Settings',
@@ -31,4 +46,4 @@ const sideMenusTwo = [
   },
 ];
 
-export { sideMenus, sideMenusTwo };
+export { sideMenusBody, sideMenusFooter };

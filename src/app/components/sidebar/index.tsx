@@ -1,18 +1,34 @@
 // components/Sidebar.js
 import Link from 'next/link';
 import React from 'react';
-import { sideMenus, sideMenusTwo } from './sidebarMocks';
+import { sideMenusBody, sideMenusFooter } from './sidebarMocks';
 import Image from 'next/image';
-const Sidebar = () => {
+import { sidebarProps } from './sidebarProps';
+
+const Sidebar: React.FC<sidebarProps> = ({ heading, headingSvg }) => {
   return (
     <div className="sidebar">
-      {sideMenus.map((menu, index) => {
-        return (
-          <Link key={`key${index}`} href={menu.link}>
-            <div
-              className={`flex h-14 cursor-pointer border-l-2  text-center 
-                                    `}
-            >
+      {headingSvg && (
+        <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
+          <Image
+            className="select-none object-contain"
+            src={headingSvg}
+            alt=""
+            width={24}
+            height={24}
+          />
+        </div>
+      )}
+      <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
+        {heading}
+      </p>
+      {sideMenusBody.map((menu, index) => (
+        <div
+          key={`menu-${index}`}
+          className="flex h-14 cursor-pointer border-l-2 text-center"
+        >
+          {!menu.subMenus ? (
+            <Link href={menu.link || '#'}>
               <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
                 <Image
                   className="select-none object-contain"
@@ -22,13 +38,10 @@ const Sidebar = () => {
                   height={24}
                 />
               </div>
-              <p
-                className={`font-poppins select-none self-center text-[15px] font-medium leading-[19px]
-                                    `}
-              >
+              <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
                 {menu.text}
               </p>
-              {menu.optionalSvg ? (
+              {menu.optionalSvg && (
                 <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
                   <Image
                     className="select-none object-contain"
@@ -38,16 +51,51 @@ const Sidebar = () => {
                     height={24}
                   />
                 </div>
-              ) : null}
+              )}
+            </Link>
+          ) : (
+            <div className="relative">
+              <div className="flex w-full cursor-pointer items-center">
+                <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
+                  <Image
+                    className="select-none object-contain"
+                    src={menu.image}
+                    alt=""
+                    width={24}
+                    height={24}
+                  />
+                </div>
+                <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
+                  {menu.text}
+                </p>
+              </div>
+              <div className="ml-8">
+                {menu.subMenus.map((subMenu, subIndex) => (
+                  <Link key={`submenu-${subIndex}`} href={subMenu.link}>
+                    <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
+                      <Image
+                        className="select-none object-contain"
+                        src={subMenu.image}
+                        alt=""
+                        width={24}
+                        height={24}
+                      />
+                    </div>
+                    <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
+                      {subMenu.text}
+                    </p>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </Link>
-        );
-      })}
+          )}
+        </div>
+      ))}
 
       <div>
-        {sideMenusTwo.map((menu, index) => {
+        {sideMenusFooter.map((menu, index) => {
           return (
-            <Link key={`key${index}`} href={menu.link}>
+            <Link key={`key${index}`} href={menu.link || ''}>
               <div
                 className={`$ flex h-14 cursor-pointer  border-l-2 text-center`}
               >
