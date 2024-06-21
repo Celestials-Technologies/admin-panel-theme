@@ -49,13 +49,13 @@ const sideMenusBody: IMenu[] = [
   {
     link: '/main',
     text: 'Email Templates',
-    image: '/images/storeIcon.svg',
+    image: '/images/EmailIcon.svg',
   },
 
   {
     link: '/main',
     text: 'Pop-Ups',
-    image: '/images/storeIcon.svg',
+    image: '/images/popUpIcon.svg',
     lineBreak: true,
   },
   {
@@ -72,11 +72,11 @@ const sideMenusBody: IMenu[] = [
   {
     link: '/main',
     text: 'Integrations',
-    image: '/images/storeIcon.svg',
+    image: '/images/integrations.svg',
   }, {
     link: '/main',
     text: 'Data Feeds',
-    image: '/images/storeIcon.svg',
+    image: '/images/DataFeeds.svg',
     lineBreak: true,
   },
 ];
@@ -85,12 +85,12 @@ const sideMenusFooter: IMenu[] = [
   {
     link: '/faq',
     text: 'Settings',
-    image: '/images/dashboard.svg',
+    image: '/images/settingIcon.svg',
   },
   {
     link: '/help',
     text: 'Get Help',
-    image: '/images/dashboard.svg',
+    image: '/images/helpIcon.svg',
   },
 ];
 

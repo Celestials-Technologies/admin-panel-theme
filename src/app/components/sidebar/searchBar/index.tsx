@@ -9,13 +9,13 @@ interface Props {
 
 const SearchBar: React.FC<Props> = ({ searchTerm, handleSearchChange }) => {
   return (
-    <div className="mb-2 mt-4">
+    <div className="mb-2 mt-4 mx-2.5">
       <InputComponent
         type="text"
         value={searchTerm}
         onChange={handleSearchChange}
         placeholder="Jump to..."
-        className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+        className="w-full rounded-md w-full border border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200"
       />
     </div>
   );
