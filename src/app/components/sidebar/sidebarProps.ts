@@ -4,4 +4,5 @@ export interface sidebarProps {
   header: IHeader;
   menuBody: IMenu[];
   menuFooter: IMenu[];
+  showSearchBar?: boolean;
 }

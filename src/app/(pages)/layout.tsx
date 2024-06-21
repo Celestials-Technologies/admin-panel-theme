@@ -31,6 +31,7 @@ export default function RootLayout({
             header={header}
             menuBody={sideMenusBody}
             menuFooter={sideMenusFooter}
+            showSearchBar={true}
           />
 
           <main>{children}</main>
