@@ -8,18 +8,12 @@ interface Props {
 }
 const MainMenu: React.FC<Props> = ({ menu }) => {
   return (
-    <div className='flex items-center justify-between px-3 min-h-[52px] border-b border-borderGrey'>
+    <div
+      className={`flex min-h-[52px] items-center justify-between px-3 ${menu.lineBreak ? 'border-b' : ''} border-borderGrey`}
+    >
       <div className="flex items-center">
-        <Image
-          className=""
-          src={menu.image}
-          alt=""
-          width={18}
-          height={18}
-        />
-        <p className="mx-3 text-textGrey text-13 font-medium">
-          {menu.text}
-        </p>
+        <Image className="" src={menu.image} alt="" width={18} height={18} />
+        <p className="text-textGrey text-13 mx-3 font-medium">{menu.text}</p>
       </div>
 
       {!!menu.optionalSvg && (

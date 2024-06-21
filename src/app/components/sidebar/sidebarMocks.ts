@@ -11,18 +11,19 @@ const sideMenusBody: IMenu[] = [
     text: 'Dashboard',
     image: '/images/dashboard.svg',
     optionalSvg: 'images/sidebarOption.svg',
-    subMenus: [
-      {
-        link: '/sub1',
-        text: 'Submenu 1',
-        image: '/images/dashboard.svg',
-      },
-      {
-        link: '/sub2',
-        text: 'Submenu 2',
-        image: '/images/dashboard.svg',
-      },
-    ],
+    lineBreak: true,
+    // subMenus: [
+    //   {
+    //     link: '/sub1',
+    //     text: 'Submenu 1',
+    //     image: '/images/dashboard.svg',
+    //   },
+    //   {
+    //     link: '/sub2',
+    //     text: 'Submenu 2',
+    //     image: '/images/dashboard.svg',
+    //   },
+    // ],
   },
   {
     link: '/campaigns',
@@ -41,6 +42,7 @@ const sideMenusBody: IMenu[] = [
     text: 'Store',
     image: '/images/storeIcon.svg',
     optionalSvg: 'images/sidebarOption.svg',
+    lineBreak: true,
   },
 
 
@@ -54,6 +56,7 @@ const sideMenusBody: IMenu[] = [
     link: '/main',
     text: 'Pop-Ups',
     image: '/images/storeIcon.svg',
+    lineBreak: true,
   },
   {
     link: '/main',
@@ -64,6 +67,7 @@ const sideMenusBody: IMenu[] = [
     link: '/main',
     text: 'Subscriber Profiles',
     image: '/images/storeIcon.svg',
+    lineBreak: true,
   },
   {
     link: '/main',
@@ -73,6 +77,7 @@ const sideMenusBody: IMenu[] = [
     link: '/main',
     text: 'Data Feeds',
     image: '/images/storeIcon.svg',
+    lineBreak: true,
   },
 ];
 

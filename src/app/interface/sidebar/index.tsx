@@ -10,6 +10,7 @@ export interface ISubMenu {
     image: string;
     optionalSvg?: string;
     subMenus?: ISubMenu[];
+    lineBreak?: boolean;
   }
 
   export  interface IHeader {
