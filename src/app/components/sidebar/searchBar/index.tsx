@@ -9,7 +9,7 @@ interface Props {
 
 const SearchBar: React.FC<Props> = ({ searchTerm, handleSearchChange }) => {
   return (
-    <div className="mb-2 mt-4">
+    <div className="mb-2 mt-4 mx-2.5">
       <Input
         type="text"
         value={searchTerm}

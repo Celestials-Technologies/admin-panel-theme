@@ -23,17 +23,22 @@ const Sidebar: React.FC<sidebarProps> = ({
   const filteredMenuFooter = filterMenus(menuFooter, searchTerm);
 
   return (
-    <div className=" bg-grey100 sidebar w-[220px] h-[100vh] max-w-[220px]">
-      <SidebarHeader header={header} />
-      
-      {showSearchBar && (
-        <SearchBar
-          searchTerm={searchTerm}
-          handleSearchChange={handleSearchChange}
-        />
-      )}
-      <SidebarBody menuBody={filteredMenuBody} />
-      <SidebarBody menuBody={filteredMenuFooter} /> {/* for footer items */}
+    <div className=" flex flex-col justify-between bg-grey100 sidebar w-[220px] h-[100vh] max-w-[220px]">
+
+      <div>
+        <SidebarHeader header={header} />
+        {showSearchBar && (
+          <SearchBar
+            searchTerm={searchTerm}
+            handleSearchChange={handleSearchChange}
+          />
+        )}
+        <SidebarBody menuBody={filteredMenuBody} />
+      </div>
+      <div>
+        <SidebarBody menuBody={filteredMenuFooter} /> {/* for footer items */}
+      </div>
+
     </div>
   );
 };

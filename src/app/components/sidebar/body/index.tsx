@@ -9,11 +9,11 @@ interface Props {
 
 const SidebarBody: React.FC<Props> = ({ menuBody }) => {
   return (
-    <React.Fragment>
+    <div className='mt-4'>
       {menuBody.map((menu, index) => (
         <SidebarMenu menu={menu} key={`menu-${index}`} />
       ))}  
-    </React.Fragment>
+    </div>
   );
 };
 export default SidebarBody;

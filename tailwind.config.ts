@@ -20,6 +20,7 @@ const config: Config = {
         white: '#FFFFFF',
         titleBlack: '#212121',
         ryzeoBlue: '#3575D5',
+        blue100: '#D1E6FF',
         titleGrey: '#757575',
         textGrey: '#616161',
         borderGrey: '#E0E0E0',

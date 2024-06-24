@@ -9,7 +9,7 @@ interface Props {
 const MainMenu: React.FC<Props> = ({ menu }) => {
   return (
     <div
-      className={`flex min-h-[52px] items-center justify-between px-3 ${menu.lineBreak ? 'border-b' : ''} border-borderGrey`}
+      className={`flex hover:bg-blue100 min-h-[36px] items-center justify-between px-3 ${menu.lineBreak ? 'border-b' : ''} border-borderGrey`}
     >
       <div className="flex items-center">
         <Image className="" src={menu.image} alt="" width={18} height={18} />
