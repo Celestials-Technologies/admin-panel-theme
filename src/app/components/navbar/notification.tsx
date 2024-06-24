@@ -7,8 +7,8 @@ const NavbarNotification = () => {
       <Image
         src={'/images/notification.svg'}
         alt="profile"
-        height={20}
-        width={20}
+        height={24}
+        width={24}
       />
     </div>
   );

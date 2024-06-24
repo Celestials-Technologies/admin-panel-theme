@@ -7,14 +7,14 @@ import NavbarDropdown from './dropdown';
 const Navbar = () => {
 
   return (
-    <nav className="shadowPrimary border-b border-dividerColor bg-white p-4 flex items-center justify-between">
+    <nav className="shadowPrimary border-b border-dividerColor bg-white px-4 flex items-center justify-between">
       <div className="flex items-center">
         <NavbarSearch />
       </div>
-      <div className="flex items-center gap-3 border-r ">
+      <div className="flex items-center gap-3 border-l border-dividerColor ">
         <NavbarNotification />
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 py-3">
           <NavbarDropdown />
         </div>
       </div>
