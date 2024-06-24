@@ -23,16 +23,18 @@ export default function RootLayout({
       <body>
         {' '}
         <div className="layout flex">
-          
+
           <Sidebar
             header={header}
             menuBody={sideMenusBody}
             menuFooter={sideMenusFooter}
             showSearchBar={true}
           />
-          <div><Navbar />
-          <main>{children}</main></div>
-          
+          <div className='w-full'>
+            <Navbar />
+            <main>{children}</main>
+          </div>
+
         </div>
       </body>
     </html>

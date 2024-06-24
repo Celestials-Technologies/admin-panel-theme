@@ -30,7 +30,7 @@ const Sidebar: React.FC<sidebarProps> = ({
   const filteredMenuFooter = filterMenus(menuFooter, searchTerm);
 
   return (
-    <div className={`relative flex flex-col justify-between bg-grey100 sidebar h-[100vh] max-w-[220px] ${isCollapsed ? 'w-[70px]' : 'w-[220px]'}`}>
+    <div className={`relative flex flex-col justify-between bg-grey100 sidebar h-[100vh] min-w-[220px] max-w-[220px] ${isCollapsed ? 'w-[70px]' : 'w-[220px]'}`}>
       <div>
         <SidebarHeader header={header} isCollapsed={isCollapsed} />
         {showSearchBar && !isCollapsed && (

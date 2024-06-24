@@ -8,13 +8,12 @@ import NavbarProfile from './profile';
 const Navbar = () => {
 
   return (
-    <nav className="bg-gray-800 p-4 flex items-center justify-between">
+    <nav className="shadowPrimary border-b border-dividerColor bg-white p-4 flex items-center justify-between">
       <div className="flex items-center">
         <NavbarSearch />
       </div>
       <div className="flex items-center">
-       
-        <div className="ml-6 flex space-x-4">
+        <div className=" flex space-x-4">
           <Dropdown profile={<NavbarProfile />}>
             <Link href="/team" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">More</Link>
             <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</Link>
@@ -22,6 +21,7 @@ const Navbar = () => {
           </Dropdown>
         </div>
       </div>
+     
     </nav>
   );
 };

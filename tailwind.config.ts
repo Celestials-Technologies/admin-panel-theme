@@ -27,10 +27,14 @@ const config: Config = {
         grey100: '#FAFAFA',
         grey200: '#E0E0E0',
         grey300: '#616161',
+        dividerColor: '#E1E3E5',
       },
       fontSize: {
         '13': '13px',
-      }
+      },
+      boxShadow: {
+        shadowPrimary: '0px -1px 0px 0px #EEEEEE inset',
+      },
     },
   },
   plugins: [],
