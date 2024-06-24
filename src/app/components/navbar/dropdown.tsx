@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Dropdown from '../DropDown';
 import NavbarProfile from './profile';
+import { IProfile } from '@/app/interface/navbar';
 
 const NavbarDropdown = () => {
   const dropDownArray = [
@@ -14,8 +15,13 @@ const NavbarDropdown = () => {
       label: 'Profile',
     },
   ];
+  const profile: IProfile ={
+    name: 'ABC Store',
+    email: 'daniel.rist@gmail.com',
+    image: 'images/DropdownArrow.svg'
+  }
   return (
-    <Dropdown profile={<NavbarProfile />}>
+    <Dropdown profile={<NavbarProfile profile={profile}/>}>
       {dropDownArray.map((option, index) => {
         return (
           <Link
