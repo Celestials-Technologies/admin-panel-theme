@@ -6,15 +6,16 @@ import SubMenuItem from './subMenuItem';
 
 interface Props {
   menu: IMenu;
+  isCollapsed: boolean;
 }
-const SubMenu: React.FC<Props> = ({ menu }) => {
+const SubMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
   return (
     <div className="relative">
-      <MainMenu menu={menu} />
+      <MainMenu menu={menu} isCollapsed={isCollapsed}/>
       <div className="">
         {menu.subMenus &&
           menu.subMenus.map((subMenu, subIndex) => (
-            <SubMenuItem subMenu={subMenu} key={`submenu-${subIndex}`} />
+            <SubMenuItem subMenu={subMenu} key={`submenu-${subIndex}`} isCollapsed={isCollapsed}/>
           ))}
       </div>
     </div>

@@ -6,10 +6,11 @@ import { ISubMenu } from '@/app/interface/sidebar';
 
 interface Props {
   subMenu: ISubMenu;
+  isCollapsed: boolean;
 }
-const SubMenuItem: React.FC<Props> = ({ subMenu }) => {
+const SubMenuItem: React.FC<Props> = ({ subMenu, isCollapsed }) => {
   return (
-    <Link href={subMenu.link} className='flex'>
+    <Link href={subMenu.link} className="flex">
       <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
         <Image
           className="select-none object-contain"
@@ -19,9 +20,11 @@ const SubMenuItem: React.FC<Props> = ({ subMenu }) => {
           height={24}
         />
       </div>
-      <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
-        {subMenu.text}
-      </p>
+      {!isCollapsed && (
+        <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
+          {subMenu.text}
+        </p>
+      )}
     </Link>
   );
 };

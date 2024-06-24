@@ -6,6 +6,7 @@ import SidebarHeader from './header';
 import SidebarBody from './body';
 import SearchBar from './searchBar';
 import { filterMenus } from '@/app/helpers/filterMenu';
+import Button from '../Button';
 
 const Sidebar: React.FC<sidebarProps> = ({
   header,
@@ -14,6 +15,11 @@ const Sidebar: React.FC<sidebarProps> = ({
   showSearchBar,
 }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -23,22 +29,20 @@ const Sidebar: React.FC<sidebarProps> = ({
   const filteredMenuFooter = filterMenus(menuFooter, searchTerm);
 
   return (
-    <div className=" flex flex-col justify-between bg-grey100 sidebar w-[220px] h-[100vh] max-w-[220px]">
-
-      <div>
-        <SidebarHeader header={header} />
-        {showSearchBar && (
-          <SearchBar
-            searchTerm={searchTerm}
-            handleSearchChange={handleSearchChange}
-          />
-        )}
-        <SidebarBody menuBody={filteredMenuBody} />
-      </div>
-      <div>
-        <SidebarBody menuBody={filteredMenuFooter} /> {/* for footer items */}
-      </div>
-
+    <div className={` flex flex-col justify-between bg-grey100 sidebar h-[100vh] max-w-[220px] ${isCollapsed ? 'w-[50px]' : 'w-[220px]'}`}>
+      <SidebarHeader header={header} isCollapsed={isCollapsed}/>
+      
+      {showSearchBar && !isCollapsed &&  (
+        <SearchBar
+          searchTerm={searchTerm}
+          handleSearchChange={handleSearchChange}
+        />
+      )}
+      <Button className="toggle-button" variant='toggle' onClick={toggleSidebar}>
+        Toggle
+      </Button>
+      <SidebarBody menuBody={filteredMenuBody} isCollapsed={isCollapsed}/>
+      <SidebarBody menuBody={filteredMenuFooter} isCollapsed={isCollapsed}/> {/* for footer items */}
     </div>
   );
 };

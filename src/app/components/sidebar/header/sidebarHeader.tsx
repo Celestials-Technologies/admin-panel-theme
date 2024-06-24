@@ -4,6 +4,7 @@ import { IHeader } from '@/app/interface/sidebar'; // Adjust the path based on y
 
 interface Props {
   header: IHeader;
+  isCollapsed: boolean;
 }
 
 const SidebarSubHeader: React.FC<Props> = ({ header }) => {

@@ -5,17 +5,18 @@ import SidebarSubHeader from './sidebarHeader';
 
 interface Props {
   header: IHeader;
+  isCollapsed: boolean;
 }
 
-const SidebarHeader: React.FC<Props> = ({ header }) => {
+const SidebarHeader: React.FC<Props> = ({ header, isCollapsed }) => {
   return (
     <>
       {!!header.link ? (
         <Link href={header.link}>
-          <SidebarSubHeader header={header} />
+          <SidebarSubHeader header={header} isCollapsed={isCollapsed}/>
         </Link>
       ) : (
-        <SidebarSubHeader header={header} />
+        <SidebarSubHeader header={header} isCollapsed={isCollapsed}/>
       )}
     </>
   );
