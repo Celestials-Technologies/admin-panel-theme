@@ -7,7 +7,7 @@ const header: IHeader = {
 
 const sideMenusBody: IMenu[] = [
   {
-    link: '/main',
+    link: '/dashboard',
     text: 'Dashboard',
     image: '/images/dashboard.svg',
     optionalSvg: 'images/sidebarOption.svg',
