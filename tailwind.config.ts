@@ -37,6 +37,9 @@ const config: Config = {
       rotate: {
         '270': '270deg',
       },
+      padding: {
+        '30': '30px',
+      }
     },
   },
   plugins: [],

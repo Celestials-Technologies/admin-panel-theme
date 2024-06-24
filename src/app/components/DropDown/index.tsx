@@ -4,9 +4,10 @@ interface DropdownProps {
   title?: string;
   children: React.ReactNode;
   profile?: React.ReactNode;
+  classname?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ title, children, profile }) => {
+const Dropdown: React.FC<DropdownProps> = ({ title, children, profile, classname }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +38,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children, profile }) => {
       ) : (
         <button
           onClick={toggleDropdown}
-          className="text-gray-300 hover:text-white focus:outline-none"
+          className={` ${classname}`}
         >
           {title}
         </button>
