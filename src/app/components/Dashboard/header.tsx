@@ -10,18 +10,18 @@ const DashboardHeader: React.FC<Props> = ({ }) => {
         <div className='flex'>
           <div className='flex items-center'>
             <Image src={'images/DashboardIcon.svg'} alt="Dashboard" height={24} width={24} />
-            <p className='text-xl	font-bold text-titleBlack ml-1.5 '>Dahboard</p>
+            <p className='text-xl	font-bold text-titleBlack ml-1.5 '>Dashboard</p>
           </div>
           <div className='border rounded border-grey200 ml-3'>
-            <Dropdown classname='text-titleGrey w-[130px] h-11 text-xs font-medium' title="Last 30 days">
+            <Dropdown iconColor='#616161' classname='text-titleGrey flex items-center justify-center gap-3 w-[130px] h-11 text-xs font-medium' title="Last 30 days">
               <li className='text-titleGrey font-medium'>Last 10 days </li>
               <li className='text-titleGrey font-medium'>last 20 days</li>
             </Dropdown>
-            
+
           </div>
         </div>
         <div>
-          <Dropdown classname='bg-ryzeoBlue w-[164px] h-[42px] text-white text-13 font-medium rounded' title="Create Campaign">
+          <Dropdown iconColor='#fff' classname='bg-ryzeoBlue flex items-center justify-center gap-3 w-[164px] h-[42px] text-white text-13 font-medium rounded' title="Create Campaign">
             <li className='text-titleGrey'>Create </li>
             <li className='text-titleGrey'>Update</li>
           </Dropdown>

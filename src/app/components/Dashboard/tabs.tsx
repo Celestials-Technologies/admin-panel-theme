@@ -10,7 +10,7 @@ interface Props {
 const DashboardTabs: React.FC<Props> = ({ activeTab, setActiveTab, tabs }) => {
   return (
     <div
-      className={`dark:bg-darkBorder mt-[38px] flex justify-between bg-[#F5F6FA] p-1`}
+      className={`flex bg-white`}
     >
       {tabs.map((tab) => {
         return (

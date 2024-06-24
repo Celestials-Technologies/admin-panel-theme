@@ -16,10 +16,10 @@ const TabItem: React.FC<Props> = ({ activeTab, setActiveTab, tab }) => {
         setActiveTab(tab);
       }}
       type="button"
-      className={`font-poppins rounded p-3 text-sm uppercase  tracking-[-0.21px] text-[#8A8F9C] sm:px-5 ${
+      className={`font-poppins p-3 text-sm uppercase sm:px-5 ${
         activeTab.id === tab.id
-          ? ' dark:bg-dark-medium bg-white text-black '
-          : ' text-gray-text'
+          ? 'text-ryzeoBlue border-b border-ryzeoBlue '
+          : ' text-textGrey'
       } `}
     >
       {tab.name}
