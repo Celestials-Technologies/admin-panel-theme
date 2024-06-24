@@ -7,18 +7,27 @@ interface Props {
   isCollapsed: boolean;
 }
 
-const SidebarSubHeader: React.FC<Props> = ({ header }) => {
+const SidebarSubHeader: React.FC<Props> = ({ header, isCollapsed }) => {
   return (
     <>
       {!!header.image && (
-        <div className="h-[72px] flex pl-[22px] border-b border-borderGrey">
-          <Image
-            className="select-none object-contain"
-            src={header.image}
-            alt=""
-            width={150}
-            height={39}
-          />
+        <div className={` h-[72px] flex ${isCollapsed ? 'justify-center' : 'pl-[22px]'}  border-b border-borderGrey`}>
+
+          {isCollapsed ?
+            <Image
+              className="select-none object-contain"
+              src={'images/mobileLogo.svg'}
+              alt=""
+              width={40}
+              height={40}
+            />
+            : <Image
+              className="select-none object-contain"
+              src={header.image}
+              alt=""
+              width={150}
+              height={39}
+            />}
         </div>
       )}
 

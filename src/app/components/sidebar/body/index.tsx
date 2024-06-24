@@ -10,7 +10,7 @@ interface Props {
 
 const SidebarBody: React.FC<Props> = ({ menuBody, isCollapsed }) => {
   return (
-    <div className='mt-4'>
+    <div className='mt-6'>
       {menuBody.map((menu, index) => (
         <SidebarMenu menu={menu} key={`menu-${index}`} isCollapsed={isCollapsed}/>
       ))}  

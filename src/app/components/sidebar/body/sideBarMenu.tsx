@@ -11,12 +11,12 @@ interface Props {
 }
 const SidebarMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
   return (
-    <div className="mx-2.5">
+    <div className={`${isCollapsed ? 'mx-1' : 'mx-2.5'}`}>
       {!!menu.subMenus ? (
-        <SubMenu menu={menu} isCollapsed={isCollapsed}/>
+        <SubMenu menu={menu} isCollapsed={isCollapsed} />
       ) : (
         <Link href={menu.link || '#'}>
-          <MainMenu menu={menu} isCollapsed={isCollapsed}/>
+          <MainMenu menu={menu} isCollapsed={isCollapsed} />
         </Link>
       )}
     </div>

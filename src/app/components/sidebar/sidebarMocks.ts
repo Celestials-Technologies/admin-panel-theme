@@ -66,7 +66,7 @@ const sideMenusBody: IMenu[] = [
   {
     link: '/main',
     text: 'Subscriber Profiles',
-    image: '/images/storeIcon.svg',
+    image: '/images/subscriberProfile.svg',
     lineBreak: true,
   },
   {

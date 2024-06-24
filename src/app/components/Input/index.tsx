@@ -14,13 +14,13 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 // Define Input as a generic functional component
 const Input: React.FC<InputProps> = ({ type, ...props }) => {
   return (
-    <div className='px-3 flex items-center border border-gray-300 rounded-md h-[34px] '>
+    <div className='px-3 flex items-center border border-borderGrey rounded-md h-[34px] '>
       <div className='flex items-center'>
         <Image src={'images/SearchIcon.svg'} alt='SearchIcon' width={13} height={13} />
         <input
           type={type}
           {...props}
-          className={`ml-2 focus:outline-none focus:ring focus:ring-blue-200 ${props.className}`}
+          className={`ml-2 focus:outline-none ${props.className}`}
         />
       </div>
       <Image src={'images/searchBar.svg'} alt='SearchIcon' width={24} height={16} />
