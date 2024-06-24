@@ -44,7 +44,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children, profile }) => {
       )}
       {isOpen && (
         <div className="absolute right-0 z-20 mt-2 w-48 rounded-md border border-gray-200 bg-white shadow-lg">
-          <div className="py-2">{children}</div>
+          <div onClick={toggleDropdown} className="py-2">{children}</div>
         </div>
       )}
     </div>

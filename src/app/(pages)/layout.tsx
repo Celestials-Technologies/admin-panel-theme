@@ -23,7 +23,6 @@ export default function RootLayout({
       <body>
         {' '}
         <div className="layout flex">
-
           <Sidebar
             header={header}
             menuBody={sideMenusBody}

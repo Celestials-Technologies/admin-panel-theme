@@ -1,9 +1,8 @@
-'use client'
+'use client';
 import React from 'react';
 import NavbarSearch from './navbarSearch';
-import Link from 'next/link';
-import Dropdown from '../DropDown';
-import NavbarProfile from './profile';
+import NavbarNotification from './notification';
+import NavbarDropdown from './dropdown';
 
 const Navbar = () => {
 
@@ -13,12 +12,10 @@ const Navbar = () => {
         <NavbarSearch />
       </div>
       <div className="flex items-center">
-        <div className=" flex space-x-4">
-          <Dropdown profile={<NavbarProfile />}>
-            <Link href="/team" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">More</Link>
-            <Link href="/projects" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</Link>
-            <Link href="/careers" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</Link>
-          </Dropdown>
+        <NavbarNotification />
+
+        <div className="flex space-x-4">
+          <NavbarDropdown />
         </div>
       </div>
      

@@ -39,13 +39,22 @@ const Sidebar: React.FC<sidebarProps> = ({
             handleSearchChange={handleSearchChange}
           />
         )}
-        <Button className="toggle-button" variant='toggle' onClick={toggleSidebar}>
-          <Image src={'images/ArrowIcon.svg'} alt="ArrowIcon" width={12} height={12} />
+        <Button
+          className={`toggle-button transition duration-500 ${isCollapsed? 'rotate-270 ': 'rotate-90'}`}
+          variant="toggle"
+          onClick={toggleSidebar}
+        >
+          <Image
+            src={'images/ArrowIcon.svg'}
+            alt="ArrowIcon"
+            width={12}
+            height={12}
+          />
         </Button>
         <SidebarBody menuBody={filteredMenuBody} isCollapsed={isCollapsed} />
       </div>
-
-      <SidebarBody menuBody={filteredMenuFooter} isCollapsed={isCollapsed} /> {/* for footer items */}
+      <SidebarBody menuBody={filteredMenuFooter} isCollapsed={isCollapsed} />{' '}
+      {/* for footer items */}
     </div>
   );
 };
