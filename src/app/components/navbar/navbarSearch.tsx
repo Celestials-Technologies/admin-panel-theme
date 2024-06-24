@@ -8,16 +8,16 @@ const NavbarSearch = () => {
   };
   return (
     <form onSubmit={handleSearch} className="flex">
-          <Input
-            type="text"
-            name="search"
-            placeholder="Search..."
-            className="w-full"
-          />
-          <Button type="submit" variant="primary" className="rounded-r-md">
-            Search
-          </Button>
-        </form>
+      <Input
+        type="text"
+        name="search"
+        placeholder="Search..."
+        className="w-full"
+      />
+      <Button type="submit" variant="primary" className="rounded-r-md">
+        Search
+      </Button>
+    </form>
   );
 };
 export default NavbarSearch;

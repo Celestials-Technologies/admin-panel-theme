@@ -22,16 +22,17 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {' '}
-        <div className="layout">
-          <Navbar />
+        <div className="layout flex">
+          
           <Sidebar
             header={header}
             menuBody={sideMenusBody}
             menuFooter={sideMenusFooter}
             showSearchBar={true}
           />
-
-          <main>{children}</main>
+          <div><Navbar />
+          <main>{children}</main></div>
+          
         </div>
       </body>
     </html>
