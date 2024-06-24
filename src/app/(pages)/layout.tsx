@@ -6,6 +6,7 @@ import {
   sideMenusBody,
   sideMenusFooter,
 } from '../components/sidebar/sidebarMocks';
+import Navbar from '../components/navbar';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body>
         {' '}
         <div className="layout">
-          {/* <Navbar /> */}
+          <Navbar />
           <Sidebar
             header={header}
             menuBody={sideMenusBody}
