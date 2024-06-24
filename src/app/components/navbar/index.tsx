@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="flex items-center">
         <NavbarSearch />
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center gap-3 border-r ">
         <NavbarNotification />
 
         <div className="flex space-x-4">

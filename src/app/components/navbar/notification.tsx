@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const NavbarNotification = () => {
   return (
-    <div>
+    <div className='w-[56px] flex justify-center'>
       <Image
         src={'/images/notification.svg'}
         alt="profile"
