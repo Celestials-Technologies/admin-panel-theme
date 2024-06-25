@@ -29,7 +29,7 @@ export default function RootLayout({
             menuFooter={sideMenusFooter}
             showSearchBar={true}
           />
-          <div className='w-full'>
+          <div className='w-full bg-grey50'>
             <Navbar />
             <main>{children}</main>
           </div>

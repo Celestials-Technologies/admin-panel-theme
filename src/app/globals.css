@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .cardSubTitle {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.8px;
+    letter-spacing: 0.04em;
+    color: #757575;
+  }
+
+  .cardContent {
+    font-family: Gilroy;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #424242;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -22,6 +41,7 @@ body {
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
+
 
 .tabIsActive svg path {
   stroke: #3575D5;

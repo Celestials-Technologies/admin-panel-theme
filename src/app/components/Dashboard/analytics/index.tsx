@@ -5,7 +5,7 @@ import AnalyticsPerformance from './performance';
 
 const AnalyticsDashboard = () => {
   return (
-    <div>
+    <div className='mx-30'>
       Top Performing Strategies
       <AnalyticsPerformance
         heading="top performing workflows"
