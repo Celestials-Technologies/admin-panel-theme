@@ -34,21 +34,23 @@ const AnalyticsDashboard = () => {
         console.log(err?.response?.data?.message || 'Something went wrong');
       });
   }, []);
-  
+
   return (
     <div className="mx-30">
-      Top Performing Strategies
-      <div className='flex'>
-      {topPerformanceArray.map((option) => {
-        return (
-          <AnalyticsPerformance
-            key={option.index}
-            heading={option.heading}
-            subHeading={option.subHeading}
-            data={option.data}
-          />
-        );
-      })}
+      <h2 className='heading mt-7'>
+        Top Performing Strategies
+      </h2>
+      <div className='flex  gap-5'>
+        {topPerformanceArray.map((option) => {
+          return (
+            <AnalyticsPerformance
+              key={option.index}
+              heading={option.heading}
+              subHeading={option.subHeading}
+              data={option.data}
+            />
+          );
+        })}
       </div>
       <Orders />
     </div>
