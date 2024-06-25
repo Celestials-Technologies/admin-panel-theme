@@ -1,6 +1,8 @@
 // components/Sidebar.js
 import React from 'react';
-import { IMenu } from '@/app/interface/sidebar';
+
+import type { IMenu } from '@/app/interface/sidebar';
+
 import MainMenu from './mainMenu';
 import SubMenuItem from './subMenuItem';
 

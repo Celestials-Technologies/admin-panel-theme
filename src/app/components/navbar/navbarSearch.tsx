@@ -1,6 +1,7 @@
-import React from 'react';
-import Input from '../Input';
 import Image from 'next/image';
+import React from 'react';
+
+import Input from '../Input';
 
 const NavbarSearch = () => {
   return (

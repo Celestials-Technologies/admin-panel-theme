@@ -1,6 +1,7 @@
 // components/Sidebar.js
-import { ITabs } from '@/app/interface/dashboard';
 import React from 'react';
+
+import type { ITabs } from '@/app/interface/dashboard';
 
 interface Props {
   activeTab: ITabs;
@@ -15,7 +16,7 @@ const TabItem: React.FC<Props> = ({ activeTab, setActiveTab, tab }) => {
         setActiveTab(tab);
       }}
       key={tab.id}
-      className={`relative flex items-center gap-2.5 border-b px-3 py-3 ${
+      className={`relative flex items-center gap-2.5 border-b p-3 ${
         activeTab.id === tab.id ? 'border-ryzeoBlue' : 'border-transparent'
       }`}
     >

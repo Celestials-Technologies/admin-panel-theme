@@ -1,13 +1,16 @@
 'use client';
+
 import '@/app/globals.css';
+
+import { useState } from 'react';
+
+import Navbar from '../components/navbar';
 import Sidebar from '../components/sidebar';
 import {
   header,
   sideMenusBody,
   sideMenusFooter,
 } from '../components/sidebar/sidebarMocks';
-import Navbar from '../components/navbar';
-import { useState } from 'react';
 
 export default function RootLayout({
   children,

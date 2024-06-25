@@ -1,9 +1,11 @@
-import React from 'react';
-import Dropdown from '../DropDown';
 import Image from 'next/image';
+import React from 'react';
+
+import Dropdown from '../DropDown';
+
 interface Props {}
 
-const DashboardHeader: React.FC<Props> = ({}) => {
+const DashboardHeader: React.FC<Props> = () => {
   return (
     <div className="mt-[65px] flex bg-white px-30 pt-5">
       <div className="mb-6 flex w-full items-center justify-between">

@@ -1,11 +1,14 @@
 'use client';
+
+import { useState } from 'react';
+
 import DashboardActiveTab from '@/app/components/Dashboard';
 import DashboardTabs from '@/app/components/Dashboard/tabs';
-import { ITabs } from '@/app/interface/dashboard';
-import { useState } from 'react';
+import type { ITabs } from '@/app/interface/dashboard';
+
+import ActivitySvg from '../../../../public/svgs/activitySvg';
 import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
 import CalendarSvg from '../../../../public/svgs/CalendarSvg';
-import ActivitySvg from '../../../../public/svgs/activitySvg';
 
 const Dashboard = () => {
   const tabs: ITabs[] = [

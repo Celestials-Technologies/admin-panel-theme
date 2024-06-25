@@ -15,7 +15,7 @@ const DropdownIcon: React.FC<DropdownProps> = ({ iconColor }) => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M10.59 0.589844L6 5.16984L1.41 0.589844L0 1.99984L6 7.99984L12 1.99984L10.59 0.589844Z"
-        fill={iconColor ? iconColor : '#212121'}
+        fill={iconColor || '#212121'}
       />
     </svg>
   );

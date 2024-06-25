@@ -1,7 +1,8 @@
 // components/Sidebar.js
-import React from 'react';
 import Image from 'next/image';
-import { IMenu } from '@/app/interface/sidebar';
+import React from 'react';
+
+import type { IMenu } from '@/app/interface/sidebar';
 
 interface Props {
   menu: IMenu;
@@ -41,7 +42,7 @@ const MainMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
         )}
       </div>
       {menu.lineBreak ? (
-        <div className="my-1.5 h-[1px] w-full bg-borderGrey" />
+        <div className="my-1.5 h-px w-full bg-borderGrey" />
       ) : null}
     </>
   );

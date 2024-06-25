@@ -1,16 +1,18 @@
 'use client';
 
-import DashboardAPI from '@/app/services/dashboard';
-import AnalyticsPerformance from './performance';
 import { useEffect, useState } from 'react';
-import {
+
+import type {
   IAnalyticsOrders,
   IAnalyticsPerformance,
   IAnalyticsRevenue,
 } from '@/app/interface/dashboard';
-import Revenue from './Revenue';
-import Order from './Order';
+import DashboardAPI from '@/app/services/dashboard';
+
 import { initialOrders, initialRevenue } from './initials';
+import Order from './Order';
+import AnalyticsPerformance from './performance';
+import Revenue from './Revenue';
 
 const AnalyticsDashboard = () => {
   const [workFlowData, setWorkFlowData] = useState<IAnalyticsPerformance[]>([]);

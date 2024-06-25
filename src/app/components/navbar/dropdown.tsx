@@ -1,8 +1,10 @@
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+
+import type { IProfile } from '@/app/interface/navbar';
+
 import Dropdown from '../DropDown';
 import NavbarProfile from './profile';
-import { IProfile } from '@/app/interface/navbar';
 
 const NavbarDropdown = () => {
   const dropDownArray = [

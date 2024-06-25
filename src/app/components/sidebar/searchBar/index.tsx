@@ -1,7 +1,8 @@
 // components/Sidebar.js
-import React from 'react';
-import Input from '../../Input';
 import Image from 'next/image';
+import React from 'react';
+
+import Input from '../../Input';
 
 interface Props {
   searchTerm: string;

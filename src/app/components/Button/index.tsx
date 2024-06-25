@@ -1,5 +1,6 @@
-import { buttonVarients } from '@/app/utils/buttons/indes';
 import React from 'react';
+
+import { buttonVarients } from '@/app/utils/buttons/indes';
 
 // Define types for button variants (primary, secondary, etc.)
 type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'toggle';
@@ -10,6 +11,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FC<ButtonProps> = ({ variant, children, ...props }) => {
+  // Define styles for different button variants
+  const variantStyles: Record<ButtonVariant, string> = buttonVarients;
   return (
     <button
       {...props}
@@ -20,8 +23,5 @@ const Button: React.FC<ButtonProps> = ({ variant, children, ...props }) => {
     </button>
   );
 };
-
-// Define styles for different button variants
-const variantStyles: Record<ButtonVariant, string> = buttonVarients;
 
 export default Button;

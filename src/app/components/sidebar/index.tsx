@@ -1,13 +1,17 @@
 // components/Sidebar.js
+
 'use client';
-import React, { useState } from 'react';
-import { sidebarProps } from './sidebarProps';
-import SidebarHeader from './header';
-import SidebarBody from './body';
-import SearchBar from './searchBar';
-import { filterMenus } from '@/app/helpers/filterMenu';
-import Button from '../Button';
+
 import Image from 'next/image';
+import React, { useState } from 'react';
+
+import { filterMenus } from '@/app/helpers/filterMenu';
+
+import Button from '../Button';
+import SidebarBody from './body';
+import SidebarHeader from './header';
+import SearchBar from './searchBar';
+import type { sidebarProps } from './sidebarProps';
 
 const Sidebar: React.FC<sidebarProps> = ({
   header,
@@ -32,7 +36,7 @@ const Sidebar: React.FC<sidebarProps> = ({
 
   return (
     <div
-      className={`sidebar fixed left-0 flex h-[100vh] max-w-[220px] flex-col justify-between border-r border-dividerColor  bg-grey100 ${isCollapsed ? 'w-[70px]' : 'w-[220px] min-w-[220px]'}`}
+      className={`sidebar fixed left-0 flex h-screen max-w-[220px] flex-col justify-between border-r border-dividerColor  bg-grey100 ${isCollapsed ? 'w-[70px]' : 'w-[220px] min-w-[220px]'}`}
     >
       <div>
         <SidebarHeader header={header} isCollapsed={isCollapsed} />

@@ -1,5 +1,7 @@
-import { ITabs } from '@/app/interface/dashboard';
 import React from 'react';
+
+import type { ITabs } from '@/app/interface/dashboard';
+
 import TabItem from './tabItem';
 
 interface Props {

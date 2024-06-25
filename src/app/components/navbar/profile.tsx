@@ -1,6 +1,7 @@
-import React from 'react';
 import Image from 'next/image';
-import { IProfile } from '@/app/interface/navbar';
+import React from 'react';
+
+import type { IProfile } from '@/app/interface/navbar';
 
 interface Props {
   profile: IProfile;
@@ -25,7 +26,7 @@ const NavbarProfile: React.FC<Props> = ({ profile }) => {
           <p className="text-13 text-titleGrey">{profile.email}</p>
         </div>
       </div>
-      <div className="hidden h-3 w-3 sm:block sm:h-4 sm:w-5 ">
+      <div className="hidden size-3 sm:block sm:h-4 sm:w-5 ">
         <Image
           className="relative top-1"
           src={profile.image}

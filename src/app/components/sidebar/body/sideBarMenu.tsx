@@ -1,9 +1,11 @@
 // components/Sidebar.js
+import Link from 'next/link';
 import React from 'react';
-import { IMenu } from '@/app/interface/sidebar';
+
+import type { IMenu } from '@/app/interface/sidebar';
+
 import MainMenu from './mainMenu';
 import SubMenu from './subMenu';
-import Link from 'next/link';
 
 interface Props {
   menu: IMenu;
@@ -12,7 +14,7 @@ interface Props {
 const SidebarMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
   return (
     <div className={`${isCollapsed ? 'mx-1' : 'mx-2.5'}`}>
-      {!!menu.subMenus ? (
+      {menu.subMenus ? (
         <SubMenu menu={menu} isCollapsed={isCollapsed} />
       ) : (
         <Link href={menu.link || '#'}>

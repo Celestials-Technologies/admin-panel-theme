@@ -1,4 +1,4 @@
-import { IHeader, IMenu } from '@/app/interface/sidebar';
+import type { IHeader, IMenu } from '@/app/interface/sidebar';
 
 const header: IHeader = {
   image: '/svgs/logo.svg',
@@ -93,4 +93,4 @@ const sideMenusFooter: IMenu[] = [
   },
 ];
 
-export { sideMenusBody, sideMenusFooter, header };
+export { header, sideMenusBody, sideMenusFooter };

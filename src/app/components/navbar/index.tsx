@@ -1,11 +1,14 @@
 'use client';
-import React, { FC } from 'react';
+
+import type { FC } from 'react';
+import React from 'react';
+
+import NavbarDropdown from './dropdown';
 import NavbarSearch from './navbarSearch';
 import NavbarNotification from './notification';
-import NavbarDropdown from './dropdown';
 
 interface Prop {
-  isCollapsed?: Boolean;
+  isCollapsed?: boolean;
 }
 
 const Navbar: FC<Prop> = ({ isCollapsed }) => {

@@ -1,4 +1,5 @@
-import { IAnalyticsRevenue } from '@/app/interface/dashboard';
+import type { IAnalyticsRevenue } from '@/app/interface/dashboard';
+
 import InfoBox from './infoBox';
 
 interface Props {

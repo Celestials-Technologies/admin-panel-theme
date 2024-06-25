@@ -1,7 +1,9 @@
 'use client';
 
-import { IAnalyticsPerformance } from '@/app/interface/dashboard';
 import Image from 'next/image';
+
+import type { IAnalyticsPerformance } from '@/app/interface/dashboard';
+
 import ArrowIconSvg from '../../../../../public/svgs/ArrowIconSvg';
 
 interface Props {

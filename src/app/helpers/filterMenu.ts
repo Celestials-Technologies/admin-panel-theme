@@ -1,4 +1,4 @@
-import { IMenu } from '../interface/sidebar';
+import type { IMenu } from '../interface/sidebar';
 
 export const filterMenus = (menus: IMenu[], searchTerm: string): IMenu[] => {
   return menus.reduce((filtered: IMenu[], menu) => {

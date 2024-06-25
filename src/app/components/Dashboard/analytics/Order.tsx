@@ -1,4 +1,5 @@
-import { IAnalyticsOrders } from '@/app/interface/dashboard';
+import type { IAnalyticsOrders } from '@/app/interface/dashboard';
+
 import InfoBox from './infoBox';
 
 interface Props {

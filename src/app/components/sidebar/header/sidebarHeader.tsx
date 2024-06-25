@@ -1,6 +1,7 @@
-import React from 'react';
 import Image from 'next/image';
-import { IHeader } from '@/app/interface/sidebar'; // Adjust the path based on your actual interface location
+import React from 'react';
+
+import type { IHeader } from '@/app/interface/sidebar'; // Adjust the path based on your actual interface location
 
 interface Props {
   header: IHeader;

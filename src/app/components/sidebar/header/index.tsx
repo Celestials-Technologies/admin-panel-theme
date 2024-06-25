@@ -1,6 +1,8 @@
-import React from 'react';
 import Link from 'next/link';
-import { IHeader } from '@/app/interface/sidebar'; // Adjust the path based on your actual interface location
+import React from 'react';
+
+import type { IHeader } from '@/app/interface/sidebar'; // Adjust the path based on your actual interface location
+
 import SidebarSubHeader from './sidebarHeader';
 
 interface Props {
@@ -11,7 +13,7 @@ interface Props {
 const SidebarHeader: React.FC<Props> = ({ header, isCollapsed }) => {
   return (
     <>
-      {!!header.link ? (
+      {header.link ? (
         <Link href={header.link}>
           <SidebarSubHeader header={header} isCollapsed={isCollapsed} />
         </Link>

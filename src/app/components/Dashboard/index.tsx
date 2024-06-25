@@ -1,9 +1,11 @@
-import { DashboardTabs } from '@/app/enums/dashboard';
-import { ITabs } from '@/app/interface/dashboard';
 import React from 'react';
+
+import { DashboardTabs } from '@/app/enums/dashboard';
+import type { ITabs } from '@/app/interface/dashboard';
+
+import ActivityDashboard from './activity';
 import AnalyticsDashboard from './analytics';
 import CalendarDashboard from './calendar';
-import ActivityDashboard from './activity';
 
 interface Props {
   activeTab: ITabs;
