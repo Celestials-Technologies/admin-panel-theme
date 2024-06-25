@@ -6,7 +6,7 @@ interface Props {
 }
 const Revenue: React.FC<Props> = ({ data }) => {
   return (
-    <div className="rounded-lg bg-white px-30 py-4 shadow-stripeShadow300">
+    <div className="rounded-lg mt-4 bg-white px-30 py-4 shadow-stripeShadow300">
       <div className="max-w-[375px]">
         <InfoBox
           title={'Ryzeo Return on investment'}
@@ -14,24 +14,24 @@ const Revenue: React.FC<Props> = ({ data }) => {
         />
         <div className="flex justify-between">
           <InfoBox
-            className="w-1/2"
+            className="w-1/2 pt-6"
             title={'Total Revenue'}
             info={`$${data.total}`}
           />
           <InfoBox
-            className="w-1/2"
+            className="w-1/2 pt-6"
             title={'Revenue by Ryzeo'}
             info={`$${data.ryzeo}`}
           />
         </div>
         <div className="flex justify-between">
           <InfoBox
-            className="w-1/2"
+            className="w-1/2 pt-6"
             title={'From workflows'}
             info={`$${data.workFlow}`}
           />
           <InfoBox
-            className="w-1/2"
+            className="w-1/2 pt-6"
             title={'From Campaigns'}
             info={`$${data.campaign}`}
           />

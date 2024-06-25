@@ -5,7 +5,7 @@ interface Props {}
 
 const DashboardHeader: React.FC<Props> = ({}) => {
   return (
-    <div className="mt-[65px] flex bg-white px-30 pt-5">
+    <div className="flex bg-white px-30 pt-5">
       <div className="mb-6 flex w-full items-center justify-between">
         <div className="flex">
           <div className="flex items-center">

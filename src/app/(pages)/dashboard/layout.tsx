@@ -7,9 +7,8 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
+    <section className='my-[65px]'>
       <DashboardHeader />
-
       {children}
     </section>
   );

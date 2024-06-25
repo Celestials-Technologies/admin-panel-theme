@@ -11,6 +11,7 @@ import {
 import Revenue from './Revenue';
 import Order from './Order';
 import { initialOrders, initialRevenue } from './initials';
+import AudienceGrowth from './audienceGrowth';
 
 const AnalyticsDashboard = () => {
   const [workFlowData, setWorkFlowData] = useState<IAnalyticsPerformance[]>([]);
@@ -50,7 +51,7 @@ const AnalyticsDashboard = () => {
   return (
     <div className="mx-30">
       <h2 className="heading mt-7">Top Performing Strategies</h2>
-      <div className="flex  gap-5">
+      <div className="flex gap-5">
         {topPerformanceArray.map((option) => {
           return (
             <AnalyticsPerformance
@@ -62,10 +63,13 @@ const AnalyticsDashboard = () => {
           );
         })}
       </div>
-      Revenue
+      <h2 className="heading mt-7">Revenue</h2>
       <Revenue data={revenueData} />
-      Orders
+      <h2 className="heading mt-7">Orders</h2>
       <Order data={ordersData} />
+
+      <h2 className="heading mt-7">Audience Growth</h2>
+      <AudienceGrowth />
     </div>
   );
 };
