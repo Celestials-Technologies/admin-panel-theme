@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({ type, ...props }) => {
     <input
       type={type}
       {...props}
-      className={`px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 ${props.className}`}
+      className={`ml-2 focus:outline-none ${props.className}`}
     />
   );
 };

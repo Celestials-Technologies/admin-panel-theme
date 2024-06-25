@@ -1,16 +1,18 @@
 // components/Sidebar.js
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import Image from 'next/image';
-import { ISubMenu } from '@/app/interface/sidebar';
+
+import type { ISubMenu } from '@/app/interface/sidebar';
 
 interface Props {
   subMenu: ISubMenu;
+  isCollapsed: boolean;
 }
-const SubMenuItem: React.FC<Props> = ({ subMenu }) => {
+const SubMenuItem: React.FC<Props> = ({ subMenu, isCollapsed }) => {
   return (
-    <Link href={subMenu.link} className='flex'>
-      <div className="ml-[22px] mr-[18px] flex h-6 w-6 self-center">
+    <Link href={subMenu.link} className="flex">
+      <div className="ml-[22px] mr-[18px] flex size-6 self-center">
         <Image
           className="select-none object-contain"
           src={subMenu.image}
@@ -19,9 +21,11 @@ const SubMenuItem: React.FC<Props> = ({ subMenu }) => {
           height={24}
         />
       </div>
-      <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
-        {subMenu.text}
-      </p>
+      {!isCollapsed && (
+        <p className="font-poppins select-none self-center text-[15px] font-medium leading-[19px]">
+          {subMenu.text}
+        </p>
+      )}
     </Link>
   );
 };
