@@ -1,10 +1,12 @@
 'use client';
 
+import Orders from "./Orders";
+
 const AnalyticsDashboard = () => {
-  
+
   return (
     <div>
-      Analytics
+      <Orders />
     </div>
   );
 };

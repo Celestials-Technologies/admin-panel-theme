@@ -2,15 +2,15 @@ import { IHeader, IMenu } from '@/app/interface/sidebar';
 
 const header: IHeader = {
 
-  image: '/images/logo.svg',
+  image: '/svgs/logo.svg',
 };
 
 const sideMenusBody: IMenu[] = [
   {
     link: '/dashboard',
     text: 'Dashboard',
-    image: '/images/dashboard.svg',
-    optionalSvg: 'images/sidebarOption.svg',
+    image: '/svgs/dashboard.svg',
+    optionalSvg: 'svgs/sidebarOption.svg',
     lineBreak: true,
     // subMenus: [
     //   {
@@ -28,20 +28,20 @@ const sideMenusBody: IMenu[] = [
   {
     link: '/campaigns',
     text: 'Campaigns',
-    image: '/images/CampaignsIcon.svg',
+    image: '/svgs/CampaignsIcon.svg',
   },
   {
     link: '/main',
     text: 'Work Flow',
-    image: '/images/workflowIcon.svg',
-    optionalSvg: 'images/sidebarOption.svg',
+    image: '/svgs/workflowIcon.svg',
+    optionalSvg: 'svgs/sidebarOption.svg',
   },
 
   {
     link: '/main',
     text: 'Store',
-    image: '/images/storeIcon.svg',
-    optionalSvg: 'images/sidebarOption.svg',
+    image: '/svgs/storeIcon.svg',
+    optionalSvg: 'svgs/sidebarOption.svg',
     lineBreak: true,
   },
 
@@ -49,34 +49,34 @@ const sideMenusBody: IMenu[] = [
   {
     link: '/main',
     text: 'Email Templates',
-    image: '/images/EmailIcon.svg',
+    image: '/svgs/EmailIcon.svg',
   },
 
   {
     link: '/main',
     text: 'Pop-Ups',
-    image: '/images/popUpIcon.svg',
+    image: '/svgs/popUpIcon.svg',
     lineBreak: true,
   },
   {
     link: '/main',
     text: ' Lists & Segments',
-    image: '/images/storeIcon.svg',
+    image: '/svgs/storeIcon.svg',
   },
   {
     link: '/main',
     text: 'Subscriber Profiles',
-    image: '/images/subscriberProfile.svg',
+    image: '/svgs/subscriberProfile.svg',
     lineBreak: true,
   },
   {
     link: '/main',
     text: 'Integrations',
-    image: '/images/integrations.svg',
+    image: '/svgs/integrations.svg',
   }, {
     link: '/main',
     text: 'Data Feeds',
-    image: '/images/DataFeeds.svg',
+    image: '/svgs/DataFeeds.svg',
     lineBreak: true,
   },
 ];
@@ -85,12 +85,12 @@ const sideMenusFooter: IMenu[] = [
   {
     link: '/faq',
     text: 'Settings',
-    image: '/images/settingIcon.svg',
+    image: '/svgs/settingIcon.svg',
   },
   {
     link: '/help',
     text: 'Get Help',
-    image: '/images/helpIcon.svg',
+    image: '/svgs/helpIcon.svg',
   },
 ];
 

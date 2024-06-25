@@ -16,7 +16,7 @@ const SidebarSubHeader: React.FC<Props> = ({ header, isCollapsed }) => {
           {isCollapsed ?
             <Image
               className="select-none object-contain"
-              src={'images/mobileLogo.svg'}
+              src={'svgs/mobileLogo.svg'}
               alt=""
               width={40}
               height={40}

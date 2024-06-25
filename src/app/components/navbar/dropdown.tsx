@@ -18,7 +18,7 @@ const NavbarDropdown = () => {
   const profile: IProfile ={
     name: 'ABC Store',
     email: 'daniel.rist@gmail.com',
-    image: 'images/DropdownArrow.svg'
+    image: 'svgs/DropdownArrow.svg'
   }
   return (
     <Dropdown profile={<NavbarProfile profile={profile}/>}>
