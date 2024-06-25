@@ -4,5 +4,5 @@ export const buttonVarients = {
   danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500',
   success: 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500',
   toggle:
-    'bg-ryzeoGreen -right-3 top-[70px] text-white absolute !rounded-full h-6 w-6 flex justify-center items-center',
+    'bg-ryzeoGreen -right-3 top-[58px] text-white absolute !rounded-full h-6 w-6 flex justify-center items-center',
 };
