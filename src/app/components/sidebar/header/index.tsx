@@ -13,10 +13,10 @@ const SidebarHeader: React.FC<Props> = ({ header, isCollapsed }) => {
     <>
       {!!header.link ? (
         <Link href={header.link}>
-          <SidebarSubHeader header={header} isCollapsed={isCollapsed}/>
+          <SidebarSubHeader header={header} isCollapsed={isCollapsed} />
         </Link>
       ) : (
-        <SidebarSubHeader header={header} isCollapsed={isCollapsed}/>
+        <SidebarSubHeader header={header} isCollapsed={isCollapsed} />
       )}
     </>
   );

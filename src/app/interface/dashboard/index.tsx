@@ -23,4 +23,3 @@ export interface IAnalyticsOrders {
   workFlow: number;
   campaign: number;
 }
-

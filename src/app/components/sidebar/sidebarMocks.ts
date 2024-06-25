@@ -1,7 +1,6 @@
 import { IHeader, IMenu } from '@/app/interface/sidebar';
 
 const header: IHeader = {
-
   image: '/svgs/logo.svg',
 };
 
@@ -45,7 +44,6 @@ const sideMenusBody: IMenu[] = [
     lineBreak: true,
   },
 
-
   {
     link: '/main',
     text: 'Email Templates',
@@ -73,7 +71,8 @@ const sideMenusBody: IMenu[] = [
     link: '/main',
     text: 'Integrations',
     image: '/svgs/integrations.svg',
-  }, {
+  },
+  {
     link: '/main',
     text: 'Data Feeds',
     image: '/svgs/DataFeeds.svg',

@@ -11,12 +11,21 @@ const MainMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
   return (
     <>
       <div
-        className={`flex hover:bg-blue100 min-h-[36px] items-center  ${isCollapsed ? 'justify-center' : 'px-3 justify-between'}  `}
+        className={`flex min-h-[36px] items-center hover:bg-blue100  ${isCollapsed ? 'justify-center' : 'justify-between px-3'}  `}
       >
-
         <div className="flex items-center">
-          <Image className="" src={menu.image} alt="" width={isCollapsed ? 24 : 18} height={isCollapsed ? 24 : 18} />
-          {!isCollapsed && <p className="text-textGrey text-13 mx-3 font-medium">{menu.text}</p>}
+          <Image
+            className=""
+            src={menu.image}
+            alt=""
+            width={isCollapsed ? 24 : 18}
+            height={isCollapsed ? 24 : 18}
+          />
+          {!isCollapsed && (
+            <p className="mx-3 text-13 font-medium text-textGrey">
+              {menu.text}
+            </p>
+          )}
         </div>
 
         {!!menu.optionalSvg && !isCollapsed && (
@@ -31,7 +40,9 @@ const MainMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
           </div>
         )}
       </div>
-      {menu.lineBreak ? <div className='h-[1px] w-full my-1.5 bg-borderGrey' /> : null}
+      {menu.lineBreak ? (
+        <div className="my-1.5 h-[1px] w-full bg-borderGrey" />
+      ) : null}
     </>
   );
 };

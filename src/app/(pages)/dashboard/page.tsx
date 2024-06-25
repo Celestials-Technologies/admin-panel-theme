@@ -23,7 +23,7 @@ const Dashboard = () => {
         setActiveTab={setActiveTab}
         tabs={tabs}
       />
-      <DashboardActiveTab activeTab={activeTab}/>
+      <DashboardActiveTab activeTab={activeTab} />
     </div>
   );
 };

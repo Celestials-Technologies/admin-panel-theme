@@ -10,7 +10,6 @@ interface Props {
 }
 
 const DashboardActiveTab: React.FC<Props> = ({ activeTab }) => {
-    
   switch (activeTab.name) {
     case DashboardTabs.Analytics:
       return <AnalyticsDashboard />;

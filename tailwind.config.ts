@@ -29,7 +29,6 @@ const config: Config = {
         grey200: '#E0E0E0',
         grey300: '#616161',
         dividerColor: '#E1E3E5',
-
       },
       fontSize: {
         '13': '13px',
@@ -48,7 +47,7 @@ const config: Config = {
       },
       margin: {
         '30': '30px',
-      }
+      },
     },
   },
   plugins: [],

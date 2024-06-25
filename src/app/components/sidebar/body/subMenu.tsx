@@ -11,11 +11,15 @@ interface Props {
 const SubMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
   return (
     <div className="relative">
-      <MainMenu menu={menu} isCollapsed={isCollapsed}/>
+      <MainMenu menu={menu} isCollapsed={isCollapsed} />
       <div className="">
         {menu.subMenus &&
           menu.subMenus.map((subMenu, subIndex) => (
-            <SubMenuItem subMenu={subMenu} key={`submenu-${subIndex}`} isCollapsed={isCollapsed}/>
+            <SubMenuItem
+              subMenu={subMenu}
+              key={`submenu-${subIndex}`}
+              isCollapsed={isCollapsed}
+            />
           ))}
       </div>
     </div>

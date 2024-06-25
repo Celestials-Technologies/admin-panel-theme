@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import '@/app/globals.css';
 import Sidebar from '../components/sidebar';
 import {
@@ -28,7 +28,9 @@ export default function RootLayout({
             isCollapsed={isCollapsed}
             setIsCollapsed={setIsCollapsed}
           />
-          <div className={`ml-auto bg-grey50 ${isCollapsed ? 'w-[calc(100%-70px)]' : 'w-[calc(100%-220px)]'}`}>
+          <div
+            className={`ml-auto bg-grey50 ${isCollapsed ? 'w-[calc(100%-70px)]' : 'w-[calc(100%-220px)]'}`}
+          >
             <Navbar isCollapsed={isCollapsed} />
             <main>{children}</main>
           </div>

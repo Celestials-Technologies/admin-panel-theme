@@ -15,13 +15,13 @@ const NavbarDropdown = () => {
       label: 'Profile',
     },
   ];
-  const profile: IProfile ={
+  const profile: IProfile = {
     name: 'ABC Store',
     email: 'daniel.rist@gmail.com',
-    image: 'svgs/DropdownArrow.svg'
-  }
+    image: 'svgs/DropdownArrow.svg',
+  };
   return (
-    <Dropdown profile={<NavbarProfile profile={profile}/>}>
+    <Dropdown profile={<NavbarProfile profile={profile} />}>
       {dropDownArray.map((option, index) => {
         return (
           <Link

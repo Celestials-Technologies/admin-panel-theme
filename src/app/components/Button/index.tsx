@@ -22,6 +22,6 @@ const Button: React.FC<ButtonProps> = ({ variant, children, ...props }) => {
 };
 
 // Define styles for different button variants
-const variantStyles: Record<ButtonVariant, string> = buttonVarients
+const variantStyles: Record<ButtonVariant, string> = buttonVarients;
 
 export default Button;

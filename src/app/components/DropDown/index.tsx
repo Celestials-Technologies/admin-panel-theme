@@ -9,7 +9,13 @@ interface DropdownProps {
   iconColor?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ title, children, profile, classname, iconColor }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  title,
+  children,
+  profile,
+  classname,
+  iconColor,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -38,10 +44,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children, profile, classname
       {profile ? (
         <div onClick={toggleDropdown}>{profile}</div>
       ) : (
-        <button
-          onClick={toggleDropdown}
-          className={` ${classname}`}
-        >
+        <button onClick={toggleDropdown} className={` ${classname}`}>
           {title}
           <span>
             <DropdownIcon iconColor={iconColor} />
@@ -51,7 +54,9 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children, profile, classname
 
       {isOpen && (
         <div className="absolute right-0 z-20 mt-2 w-48 rounded-md border border-gray-200 bg-white shadow-lg">
-          <div onClick={toggleDropdown} className="py-2">{children}</div>
+          <div onClick={toggleDropdown} className="py-2">
+            {children}
+          </div>
         </div>
       )}
     </div>

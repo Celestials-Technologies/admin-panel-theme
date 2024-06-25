@@ -1,4 +1,4 @@
-import { IHeader, IMenu } from "@/app/interface/sidebar";
+import { IHeader, IMenu } from '@/app/interface/sidebar';
 
 export interface sidebarProps {
   header: IHeader;

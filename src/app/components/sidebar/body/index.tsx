@@ -4,16 +4,20 @@ import { IMenu } from '@/app/interface/sidebar';
 import SidebarMenu from './sideBarMenu';
 
 interface Props {
-    menuBody: IMenu[];
-    isCollapsed: boolean;
-  }
+  menuBody: IMenu[];
+  isCollapsed: boolean;
+}
 
 const SidebarBody: React.FC<Props> = ({ menuBody, isCollapsed }) => {
   return (
-    <div className='mt-6'>
+    <div className="mt-6">
       {menuBody.map((menu, index) => (
-        <SidebarMenu menu={menu} key={`menu-${index}`} isCollapsed={isCollapsed}/>
-      ))}  
+        <SidebarMenu
+          menu={menu}
+          key={`menu-${index}`}
+          isCollapsed={isCollapsed}
+        />
+      ))}
     </div>
   );
 };

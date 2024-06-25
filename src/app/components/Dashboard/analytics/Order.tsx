@@ -6,7 +6,7 @@ interface Props {
 }
 const Order: React.FC<Props> = ({ data }) => {
   return (
-    <div className="shadow-stripeShadow300 rounded-lg bg-white px-30 py-4">
+    <div className="rounded-lg bg-white px-30 py-4 shadow-stripeShadow300">
       <div className="max-w-[375px]">
         <InfoBox title={'Total Orders'} info={`${data.total}`} />
 

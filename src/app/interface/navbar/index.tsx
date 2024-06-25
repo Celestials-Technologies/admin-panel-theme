@@ -1,5 +1,5 @@
-export  interface IProfile {
-    name: string;
-    email: string;
-    image: string;
-  }
+export interface IProfile {
+  name: string;
+  email: string;
+  image: string;
+}
