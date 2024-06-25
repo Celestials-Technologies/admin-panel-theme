@@ -17,7 +17,7 @@ const AnalyticsPerformance: React.FC<Props> = ({
   data,
 }) => {
   return (
-    <div className="mt-4 md:w-1/2 w-full rounded-lg bg-white p-7 shadow-stripeShadow300">
+    <div className="mt-4 w-full rounded-lg bg-white p-7 shadow-stripeShadow300 md:w-1/2">
       <div className="flex justify-between">
         <p className="cardSubTitle uppercase">{heading}</p>
         <button className="flex items-center gap-2">
