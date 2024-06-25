@@ -36,7 +36,7 @@ const Sidebar: React.FC<sidebarProps> = ({
 
   return (
     <div
-      className={`sidebar fixed z-30 left-0 flex h-screen max-w-[220px] flex-col justify-between border-r border-dividerColor  bg-grey100 ${isCollapsed ? 'w-[70px]' : 'w-[220px] min-w-[220px]'}`}
+      className={`sidebar fixed left-0 z-30 flex h-screen max-w-[220px] flex-col justify-between border-r border-dividerColor  bg-grey100 ${isCollapsed ? 'w-[70px]' : 'w-[220px] min-w-[220px]'}`}
     >
       <div>
         <SidebarHeader header={header} isCollapsed={isCollapsed} />
