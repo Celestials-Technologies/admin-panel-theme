@@ -8,8 +8,24 @@ import { IWorkFlow } from '@/app/interface/dashboard';
 
 const AnalyticsDashboard = () => {
   const [workFlowData, setWorkFlowData] = useState<IWorkFlow[]>([]);
+
+  const topPerformanceArray = [
+    {
+      index: 1,
+      heading: 'top performing workflows',
+      subHeading: 'Workflow Name',
+      data: workFlowData,
+    },
+    {
+      index: 2,
+      heading: 'top performing campaigns',
+      subHeading: 'Campaign Name',
+      data: workFlowData,
+    },
+  ];
+
   useEffect(() => {
-    DashboardAPI.workFlow()
+    DashboardAPI.getworkFlowData()
       .then(({ data }) => {
         const Package: IWorkFlow[] = data;
         setWorkFlowData(Package);
@@ -18,14 +34,22 @@ const AnalyticsDashboard = () => {
         console.log(err?.response?.data?.message || 'Something went wrong');
       });
   }, []);
+  
   return (
-    <div className='mx-30'>
+    <div className="mx-30">
       Top Performing Strategies
-      <AnalyticsPerformance
-        heading="top performing workflows"
-        subHeading="Workflow Name"
-        data={workFlowData}
-      />
+      <div className='flex'>
+      {topPerformanceArray.map((option) => {
+        return (
+          <AnalyticsPerformance
+            key={option.index}
+            heading={option.heading}
+            subHeading={option.subHeading}
+            data={option.data}
+          />
+        );
+      })}
+      </div>
       <Orders />
     </div>
   );
