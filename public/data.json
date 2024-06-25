@@ -1,0 +1,9 @@
+{
+    "statusCode": 200,
+    "data": [
+      { "name": "Company A", "revenue": 5000 },
+      { "name": "Company B", "revenue": 10000 },
+      { "name": "Company C", "revenue": 7500 }
+    ]
+  }
+  

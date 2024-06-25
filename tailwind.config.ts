@@ -13,18 +13,7 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      typography: {
-        'cardSubTitle': {
-          css: {
-            fontFamily: 'Inter',
-            fontSize: '12px',
-            fontWeight: '600',
-            lineHeight: '16.8px',
-            letterSpacing: '0.04em',
-            color: '#757575',
-          },
-        },
-      },
+
       colors: {
         transparent: 'transparent',
         white: '#FFFFFF',
@@ -35,21 +24,29 @@ const config: Config = {
         titleGrey: '#757575',
         textGrey: '#616161',
         borderGrey: '#E0E0E0',
+        grey50: 'F6F7F9',
         grey100: '#FAFAFA',
         grey200: '#E0E0E0',
         grey300: '#616161',
         dividerColor: '#E1E3E5',
+
       },
       fontSize: {
         '13': '13px',
       },
       boxShadow: {
         shadowPrimary: '0px -1px 0px 0px #EEEEEE inset',
+        stripeShadow100: '0px 2px 2px 0px #00000014',
+        stripeShadow200: '0px 0px 0px 1px #4044521A',
+        stripeShadow300: '0px 2px 8px 0px #40445208',
       },
       rotate: {
         '270': '270deg',
       },
       padding: {
+        '30': '30px',
+      },
+      margin: {
         '30': '30px',
       }
     },
