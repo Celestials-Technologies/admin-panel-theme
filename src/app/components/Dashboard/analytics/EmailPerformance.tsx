@@ -4,7 +4,7 @@ const EmailPerformance = () => {
     const infoBoxCommonProps = "bg-white border-[0.5px] border-dividerColor w-full flex justify-center items-center flex-col stripeShadow300";
     return (
         <div className="mt-4">
-            <div className="flex w-1/2 justify-between items-center flex-wrap">
+            <div className="flex w-1/2 justify-between items-center md:flex-nowrap flex-wrap">
                 <div className="w-full">
                     <InfoBox className={infoBoxCommonProps} title={'Total Subscribers'} info={`120`} description={'100 unique opens'} />
                     <InfoBox className={infoBoxCommonProps} title={'Newly added'} info={`0`} description={'100 unique clicks'} />
