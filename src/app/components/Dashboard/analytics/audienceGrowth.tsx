@@ -17,7 +17,7 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
     'bg-white mt-4 w-full flex justify-center items-center flex-col rounded-lg stripeShadow300';
 
   return (
-    <div className="flex items-center justify-between gap-6">
+    <div className="flex flex-wrap items-center justify-between gap-6">
       {audianceGrowthArray.map((option) => {
         return (
           <InfoBox

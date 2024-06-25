@@ -11,6 +11,7 @@ import type {
 import DashboardAPI from '@/app/services/dashboard';
 
 import AudienceGrowth from './audienceGrowth';
+import EmailPerformance from './EmailPerformance';
 import {
   initialAudianceGrowth,
   initialOrders,
@@ -62,7 +63,7 @@ const AnalyticsDashboard = () => {
   return (
     <div className="mx-30">
       <h2 className="heading mt-7">Top Performing Strategies</h2>
-      <div className="flex gap-5">
+      <div className="flex flex-col gap-5 md:flex-row">
         {topPerformanceArray.map((option) => {
           return (
             <AnalyticsPerformance
@@ -78,6 +79,9 @@ const AnalyticsDashboard = () => {
       <Revenue data={revenueData} />
       <h2 className="heading mt-7">Orders</h2>
       <Order data={ordersData} />
+
+      <h2 className="heading mt-7">Email Performance</h2>
+      <EmailPerformance />
 
       <h2 className="heading mt-7">Audience Growth</h2>
       <AudienceGrowth data={audianceData} />
