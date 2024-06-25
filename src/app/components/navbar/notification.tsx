@@ -5,7 +5,7 @@ const NavbarNotification = () => {
   return (
     <div className='w-[56px] flex justify-center'>
       <Image
-        src={'/images/notification.svg'}
+        src={'/svgs/notification.svg'}
         alt="profile"
         height={24}
         width={24}

@@ -1,5 +1,6 @@
 'use client';
 
+import Orders from './Orders';
 import AnalyticsPerformance from './performance';
 
 const AnalyticsDashboard = () => {
@@ -10,6 +11,7 @@ const AnalyticsDashboard = () => {
         heading="top performing workflows"
         subHeading="Workflow Name"
       />
+      <Orders />
     </div>
   );
 };

@@ -9,7 +9,7 @@ const DashboardHeader: React.FC<Props> = ({ }) => {
       <div className='flex justify-between w-full mb-6 items-center'>
         <div className='flex'>
           <div className='flex items-center'>
-            <Image src={'images/DashboardIcon.svg'} alt="Dashboard" height={24} width={24} />
+            <Image src={'svgs/DashboardIcon.svg'} alt="Dashboard" height={24} width={24} />
             <p className='text-xl	font-bold text-titleBlack ml-1.5 '>Dashboard</p>
           </div>
           <div className='border rounded border-grey200 ml-3'>

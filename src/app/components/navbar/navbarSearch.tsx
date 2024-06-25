@@ -5,7 +5,7 @@ import Image from 'next/image';
 const NavbarSearch = () => {
   return (
     <div className='px-3 flex items-center h-[34px] '>
-      <Image src={'images/SearchIcon.svg'} className='' alt='SearchIcon' width={13} height={13} />
+      <Image src={'svgs/SearchIcon.svg'} className='' alt='SearchIcon' width={13} height={13} />
       <Input
         type="text"
         name="search"

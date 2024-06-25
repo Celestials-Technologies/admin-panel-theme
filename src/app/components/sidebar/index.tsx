@@ -45,7 +45,7 @@ const Sidebar: React.FC<sidebarProps> = ({
           onClick={toggleSidebar}
         >
           <Image
-            src={'images/ArrowIcon.svg'}
+            src={'svgs/ArrowIcon.svg'}
             alt="ArrowIcon"
             width={12}
             height={12}

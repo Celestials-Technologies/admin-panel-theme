@@ -10,7 +10,7 @@ const NavbarProfile: React.FC<Props> = ({ profile }) => {
     <div className='flex cursor-pointer sm:items-start items-center'>
       <div className='flex sm:mr-3 mr-1'>
         <Image
-          src={'/images/user.svg'}
+          src={'/svgs/user.svg'}
           alt="profile"
           height={40}
           width={40}
@@ -18,7 +18,7 @@ const NavbarProfile: React.FC<Props> = ({ profile }) => {
         <div className='ml-3 sm:block hidden'>
           <div className='flex '>
             <p className=' text-titleBlack text-sm font-bold mr-2'>{profile.name}</p>
-            <Image src={'images/shopify.svg'} alt='shopify' width={16} height={16} />
+            <Image src={'svgs/shopify.svg'} alt='shopify' width={16} height={16} />
           </div>
           <p className='text-titleGrey text-13'>{profile.email}</p>
         </div>

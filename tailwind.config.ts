@@ -13,6 +13,18 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      typography: {
+        'cardSubTitle': {
+          css: {
+            fontFamily: 'Inter',
+            fontSize: '12px',
+            fontWeight: '600',
+            lineHeight: '16.8px',
+            letterSpacing: '0.04em',
+            color: '#757575',
+          },
+        },
+      },
       colors: {
         transparent: 'transparent',
         white: '#FFFFFF',

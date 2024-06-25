@@ -3,15 +3,15 @@ import DashboardActiveTab from '@/app/components/Dashboard';
 import DashboardTabs from '@/app/components/Dashboard/tabs';
 import { ITabs } from '@/app/interface/dashboard';
 import { useState } from 'react';
-import Aynalatics from '../../../../public/images/svgs/aynalatics';
-import Calendar from '../../../../public/images/svgs/Calendar';
-import Activity from '../../../../public/images/svgs/activity';
+import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
+import CalendarSvg from '../../../../public/svgs/CalendarSvg';
+import ActivitySvg from '../../../../public/svgs/activitySvg';
 
 const Dashboard = () => {
   const tabs: ITabs[] = [
-    { id: 1, name: 'Analytics', svg: <Aynalatics /> },
-    { id: 2, name: 'Calendar', svg: <Calendar /> },
-    { id: 3, name: 'Activity', svg: <Activity /> },
+    { id: 1, name: 'Analytics', svg: <AynalaticsSvg /> },
+    { id: 2, name: 'Calendar', svg: <CalendarSvg /> },
+    { id: 3, name: 'Activity', svg: <ActivitySvg /> },
   ];
   const initialTab = { id: 1, name: 'Analytics', svg: '' };
 
