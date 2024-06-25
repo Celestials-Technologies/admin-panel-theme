@@ -1,13 +1,23 @@
 'use client';
 
 import DashboardAPI from '@/app/services/dashboard';
-import Orders from './Orders';
 import AnalyticsPerformance from './performance';
 import { useEffect, useState } from 'react';
-import { IWorkFlow } from '@/app/interface/dashboard';
+import {
+  IAnalyticsOrders,
+  IAnalyticsPerformance,
+  IAnalyticsRevenue,
+} from '@/app/interface/dashboard';
+import Revenue from './Revenue';
+import Order from './Order';
+import { initialOrders, initialRevenue } from './initials';
 
 const AnalyticsDashboard = () => {
-  const [workFlowData, setWorkFlowData] = useState<IWorkFlow[]>([]);
+  const [workFlowData, setWorkFlowData] = useState<IAnalyticsPerformance[]>([]);
+  const [campaignData, setCampaignData] = useState<IAnalyticsPerformance[]>([]);
+  const [revenueData, setRevenueData] =
+    useState<IAnalyticsRevenue>(initialRevenue);
+  const [ordersData, setOrdersData] = useState<IAnalyticsOrders>(initialOrders);
 
   const topPerformanceArray = [
     {
@@ -20,37 +30,42 @@ const AnalyticsDashboard = () => {
       index: 2,
       heading: 'top performing campaigns',
       subHeading: 'Campaign Name',
-      data: workFlowData,
+      data: campaignData,
     },
   ];
 
   useEffect(() => {
-    DashboardAPI.getworkFlowData()
+    DashboardAPI.getDashBoardData()
       .then(({ data }) => {
-        const Package: IWorkFlow[] = data;
-        setWorkFlowData(Package);
+        setWorkFlowData(data?.workFlow);
+        setCampaignData(data?.campaign);
+        setRevenueData(data?.revenue);
+        setOrdersData(data?.orders);
       })
       .catch((err) => {
         console.log(err?.response?.data?.message || 'Something went wrong');
       });
   }, []);
-  
+
   return (
     <div className="mx-30">
       Top Performing Strategies
-      <div className='flex'>
-      {topPerformanceArray.map((option) => {
-        return (
-          <AnalyticsPerformance
-            key={option.index}
-            heading={option.heading}
-            subHeading={option.subHeading}
-            data={option.data}
-          />
-        );
-      })}
+      <div className="flex">
+        {topPerformanceArray.map((option) => {
+          return (
+            <AnalyticsPerformance
+              key={option.index}
+              heading={option.heading}
+              subHeading={option.subHeading}
+              data={option.data}
+            />
+          );
+        })}
       </div>
-      <Orders />
+      Revenue
+      <Revenue data={revenueData} />
+      Orders
+      <Order data={ordersData} />
     </div>
   );
 };

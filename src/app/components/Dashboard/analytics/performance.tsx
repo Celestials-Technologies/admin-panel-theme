@@ -1,11 +1,11 @@
 'use client';
 
-import { IWorkFlow } from "@/app/interface/dashboard";
+import { IAnalyticsPerformance } from "@/app/interface/dashboard";
 
 interface Props {
   heading: string;
   subHeading: string;
-  data: IWorkFlow[];
+  data: IAnalyticsPerformance[];
 }
 const AnalyticsPerformance: React.FC<Props> = ({ heading, subHeading, data }) => {
   return (
@@ -19,7 +19,7 @@ const AnalyticsPerformance: React.FC<Props> = ({ heading, subHeading, data }) =>
         <div>Revenue</div>
       </div>
       <div>
-        {data.map((option, index)=> {
+        {!!data.length && data.map((option, index)=> {
           return(
             <div key={`${option.name}${index}`}>
                <div>{option.name}</div>
