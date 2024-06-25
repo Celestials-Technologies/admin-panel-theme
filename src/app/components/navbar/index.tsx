@@ -1,13 +1,17 @@
 'use client';
-import React from 'react';
+import React, { FC } from 'react';
 import NavbarSearch from './navbarSearch';
 import NavbarNotification from './notification';
 import NavbarDropdown from './dropdown';
 
-const Navbar = () => {
+interface Prop {
+  isCollapsed?: Boolean;
+}
+
+const Navbar: FC<Prop> = ({ isCollapsed }) => {
 
   return (
-    <nav className="shadowPrimary border-b border-dividerColor bg-white px-4 flex items-center justify-between">
+    <nav className={`z-10 shadowPrimary border-b fixed top-0 border-dividerColor bg-white px-4 flex items-center justify-between  ${isCollapsed ? 'w-[calc(100%-70px)]' : 'w-[calc(100%-220px)]'}`}>
       <div className="flex items-center">
         <NavbarSearch />
       </div>
@@ -18,7 +22,7 @@ const Navbar = () => {
           <NavbarDropdown />
         </div>
       </div>
-     
+
     </nav>
   );
 };

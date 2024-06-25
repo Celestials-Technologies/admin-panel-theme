@@ -14,9 +14,10 @@ const Sidebar: React.FC<sidebarProps> = ({
   menuBody,
   menuFooter,
   showSearchBar,
+  isCollapsed,
+   setIsCollapsed,
 }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -30,7 +31,7 @@ const Sidebar: React.FC<sidebarProps> = ({
   const filteredMenuFooter = filterMenus(menuFooter, searchTerm);
 
   return (
-    <div className={`relative flex flex-col justify-between bg-grey100 sidebar border-r border-dividerColor h-[100vh]  max-w-[220px] ${isCollapsed ? 'w-[70px]' : 'w-[220px] min-w-[220px]'}`}>
+    <div className={`fixed left-0 flex flex-col justify-between bg-grey100 sidebar border-r border-dividerColor h-[100vh]  max-w-[220px] ${isCollapsed ? 'w-[70px]' : 'w-[220px] min-w-[220px]'}`}>
       <div>
         <SidebarHeader header={header} isCollapsed={isCollapsed} />
         {showSearchBar && !isCollapsed && (
@@ -40,7 +41,7 @@ const Sidebar: React.FC<sidebarProps> = ({
           />
         )}
         <Button
-          className={`toggle-button transition duration-500 ${isCollapsed? 'rotate-270 ': 'rotate-90'}`}
+          className={`toggle-button transition duration-500 z-40  ${isCollapsed? 'rotate-270 ': 'rotate-90'}`}
           variant="toggle"
           onClick={toggleSidebar}
         >
