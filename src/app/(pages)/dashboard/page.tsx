@@ -1,4 +1,5 @@
 'use client';
+import DashboardActiveTab from '@/app/components/Dashboard';
 import DashboardTabs from '@/app/components/Dashboard/tabs';
 import { ITabs } from '@/app/interface/dashboard';
 import { useState } from 'react';
@@ -9,7 +10,7 @@ import Activity from '../../../../public/images/svgs/activity';
 const Dashboard = () => {
   const tabs: ITabs[] = [
     { id: 1, name: 'Analytics', svg: <Aynalatics /> },
-    { id: 2, name: 'Calender', svg: <Calendar /> },
+    { id: 2, name: 'Calendar', svg: <Calendar /> },
     { id: 3, name: 'Activity', svg: <Activity /> },
   ];
   const initialTab = { id: 1, name: 'Analytics', svg: '' };
@@ -22,6 +23,7 @@ const Dashboard = () => {
         setActiveTab={setActiveTab}
         tabs={tabs}
       />
+      <DashboardActiveTab activeTab={activeTab}/>
     </div>
   );
 };
