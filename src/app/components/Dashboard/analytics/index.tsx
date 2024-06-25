@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import type {
+  IAnalyticsAudianceGrowth,
   IAnalyticsOrders,
   IAnalyticsPerformance,
   IAnalyticsRevenue,
@@ -10,7 +11,11 @@ import type {
 import DashboardAPI from '@/app/services/dashboard';
 
 import AudienceGrowth from './audienceGrowth';
-import { initialOrders, initialRevenue } from './initials';
+import {
+  initialAudianceGrowth,
+  initialOrders,
+  initialRevenue,
+} from './initials';
 import Order from './Order';
 import AnalyticsPerformance from './performance';
 import Revenue from './Revenue';
@@ -21,6 +26,9 @@ const AnalyticsDashboard = () => {
   const [revenueData, setRevenueData] =
     useState<IAnalyticsRevenue>(initialRevenue);
   const [ordersData, setOrdersData] = useState<IAnalyticsOrders>(initialOrders);
+  const [audianceData, setAudianceData] = useState<IAnalyticsAudianceGrowth>(
+    initialAudianceGrowth
+  );
 
   const topPerformanceArray = [
     {
@@ -44,6 +52,7 @@ const AnalyticsDashboard = () => {
         setCampaignData(data?.campaign);
         setRevenueData(data?.revenue);
         setOrdersData(data?.orders);
+        setAudianceData(data?.audianceGrowth);
       })
       .catch((err) => {
         console.log(err?.response?.data?.message || 'Something went wrong');
@@ -71,7 +80,7 @@ const AnalyticsDashboard = () => {
       <Order data={ordersData} />
 
       <h2 className="heading mt-7">Audience Growth</h2>
-      <AudienceGrowth />
+      <AudienceGrowth data={audianceData} />
     </div>
   );
 };

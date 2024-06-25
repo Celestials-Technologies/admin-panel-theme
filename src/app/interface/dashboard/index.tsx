@@ -23,3 +23,10 @@ export interface IAnalyticsOrders {
   workFlow: number;
   campaign: number;
 }
+
+export interface IAnalyticsAudianceGrowth {
+  total: number;
+  new: number;
+  unsubscribed: number;
+  deleted: number;
+}

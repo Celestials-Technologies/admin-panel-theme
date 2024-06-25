@@ -12,3 +12,10 @@ export const initialOrders = {
   workFlow: 0,
   campaign: 0,
 };
+
+export const initialAudianceGrowth = {
+  total: 0,
+  new: 0,
+  unsubscribed: 0,
+  deleted: 0,
+};

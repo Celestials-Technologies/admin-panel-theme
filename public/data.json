@@ -23,6 +23,12 @@
       "total": 5000,
       "workFlow": 1000,
       "campaign": 1000
+    },
+    "audianceGrowth": {
+      "total": 120,
+      "new": 2,
+      "unsubscribed": 0,
+      "deleted": 2
     }
   }
 }
