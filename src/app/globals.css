@@ -10,6 +10,7 @@
     letter-spacing: 0.04em;
     color: #757575;
   }
+
   .cardContent {
     font-family: Gilroy;
     font-size: 30px;
@@ -17,6 +18,7 @@
     line-height: 30px;
     color: #424242;
   }
+
   .heading {
     font-family: Gilroy;
     font-size: 20px;
@@ -25,21 +27,8 @@
     color: #424242;
   }
 }
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #F6F7F9;
 }
 
 .tabIsActive svg path {

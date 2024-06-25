@@ -9,6 +9,7 @@ import type {
 } from '@/app/interface/dashboard';
 import DashboardAPI from '@/app/services/dashboard';
 
+import AudienceGrowth from './audienceGrowth';
 import { initialOrders, initialRevenue } from './initials';
 import Order from './Order';
 import AnalyticsPerformance from './performance';
@@ -52,7 +53,7 @@ const AnalyticsDashboard = () => {
   return (
     <div className="mx-30">
       <h2 className="heading mt-7">Top Performing Strategies</h2>
-      <div className="flex  gap-5">
+      <div className="flex gap-5">
         {topPerformanceArray.map((option) => {
           return (
             <AnalyticsPerformance
@@ -64,10 +65,13 @@ const AnalyticsDashboard = () => {
           );
         })}
       </div>
-      Revenue
+      <h2 className="heading mt-7">Revenue</h2>
       <Revenue data={revenueData} />
-      Orders
+      <h2 className="heading mt-7">Orders</h2>
       <Order data={ordersData} />
+
+      <h2 className="heading mt-7">Audience Growth</h2>
+      <AudienceGrowth />
     </div>
   );
 };
