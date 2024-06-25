@@ -3,3 +3,8 @@ export interface ITabs {
   id: number;
   svg: React.ReactNode;
 }
+
+export interface IWorkFlow {
+  name: string;
+  revenue: number;
+}
