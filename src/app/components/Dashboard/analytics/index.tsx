@@ -1,10 +1,15 @@
 'use client';
 
+import AnalyticsPerformance from './performance';
+
 const AnalyticsDashboard = () => {
-  
   return (
     <div>
-      Analytics
+      Top Performing Strategies
+      <AnalyticsPerformance
+        heading="top performing workflows"
+        subHeading="Workflow Name"
+      />
     </div>
   );
 };

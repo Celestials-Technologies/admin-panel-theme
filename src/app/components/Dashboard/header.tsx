@@ -15,7 +15,7 @@ const DashboardHeader: React.FC<Props> = ({ }) => {
           <div className='border rounded border-grey200 ml-3'>
             <Dropdown iconColor='#616161' classname='text-titleGrey flex items-center justify-center gap-3 w-[130px] h-11 text-xs font-medium' title="Last 30 days">
               <div className='text-titleGrey font-medium'>Last 10 days </div>
-              <div className='text-titleGrey font-medium'>last 20 days</div>
+              <div className='text-titleGrey font-medium'>Last 20 days</div>
             </Dropdown>
 
           </div>
