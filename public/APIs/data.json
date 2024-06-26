@@ -24,7 +24,7 @@
       "workFlow": 1000,
       "campaign": 1000
     },
-    "audianceGrowth": {
+    "audienceGrowth": {
       "total": 120,
       "new": 2,
       "unsubscribed": 0,

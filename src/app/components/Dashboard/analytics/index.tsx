@@ -3,20 +3,20 @@
 import { useEffect, useState } from 'react';
 
 import type {
-  IAnalyticsAudianceGrowth,
+  IAnalyticsAudienceGrowth,
+  IAnalyticsEmailPerformance,
   IAnalyticsOrders,
   IAnalyticsPerformance,
   IAnalyticsRevenue,
-  IAnalyticsEmailPerformance,
 } from '@/app/interface/dashboard';
 import DashboardAPI from '@/app/services/dashboard';
 
 import AudienceGrowth from './audienceGrowth';
 import EmailPerformance from './EmailPerformance';
 import {
-  initialAudianceGrowth,
+  initialAudienceGrowth,
   initialOrders,
-  initialRevenue
+  initialRevenue,
 } from './initials';
 import Order from './Order';
 import AnalyticsPerformance from './performance';
@@ -28,15 +28,13 @@ const AnalyticsDashboard = () => {
   const [revenueData, setRevenueData] =
     useState<IAnalyticsRevenue>(initialRevenue);
   const [ordersData, setOrdersData] = useState<IAnalyticsOrders>(initialOrders);
-  const [audianceData, setAudianceData] = useState<IAnalyticsAudianceGrowth>(
-    initialAudianceGrowth
+  const [audienceData, setAudienceData] = useState<IAnalyticsAudienceGrowth>(
+    initialAudienceGrowth
   );
 
-  const [emailPerformance, setEmailPerformance] = useState<IAnalyticsEmailPerformance[]>(
-    []
-  );
-
-  
+  const [emailPerformance, setEmailPerformance] = useState<
+    IAnalyticsEmailPerformance[]
+  >([]);
 
   const topPerformanceArray = [
     {
@@ -60,23 +58,23 @@ const AnalyticsDashboard = () => {
         setCampaignData(data?.campaign);
         setRevenueData(data?.revenue);
         setOrdersData(data?.orders);
-        setAudianceData(data?.audianceGrowth);
+        setAudienceData(data?.audienceGrowth);
       })
       .catch((err) => {
         console.log(err?.response?.data?.message || 'Something went wrong');
       });
-  }
+  };
 
   const emailDataHandler = () => {
     DashboardAPI.grabEmailData()
       .then(({ data }) => {
-        console.log('data: ', data)
+        console.log('data: ', data);
         setEmailPerformance(data.emailPerformance);
       })
       .catch((err) => {
         console.log(err?.response?.data?.message || 'Something went wrong');
       });
-  }
+  };
 
   useEffect(() => {
     dashboardDataHandler();
@@ -107,7 +105,7 @@ const AnalyticsDashboard = () => {
       <EmailPerformance data={emailPerformance} />
 
       <h2 className="heading mt-7">Audience Growth</h2>
-      <AudienceGrowth data={audianceData} />
+      <AudienceGrowth data={audienceData} />
     </div>
   );
 };

@@ -13,7 +13,7 @@ export const initialOrders = {
   campaign: 0,
 };
 
-export const initialAudianceGrowth = {
+export const initialAudienceGrowth = {
   total: 0,
   new: 0,
   unsubscribed: 0,
