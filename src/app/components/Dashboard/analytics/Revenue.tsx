@@ -41,7 +41,6 @@ const Revenue: React.FC<Props> = ({ data }) => {
         <InfoBox title={'Spent on Ryzeo'} info={'$15,000'} />
       </div>
       <div className="App">
-        <h1>Bar Chart Example</h1>
         <BarChart
           labels={['Jan 1', 'Jan 7', 'Jan 14', 'Jan 28']}
           chartData={[1, 2, 3, 100]}
