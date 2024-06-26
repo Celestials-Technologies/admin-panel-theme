@@ -1,39 +1,57 @@
+import type { IAnalyticsEmailPerformance } from '@/app/interface/dashboard';
+
+import DoughnutChart from '../../Charts/DoughnutChart';
 import InfoBox from './infoBox';
 
-const EmailPerformance = () => {
+interface IProps {
+  data: IAnalyticsEmailPerformance[];
+}
+
+const EmailPerformance: React.FC<IProps> = (props) => {
+  const { data } = props;
+
   const infoBoxCommonProps =
     'bg-white border-[0.5px] border-dividerColor w-full flex justify-center items-center flex-col stripeShadow300';
   return (
-    <div className="mt-4">
+    <div className="mt-4 flex ">
       <div className="flex w-1/2 flex-wrap items-center justify-between md:flex-nowrap">
         <div className="w-full">
-          <InfoBox
-            className={infoBoxCommonProps}
-            title={'Total Subscribers'}
-            info={`120`}
-            description={'100 unique opens'}
-          />
-          <InfoBox
-            className={infoBoxCommonProps}
-            title={'Newly added'}
-            info={`0`}
-            description={'100 unique clicks'}
-          />
+          {data
+            .filter((_, index) => index < 2)
+            .map((email, index) => {
+              return (
+                <InfoBox
+                  key={`email_performance_${index}`}
+                  className={infoBoxCommonProps}
+                  title={email.title}
+                  info={email.info.toString()}
+                  description={email.description}
+                />
+              );
+            })}
         </div>
+
         <div className="w-full">
-          <InfoBox
-            className={infoBoxCommonProps}
-            title={'Unsubscribed'}
-            info={`5`}
-            description="100 emails delivered"
-          />
-          <InfoBox
-            className={infoBoxCommonProps}
-            title={'Deleted/Removed'}
-            info={`12`}
-            description="90 contacts converted"
-          />
+          {data
+            .filter((_, index) => index >= 2)
+            .map((email, index) => {
+              return (
+                <InfoBox
+                  key={`email_performance_${index}`}
+                  className={infoBoxCommonProps}
+                  title={email.title}
+                  info={email.info.toString()}
+                  description={email.description}
+                />
+              );
+            })}
         </div>
+      </div>
+      <div className="size-[120px] md:size-[140px] xl:size-[154px]">
+        <DoughnutChart
+          dataSet={[24, 22, 33]}
+          labelSet={['Sent in workflows', 'Sent in campaigns', 'Available']}
+        />
       </div>
     </div>
   );

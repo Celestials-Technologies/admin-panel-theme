@@ -24,9 +24,15 @@ export interface IAnalyticsOrders {
   campaign: number;
 }
 
-export interface IAnalyticsAudianceGrowth {
+export interface IAnalyticsAudienceGrowth {
   total: number;
   new: number;
   unsubscribed: number;
   deleted: number;
+}
+
+export interface IAnalyticsEmailPerformance {
+  title: string;
+  info: number;
+  description: string;
 }
