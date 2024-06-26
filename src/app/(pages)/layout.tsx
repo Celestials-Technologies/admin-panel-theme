@@ -2,7 +2,7 @@
 
 import '@/app/globals.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Navbar from '../components/navbar';
 import Sidebar from '../components/sidebar';
@@ -18,6 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  useEffect(() => {
+    console.log('layout landed');
+    setIsCollapsed(false);
+  }, []);
+  console.log({ isCollapsed });
   return (
     <html lang="en">
       <body>

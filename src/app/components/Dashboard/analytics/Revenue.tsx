@@ -1,5 +1,6 @@
 import type { IAnalyticsRevenue } from '@/app/interface/dashboard';
 
+import BarChart from '../../Charts/barChart';
 import InfoBox from './infoBox';
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
 }
 const Revenue: React.FC<Props> = ({ data }) => {
   return (
-    <div className="mt-4 rounded-lg bg-white px-30 py-4 shadow-stripeShadow300">
+    <div className="mt-4 flex rounded-lg bg-white px-30 py-4 shadow-stripeShadow300">
       <div className="max-w-[375px]">
         <InfoBox
           title={'Ryzeo Return on investment'}
@@ -38,6 +39,14 @@ const Revenue: React.FC<Props> = ({ data }) => {
           />
         </div>
         <InfoBox title={'Spent on Ryzeo'} info={'$15,000'} />
+      </div>
+      <div className="App">
+        <h1>Bar Chart Example</h1>
+        <BarChart
+          labels={['Jan 1', 'Jan 7', 'Jan 14', 'Jan 28']}
+          chartData={[1, 2, 3, 100]}
+          barColor={undefined}
+        />
       </div>
     </div>
   );

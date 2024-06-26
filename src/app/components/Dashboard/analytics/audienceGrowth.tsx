@@ -1,5 +1,6 @@
 import type { IAnalyticsAudianceGrowth } from '@/app/interface/dashboard';
 
+import LineChart from '../../Charts/lineChart';
 import InfoBox from './infoBox';
 
 interface Props {
@@ -17,17 +18,25 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
     'bg-white mt-4 w-full flex justify-center items-center flex-col rounded-lg stripeShadow300';
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 lg:flex-nowrap xl:gap-6">
-      {audianceGrowthArray.map((option) => {
-        return (
-          <InfoBox
-            key={option.id}
-            className={infoBoxCommonProps}
-            title={option.title}
-            info={option.value}
-          />
-        );
-      })}
+    <div>
+      <div className="flex flex-wrap items-center justify-between gap-3 lg:flex-nowrap xl:gap-6">
+        {audianceGrowthArray.map((option) => {
+          return (
+            <InfoBox
+              key={option.id}
+              className={infoBoxCommonProps}
+              title={option.title}
+              info={option.value}
+            />
+          );
+        })}
+      </div>
+      <div>
+        <LineChart
+          chartData={[24, 22, 33]}
+          labels={['Total Subscribers', 'Newly added', 'Unsubscribed']}
+        />
+      </div>
     </div>
   );
 };

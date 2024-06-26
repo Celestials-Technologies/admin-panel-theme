@@ -1,10 +1,11 @@
+import DoughnutChart from '../../Charts/DoughnutChart';
 import InfoBox from './infoBox';
 
 const EmailPerformance = () => {
   const infoBoxCommonProps =
     'bg-white border-[0.5px] border-dividerColor w-full flex justify-center items-center flex-col stripeShadow300';
   return (
-    <div className="mt-4">
+    <div className="mt-4 flex ">
       <div className="flex w-1/2 flex-wrap items-center justify-between md:flex-nowrap">
         <div className="w-full">
           <InfoBox
@@ -34,6 +35,12 @@ const EmailPerformance = () => {
             description="90 contacts converted"
           />
         </div>
+      </div>
+      <div className="size-[120px] md:size-[140px] xl:size-[154px]">
+        <DoughnutChart
+          dataSet={[24, 22, 33]}
+          labelSet={['Sent in workflows', 'Sent in campaigns', 'Available']}
+        />
       </div>
     </div>
   );
