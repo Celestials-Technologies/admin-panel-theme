@@ -16,8 +16,7 @@ import EmailPerformance from './EmailPerformance';
 import {
   initialAudianceGrowth,
   initialOrders,
-  initialRevenue,
-  initialEmailPerformance
+  initialRevenue
 } from './initials';
 import Order from './Order';
 import AnalyticsPerformance from './performance';
