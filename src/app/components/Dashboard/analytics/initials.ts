@@ -19,3 +19,9 @@ export const initialAudianceGrowth = {
   unsubscribed: 0,
   deleted: 0,
 };
+
+export const initialEmailPerformance = {
+  title: '',
+  info: 0,
+  description: ''
+}

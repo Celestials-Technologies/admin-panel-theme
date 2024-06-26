@@ -30,3 +30,9 @@ export interface IAnalyticsAudianceGrowth {
   unsubscribed: number;
   deleted: number;
 }
+
+export interface IAnalyticsEmailPerformance {
+  title: string;
+  info: number;
+  description: string;
+}

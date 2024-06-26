@@ -7,6 +7,7 @@ import type {
   IAnalyticsOrders,
   IAnalyticsPerformance,
   IAnalyticsRevenue,
+  IAnalyticsEmailPerformance,
 } from '@/app/interface/dashboard';
 import DashboardAPI from '@/app/services/dashboard';
 
@@ -16,6 +17,7 @@ import {
   initialAudianceGrowth,
   initialOrders,
   initialRevenue,
+  initialEmailPerformance
 } from './initials';
 import Order from './Order';
 import AnalyticsPerformance from './performance';
@@ -30,6 +32,12 @@ const AnalyticsDashboard = () => {
   const [audianceData, setAudianceData] = useState<IAnalyticsAudianceGrowth>(
     initialAudianceGrowth
   );
+
+  const [emailPerformance, setEmailPerformance] = useState<IAnalyticsEmailPerformance[]>(
+    []
+  );
+
+  
 
   const topPerformanceArray = [
     {
@@ -46,7 +54,7 @@ const AnalyticsDashboard = () => {
     },
   ];
 
-  useEffect(() => {
+  const dashboardDataHandler = () => {
     DashboardAPI.getDashBoardData()
       .then(({ data }) => {
         setWorkFlowData(data?.workFlow);
@@ -58,6 +66,22 @@ const AnalyticsDashboard = () => {
       .catch((err) => {
         console.log(err?.response?.data?.message || 'Something went wrong');
       });
+  }
+
+  const emailDataHandler = () => {
+    DashboardAPI.grabEmailData()
+      .then(({ data }) => {
+        console.log('data: ', data)
+        setEmailPerformance(data.emailPerformance);
+      })
+      .catch((err) => {
+        console.log(err?.response?.data?.message || 'Something went wrong');
+      });
+  }
+
+  useEffect(() => {
+    dashboardDataHandler();
+    emailDataHandler();
   }, []);
 
   return (
@@ -81,7 +105,7 @@ const AnalyticsDashboard = () => {
       <Order data={ordersData} />
 
       <h2 className="heading mt-7">Email Performance</h2>
-      <EmailPerformance />
+      <EmailPerformance data={emailPerformance} />
 
       <h2 className="heading mt-7">Audience Growth</h2>
       <AudienceGrowth data={audianceData} />
