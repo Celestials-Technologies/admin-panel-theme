@@ -5,12 +5,12 @@ import '@/app/globals.css';
 import { useEffect, useState } from 'react';
 
 import Navbar from '../components/navbar';
-import Sidebar from '../components/sidebar';
+import Sidebar from '../components/Sidebar';
 import {
   header,
   sideMenusBody,
   sideMenusFooter,
-} from '../components/sidebar/sidebarMocks';
+} from '../components/Sidebar/sidebarMocks';
 
 export default function RootLayout({
   children,
