@@ -26,7 +26,6 @@ const Order: React.FC<Props> = ({ data }) => {
         </div>
       </div>
       <div className="App">
-        <h1>Bar Chart Example</h1>
         <BarChart
           labels={['Jan 1', 'Jan 7', 'Jan 14', 'Jan 28']}
           chartData={[1, 2, 3, 100]}
