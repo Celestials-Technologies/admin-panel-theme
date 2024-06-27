@@ -7,7 +7,7 @@ type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'toggle';
 
 // Define ButtonProps as a generic type that extends HTMLButtonElement
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: ButtonVariant;
+  variant?: ButtonVariant;
 }
 
 const Button: React.FC<ButtonProps> = ({ variant, children, ...props }) => {
@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ variant, children, ...props }) => {
     <button
       {...props}
       className={`rounded-md focus:outline-none 
-      ${variantStyles[variant]} ${props.className}`}
+      ${variant && variantStyles[variant]} ${props.className}`}
     >
       {children}
     </button>

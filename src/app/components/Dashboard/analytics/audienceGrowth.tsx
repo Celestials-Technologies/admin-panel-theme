@@ -15,7 +15,7 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
     { id: 4, title: 'Deleted/Removed', value: `${data.deleted}` },
   ];
   const infoBoxCommonProps =
-    'bg-white mt-4 w-full flex justify-center items-center flex-col rounded-lg stripeShadow300';
+    'bg-white mt-4 w-full flex justify-center items-center flex-col rounded-lg boxShadowDashBoard h-[139px]';
 
   return (
     <div>
@@ -31,10 +31,11 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
           );
         })}
       </div>
-      <div>
+      <div className='w-full lg:w-1/2 mt-4 boxShadowDashBoard px-7 py-6 rounded-lg bg-white'>
         <LineChart
           chartData={[24, 22, 33]}
           labels={['Total Subscribers', 'Newly added', 'Unsubscribed']}
+          
         />
       </div>
     </div>
