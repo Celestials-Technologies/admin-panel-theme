@@ -96,15 +96,15 @@ const AnalyticsDashboard = () => {
           );
         })}
       </div>
-      <h2 className="heading mt-7">Revenue</h2>
+      <h2 className="heading mt-[50px]">Revenue</h2>
       <Revenue data={revenueData} />
-      <h2 className="heading mt-7">Orders</h2>
+      <h2 className="heading mt-[50px]">Orders</h2>
       <Order data={ordersData} />
 
-      <h2 className="heading mt-7">Email Performance</h2>
+      <h2 className="heading mt-[50px]">Email Performance</h2>
       <EmailPerformance data={emailPerformance} />
 
-      <h2 className="heading mt-7">Audience Growth</h2>
+      <h2 className="heading mt-[50px]">Audience Growth</h2>
       <AudienceGrowth data={audienceData} />
     </div>
   );
