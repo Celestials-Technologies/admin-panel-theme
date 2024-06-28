@@ -31,11 +31,10 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
           );
         })}
       </div>
-      <div className='w-full lg:w-1/2 mt-4 boxShadowDashBoard px-7 py-6 rounded-lg bg-white'>
+      <div className="boxShadowDashBoard mt-4 w-full rounded-lg bg-white px-7 py-6 lg:w-1/2">
         <LineChart
           chartData={[24, 22, 33]}
           labels={['Total Subscribers', 'Newly added', 'Unsubscribed']}
-          
         />
       </div>
     </div>

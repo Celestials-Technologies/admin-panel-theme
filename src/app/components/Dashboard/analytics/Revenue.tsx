@@ -8,13 +8,14 @@ interface Props {
 }
 const Revenue: React.FC<Props> = ({ data }) => {
   return (
-    <div className="mt-4 flex rounded-lg bg-white  px-30 pb-7 lg:pb-0 boxShadowDashBoard overflow-hidden flex-col lg:flex-row">
-      <div className="w-full lg:w-[34.092%] min-w-[300px]">
-        <InfoBox className='w-full max-w-[375px] pt-6'
+    <div className="boxShadowDashBoard mt-4 flex flex-col  overflow-hidden rounded-lg bg-white px-30 pb-7 lg:flex-row lg:pb-0">
+      <div className="w-full min-w-[300px] lg:w-[34.092%]">
+        <InfoBox
+          className="w-full max-w-[375px] pt-6"
           title={'Ryzeo Return on investment'}
           info={`${data.return}X`}
         />
-        <div className="flex justify-between  w-full lg:max-w-[375px]">
+        <div className="flex w-full  justify-between lg:max-w-[375px]">
           <InfoBox
             className="w-1/2 pt-6"
             title={'Total Revenue'}
@@ -26,7 +27,7 @@ const Revenue: React.FC<Props> = ({ data }) => {
             info={`$${data.ryzeo}`}
           />
         </div>
-        <div className="flex justify-between  w-full lg:max-w-[375px]">
+        <div className="flex w-full  justify-between lg:max-w-[375px]">
           <InfoBox
             className="w-1/2 pt-6"
             title={'From workflows'}
@@ -38,9 +39,13 @@ const Revenue: React.FC<Props> = ({ data }) => {
             info={`$${data.campaign}`}
           />
         </div>
-        <InfoBox className='w-1/2 lg:max-w-[375px] pt-6' title={'Spent on Ryzeo'} info={'$15,000'} />
+        <InfoBox
+          className="w-1/2 pt-6 lg:max-w-[375px]"
+          title={'Spent on Ryzeo'}
+          info={'$15,000'}
+        />
       </div>
-      <div className="App w-full lg:w-auto xl:w-[65.9%] pt-4 lg:pt-6 max-h-[382px] lg:max-h-[unset]">
+      <div className="App max-h-[382px] w-full pt-4 lg:max-h-[unset] lg:w-auto lg:pt-6 xl:w-[65.9%]">
         <BarChart
           labels={['Jan 1', 'Jan 7', 'Jan 14', 'Jan 28']}
           chartData={[1, 2, 3, 100]}
