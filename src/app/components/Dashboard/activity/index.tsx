@@ -12,12 +12,7 @@ const ActivityDashboard = () => {
       Header: 'Checkbox',
       accessor: 'show.genres',
       Cell: () => (
-        <CustomCheckbox
-          id="exampleCheckbox"
-          label=""
-          checked={false}
-          onChange={() => {}}
-        />
+        <CustomCheckbox id="exampleCheckbox" label="" onChange={() => {}} />
       ),
     },
     {
