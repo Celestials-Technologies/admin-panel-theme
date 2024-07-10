@@ -8,7 +8,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="my-[65px]">
+    <section className="mt-[65px] mb-[137px]">
       <DashboardHeader />
       {children}
     </section>

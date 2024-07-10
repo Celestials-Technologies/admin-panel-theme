@@ -29,6 +29,8 @@ const config: Config = {
         grey200: '#E0E0E0',
         grey300: '#616161',
         dividerColor: '#E1E3E5',
+        drak800:'#424242',
+        gray400:'#EEEEEE',
       },
       fontSize: {
         '13': '13px',
@@ -38,6 +40,7 @@ const config: Config = {
         stripeShadow100: '0px 2px 2px 0px #00000014',
         stripeShadow200: '0px 0px 0px 1px #4044521A',
         stripeShadow300: '0px 2px 8px 0px #40445208',
+        tableShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.08)',
       },
       rotate: {
         '270': '270deg',
@@ -47,6 +50,17 @@ const config: Config = {
       },
       margin: {
         '30': '30px',
+      },
+      fontFamily: {
+        'gilroy-light': ['gilroyLight', 'sans-serif'],
+        'gilroy-medium': ['gilroyMedium', 'sans-serif'],
+        'gilroy-regular': ['gilroyRegular', 'sans-serif'],
+        'gilroy-semibold': ['gilroySemiBold', 'sans-serif'],
+        'gilroy-bold': ['gilroyBold', 'sans-serif'],
+        'interRegular': ['interRegular', 'sans-serif'],
+        'interSemiBold': ['interSemiBold', 'sans-serif'],
+        'interBold': ['interBold', 'sans-serif'],
+        'interMedium': ['interMedium', 'sans-serif'],
       },
     },
   },

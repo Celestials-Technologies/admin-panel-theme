@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
 import type {
   IAnalyticsAudienceGrowth,
   IAnalyticsEmailPerformance,
@@ -82,9 +81,9 @@ const AnalyticsDashboard = () => {
   }, []);
 
   return (
-    <div className="mx-30">
-      <h2 className="heading mt-7">Top Performing Strategies</h2>
-      <div className="flex flex-col gap-5 md:flex-row">
+    <div className="mx-[15px] md:mx-30">
+      <h2 className="heading mt-7 font-gilroy-bold">Top Performing Strategies</h2>
+      <div className="flex flex-col lg:gap-2.5 xl:gap-5 lg:flex-row">
         {topPerformanceArray.map((option) => {
           return (
             <AnalyticsPerformance
@@ -96,15 +95,15 @@ const AnalyticsDashboard = () => {
           );
         })}
       </div>
-      <h2 className="heading mt-[50px]">Revenue</h2>
+      <h2 className="heading mt-[25px] lg:mt-[50px] !font-gilroy-bold leading-5">Revenue</h2>
       <Revenue data={revenueData} />
-      <h2 className="heading mt-[50px]">Orders</h2>
+      <h2 className="heading  mt-[25px] lg:mt-[50px] font-gilroy-bold leading-5">Orders</h2>
       <Order data={ordersData} />
 
-      <h2 className="heading mt-[50px]">Email Performance</h2>
+      <h2 className="heading mt-[25px] lg:mt-[50px] font-gilroy-bold leading-5">Email Performance</h2>
       <EmailPerformance data={emailPerformance} />
 
-      <h2 className="heading mt-[50px]">Audience Growth</h2>
+      <h2 className="heading mt-[25px] lg:mt-[50px] font-gilroy-bold leading-5">Audience Growth</h2>
       <AudienceGrowth data={audienceData} />
     </div>
   );

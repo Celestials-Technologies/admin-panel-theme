@@ -52,16 +52,20 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
   } = useTable({ columns, data: filteredData }, useFilters, usePagination);
 
   return (
-    <div>
-      {showSearchBar && (
-        <Input
-          type="text"
-          placeholder="Search..."
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-          style={{ marginBottom: '10px', padding: '5px', width: '50%' }}
-        />
-      )}
+    <div className='w-full'>
+      <div className='flex items-center justify-between w-full mb-4'>
+        <div className='flex items-center gap-12'>
+          <h2 className='!text-xl font-gilroy-bold leading-5 text-drak800 font-bold whitespace-nowrap'>All Activities</h2>
+            {showSearchBar && (
+              <Input
+                type="text"
+                placeholder="Search..."
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                style={{padding: '12px', width:'998px', borderRadius:'4px' }}
+              />
+            )}
+        </div>
       {showFilter &&
         headerGroups.map((headerGroup) =>
           headerGroup.headers.map((column) =>
@@ -73,10 +77,11 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
             ) : null
           )
         )}
-
-      <table
+       
+      </div>
+      <table className='tableActiveShadow'
         {...getTableProps()}
-        style={{ border: 'solid 1px blue', width: '100%' }}
+        style={{width: '100%'}}
       >
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -84,7 +89,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
               {headerGroup.headers.map((column) => (
                 <th
                   {...column.getHeaderProps()}
-                  style={{ border: 'solid 1px gray', padding: '10px' }}
+                  style={{ borderBottom: '1px solid #EEEEEE', padding: '10px' , textAlign:'start'}}
                   key={column.id}
                 >
                   {column.render('Header')}
@@ -93,7 +98,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
             </tr>
           ))}
         </thead>
-        <tbody {...getTableBodyProps()}>
+        <tbody {...getTableBodyProps()} style={{background:'#fff'}}>
           {page.map((row) => {
             prepareRow(row);
             return (
@@ -101,7 +106,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
                 {row.cells.map((cell) => (
                   <td
                     {...cell.getCellProps()}
-                    style={{ border: 'solid 1px gray', padding: '10px' }}
+                    style={{ borderBottom: 'solid 1px #EEEEEE', borderLeft:'0px', padding: '12px', paddingBottom:'54px'}}
                     key={cell.column.id}
                   >
                     {cell.render('Cell')}

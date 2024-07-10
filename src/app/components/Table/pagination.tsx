@@ -27,7 +27,7 @@ const Pagination: React.FC<Props> = ({
   setPageSize,
 }) => {
   return (
-    <div className="pagination">
+    <div className="pagination w-full h-16 bg-white">
       <Button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
         {'<<'}
       </Button>{' '}

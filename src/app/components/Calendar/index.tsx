@@ -26,7 +26,7 @@ const MyCalendar: React.FC<Props> = ({ events }) => {
   };
 
   return (
-    <div style={{ height: '700px' }}>
+    <div style={{ height: '700' }}>
       <Calendar
         localizer={localizer}
         events={events}
