@@ -27,20 +27,26 @@ const Pagination: React.FC<Props> = ({
   setPageSize,
 }) => {
   return (
-    <div className="pagination w-full h-16 bg-white">
-      <Button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+    <div className="pagination w-full h-16 px-6 gap-2.5 flex items-center lg:justify-end bg-white rounded-b-lg  min-w-[700px]">
+      {/* <Button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
         {'<<'}
-      </Button>{' '}
-      <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
+      </Button>{' '} */}
+      <Button className='w-6 text-grey300 h-6 rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' onClick={() => previousPage()} disabled={!canPreviousPage}>
         {'<'}
       </Button>{' '}
-      <Button onClick={() => nextPage()} disabled={!canNextPage}>
+      <a className='w-6 h-6 pagination-text rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' href="#/">1</a>
+      <a className='w-6 h-6 bg-grey600 pagination-text rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center' href="#/">2</a>
+      <a className='w-6 h-6 pagination-text rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' href="#/">3</a>
+      <a className='w-6 h-6 text-grey600 rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white relative' href="#/"><span className='absolute top-[-5px]'>...</span></a>
+
+
+      <Button className='w-6 h-6 text-grey300 rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' onClick={() => nextPage()} disabled={!canNextPage}>
         {'>'}
       </Button>{' '}
-      <Button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+      {/* <Button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
         {'>>'}
-      </Button>{' '}
-      <span>
+      </Button>{' '} */}
+      {/* <span>
         Page{' '}
         <strong>
           {state.pageIndex + 1} of {pageOptions.length}
@@ -57,7 +63,7 @@ const Pagination: React.FC<Props> = ({
             Show {pageSize}
           </option>
         ))}
-      </select>
+      </select> */}
     </div>
   );
 };

@@ -25,68 +25,68 @@ const ActivityDashboard = () => {
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'owner',
+      role: 'Owner',
     },
     {
       activity: 'Thomas unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'owner',
+      role: 'Owner',
     },
     {
       activity: 'Thomas unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'owner',
+      role: 'Owner',
     },
     {
       activity: 'Thomas unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     {
       activity: 'James Perry unsubscribed',
       sent: '06.01.2022',
-      role: 'owner',
+      role: 'Owner',
     },
     {
       activity: 'Thomas unsubscribed',
       sent: '06.01.2022',
-      role: 'admin',
+      role: 'Admin',
     },
     // Add more data here...
   ];
 
   return (
-    <div className='px-7 py-[30px]'>
+    <div className='px-5 md:px-7 py-[30px]'>
       <TableComponent
         columns={columns}
         data={data}
