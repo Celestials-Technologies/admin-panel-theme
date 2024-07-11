@@ -86,7 +86,7 @@ const ActivityDashboard = () => {
   ];
 
   return (
-    <div>
+    <div className='px-7 py-[30px]'>
       <TableComponent
         columns={columns}
         data={data}

@@ -17,11 +17,11 @@ const AnalyticsPerformance: React.FC<Props> = ({
   data,
 }) => {
   return (
-    <div className="mt-4 w-full rounded-lg bg-white p-7 shadow-stripeShadow300 md:w-1/2">
-      <div className="flex justify-between">
-        <p className="cardSubTitle uppercase">{heading}</p>
+    <div className="mt-4 w-full rounded-lg bg-white px-5 sm:px-7 py-7 lg:p-[22px] shadow-stripeShadow300 lg:w-1/2">
+      <div className="flex justify-between items-center gap-1">
+        <p className="cardSubTitle uppercase font-interSemiBold">{heading}</p>
         <button className="flex items-center gap-2">
-          <p className="text-13 font-medium text-textGrey">View Report</p>
+          <p className="text-13 font-medium text-textGrey whitespace-nowrap sm:whitespace-normal font-interMedium">View Report</p>
           <Image
             height={18}
             width={18}
@@ -32,13 +32,13 @@ const AnalyticsPerformance: React.FC<Props> = ({
       </div>
       <div className="mt-6 flex justify-between bg-grey100 px-2 py-2.5">
         <div className="flex items-center gap-1">
-          <p className="flex items-center text-sm font-semibold text-titleGrey">
+          <p className="flex items-center text-sm font-semibold text-titleGrey font-interSemiBold">
             {subHeading}
           </p>
           <ArrowIconSvg fillColor="#757575" />
         </div>
         <div className="flex items-center gap-1">
-          <p className="text-sm font-semibold text-titleGrey">Revenue</p>
+          <p className="text-sm font-semibold text-titleGrey font-interSemiBold">Revenue</p>
           <ArrowIconSvg fillColor="#757575" />
         </div>
       </div>
@@ -50,10 +50,10 @@ const AnalyticsPerformance: React.FC<Props> = ({
                 className="flex h-[52px] items-center justify-between px-2"
                 key={`${option.name}${index}`}
               >
-                <p className="text-13 font-medium text-textGrey">
+                <p className="text-13 font-medium text-textGrey font-interMedium">
                   {option.name}
                 </p>
-                <p className="text-13 font-medium text-textGrey">
+                <p className="text-13 font-medium text-textGrey font-interMedium">
                   {option.revenue}
                 </p>
               </div>

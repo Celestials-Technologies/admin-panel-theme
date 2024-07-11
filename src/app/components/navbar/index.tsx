@@ -14,7 +14,7 @@ interface Prop {
 const Navbar: FC<Prop> = ({ isCollapsed }) => {
   return (
     <nav
-      className={`shadowPrimary fixed top-0 z-10 flex items-center justify-between border-b border-dividerColor bg-white px-4  ${isCollapsed ? 'w-[calc(100%-70px)]' : 'w-[calc(100%-220px)]'}`}
+      className={`shadowPrimary fixed top-0 z-10 flex items-center justify-between border-b border-dividerColor bg-white px-4 ${isCollapsed ? 'w-[calc(100%-70px)]' : 'w-[calc(100%-220px)]'}`}
     >
       <div className="flex items-center">
         <NavbarSearch />
