@@ -1,15 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
+import Notification from '../../../../public/svgs/Notification';
 
 const NavbarNotification = () => {
   return (
     <div className="flex w-[56px] justify-center">
-      <Image
-        src={'/svgs/notification.svg'}
-        alt="profile"
-        height={24}
-        width={24}
-      />
+      <Notification/>
     </div>
   );
 };

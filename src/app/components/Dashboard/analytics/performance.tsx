@@ -4,7 +4,9 @@ import Image from 'next/image';
 
 import type { IAnalyticsPerformance } from '@/app/interface/dashboard';
 
-import ArrowIconSvg from '../../../../../public/svgs/ArrowIconSvg';
+// import ArrowIconSvg from '../../../../../public/svgs/ArrowIconSvg';
+import ArrowIcon from '../../../../../public/svgs/ArrowIcon';
+import ArrowRight from '../../../../../public/svgs/ArrowRight';
 
 interface Props {
   heading: string;
@@ -22,12 +24,9 @@ const AnalyticsPerformance: React.FC<Props> = ({
         <p className="cardSubTitle uppercase font-interSemiBold">{heading}</p>
         <button className="flex items-center gap-2">
           <p className="text-13 font-medium text-textGrey whitespace-nowrap sm:whitespace-normal font-interMedium">View Report</p>
-          <Image
-            height={18}
-            width={18}
-            src={'svgs/arrowRight.svg'}
-            alt="arrowRight"
-          />
+          <div className='w-[18px] h-[18px]'>
+            <ArrowRight/>
+          </div>
         </button>
       </div>
       <div className="mt-6 flex justify-between bg-grey100 px-2 py-2.5">
@@ -35,11 +34,11 @@ const AnalyticsPerformance: React.FC<Props> = ({
           <p className="flex items-center text-sm font-semibold text-titleGrey font-interSemiBold">
             {subHeading}
           </p>
-          <ArrowIconSvg fillColor="#757575" />
+          <ArrowIcon/>
         </div>
         <div className="flex items-center gap-1">
           <p className="text-sm font-semibold text-titleGrey font-interSemiBold">Revenue</p>
-          <ArrowIconSvg fillColor="#757575" />
+          <ArrowIcon/>
         </div>
       </div>
       <div>

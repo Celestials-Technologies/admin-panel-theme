@@ -23,9 +23,8 @@ const CalendarDashboard = () => {
   return (
     <div className='mt-7 px-7 mx-.5'>
       {' '}
-      <h1 className='heading font-gilroy-bold mb-4'>Calendar View</h1>
+      <h1 className='heading font-gilroy-bold mb-4 leading-5'>Calendar View</h1>
       <div className="App !py-6 !px-7 bg-white rounded-lg shadow-tableShadow">
-      
         <MyCalendar events={events}  />
       </div>
     </div>

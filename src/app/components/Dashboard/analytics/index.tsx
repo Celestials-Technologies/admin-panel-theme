@@ -82,7 +82,7 @@ const AnalyticsDashboard = () => {
 
   return (
     <div className="mx-[15px] md:mx-30">
-      <h2 className="heading mt-7 font-gilroy-bold">Top Performing Strategies</h2>
+      <h2 className="heading mt-7 font-gilroy-bold leading-5">Top Performing Strategies</h2>
       <div className="flex flex-col lg:gap-2.5 xl:gap-5 lg:flex-row">
         {topPerformanceArray.map((option) => {
           return (
