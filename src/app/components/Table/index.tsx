@@ -56,45 +56,44 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
         <h2 className='!text-xl font-gilroy-bold leading-5 text-drak800 font-bold whitespace-nowrap mb-3 lg:mb-0'>All Activities</h2>
         <div className='mb-5 lg:mb-0 md:flex w-full gap-4 lg:gap-[42px] relative'>
           <div className='absolute ml-4  mt-3 w-[18px] h-[18px] cursor-pointer'>
-            <SearchIcon/>
+            <SearchIcon />
           </div>
-              {showSearchBar && (
-                <Input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  style={{ width:'100%'}}
-                  className='border p-3 pl-[46px] border-gray-200 rounded h-[42px] mb-3 md:mb-0 text-grey600 font-interMedium font-medium text-[13px]'
-                />
+          {showSearchBar && (
+            <Input
+              type="text"
+              placeholder="Search..."
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              className='border w-full p-3 pl-[46px] border-gray-200 rounded h-[42px] mb-3 md:mb-0 text-grey600 font-interMedium font-medium text-[13px]'
+            />
+          )}
+          <div className='inline-flex md:flex whitespace-nowrap px-4 py-2 bg-white border border-gray-200 rounded h-[42px] leading-[13px] text-[13px] font-medium font-inter text-grey600 font-[inter]'>
+            {showFilter &&
+              headerGroups.map((headerGroup) =>
+                headerGroup.headers.map((column) =>
+                  column.Filter ? (
+                    <div key={column.id} className='flex items-center justify-center '>
+                      <label htmlFor={column.id}>{column.render('Header')}: </label>
+                      {column.render('Filter')}
+                    </div>
+                  ) : null
+                )
               )}
-              <div className='inline-flex md:flex whitespace-nowrap px-4 py-2 bg-white border border-gray-200 rounded h-[42px] leading-[13px] text-[13px] font-medium font-inter text-grey600 font-[inter]'>
-                {showFilter &&
-                headerGroups.map((headerGroup) =>
-                  headerGroup.headers.map((column) =>
-                    column.Filter ? (
-                      <div key={column.id} className='flex items-center justify-center '>
-                        <label htmlFor={column.id}>{column.render('Header')}: </label>
-                        {column.render('Filter')}
-                      </div>
-                    ) : null
-                  )
-                )}
-              </div>
           </div>
+        </div>
       </div>
       <div className='w-full overflow-auto tableShadow'>
         <table className='rounded-t-lg min-w-[700px] overflow-auto'
           {...getTableProps()}
-          style={{width: '100%'}}
+          style={{ width: '100%' }}
         >
           <thead>
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
                 {headerGroup.headers.map((column) => (
                   <th
+                    className='border-b border-gray400 p-2.5 text-start bg-grey100 text-13 font-medium text-grey600'
                     {...column.getHeaderProps()}
-                    style={{ borderBottom: '1px solid #EEEEEE', padding: '10px' , textAlign:'start', background:'#fafafa', fontFamily:"inter", fontSize:'13px', lineHeight:'18.2px', fontWeight:'500', color:'#757575'}}
                     key={column.id}
                   >
                     {column.render('Header')}
@@ -103,18 +102,19 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
               </tr>
             ))}
           </thead>
-          <tbody {...getTableBodyProps()} style={{background:'#fff'}}>
+          <tbody {...getTableBodyProps()} style={{ background: '#fff' }}>
             {page.map((row) => {
               prepareRow(row);
               return (
                 <tr {...row.getRowProps()} key={row.id}>
                   {row.cells.map((cell) => (
                     <td
+                      className='border-l-0 border-b border-gray400 p-3 h-[74px]  text-13 font-medium text-grey300 '
                       {...cell.getCellProps()}
-                      style={{ borderBottom: 'solid 1px #EEEEEE', borderLeft:'0px', padding: '12px', paddingBottom:'54px', color:'#616161', fontSize:'13px', lineHeight:'18.2px', fontFamily:'inter', fontWeight:'500'}}
+
                       key={cell.column.id}
                     >
-                      {cell.render('Cell')}
+                      <p className='flex h-full'> {cell.render('Cell')}</p>
                     </td>
                   ))}
                 </tr>

@@ -95,15 +95,13 @@ const AnalyticsDashboard = () => {
           );
         })}
       </div>
-      <h2 className="heading mt-[25px] lg:mt-[50px] !font-gilroy-bold leading-5">Revenue</h2>
+
       <Revenue data={revenueData} />
-      <h2 className="heading  mt-[25px] lg:mt-[50px] font-gilroy-bold leading-5">Orders</h2>
+
       <Order data={ordersData} />
 
-      <h2 className="heading mt-[25px] lg:mt-[50px] font-gilroy-bold leading-5">Email Performance</h2>
-      <EmailPerformance data={emailPerformance} />
 
-      <h2 className="heading mt-[25px] lg:mt-[50px] font-gilroy-bold leading-5">Audience Growth</h2>
+      <EmailPerformance data={emailPerformance} />
       <AudienceGrowth data={audienceData} />
     </div>
   );
