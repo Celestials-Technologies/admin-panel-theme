@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-
 import Dropdown from '../DropDown';
+import DashboardIcon from '../../../../public/svgs/DashboardIcon';
 
 interface Props {}
 
@@ -11,12 +11,15 @@ const DashboardHeader: React.FC<Props> = () => {
       <div className="mb-6 flex flex-wrap md:flex-nowrap w-full items-center justify-between gap-5 md:gap-0">
         <div className="flex gap-5 sm:gap-0 flex-wrap sm:flex-nowrap justify-between w-full md:w-auto">
           <div className="flex items-center">
-            <Image
+            {/* <Image
               src={'svgs/DashboardIcon.svg'}
               alt="Dashboard"
               height={24}
               width={24}
-            />
+            /> */}
+            <div>
+              <DashboardIcon/>
+            </div>
             <p className="ml-1.5	text-xl font-bold text-titleBlack ">
               Dashboard
             </p>

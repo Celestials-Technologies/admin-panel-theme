@@ -6,6 +6,7 @@ interface SelectProps<T> {
   options: T[];
   setValue: (value: T | undefined) => void;
   placeholder?: string;
+  className?: string;
 }
 
 const Select = <T extends string | number>({
@@ -14,12 +15,14 @@ const Select = <T extends string | number>({
   options,
   setValue,
   placeholder = '',
+  className
 }: SelectProps<T>) => {
   return (
     <select
       name={id}
       id={id}
       value={value}
+      className={className}
       onChange={(e) => {
         const value = e.target.value as T;
         setValue(value || undefined);

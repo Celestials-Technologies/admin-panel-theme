@@ -12,6 +12,7 @@ import SidebarBody from './body';
 import SidebarHeader from './header';
 import SearchBar from './searchBar';
 import type { sidebarProps } from './sidebarProps';
+import ArrowIcon from '../../../../public/svgs/ArrowIcon';
 
 const Sidebar: React.FC<sidebarProps> = ({
   header,
@@ -51,12 +52,7 @@ const Sidebar: React.FC<sidebarProps> = ({
           variant="toggle"
           onClick={toggleSidebar}
         >
-          <Image
-            src={'svgs/ArrowIcon.svg'}
-            alt="ArrowIcon"
-            width={12}
-            height={12}
-          />
+          <ArrowIcon/>
         </Button>
         <SidebarBody menuBody={filteredMenuBody} isCollapsed={isCollapsed} />
       </div>

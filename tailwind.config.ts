@@ -31,6 +31,8 @@ const config: Config = {
         dividerColor: '#E1E3E5',
         drak800:'#424242',
         gray400:'#EEEEEE',
+        grey500:'#BDBDBD',
+        grey600:'#757575',
       },
       fontSize: {
         '13': '13px',
