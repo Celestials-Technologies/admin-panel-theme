@@ -1,0 +1,11 @@
+{
+  "statusCode": 200,
+  "data": {
+    "emailPerformance": [
+      { "title": "Total Subscribers", "info": 120, "description": "100 unique opens" },
+      { "title": "Newly added", "info": 0, "description": "100 unique clicks" },
+      { "title": "Unsubscribed", "info": 5, "description": "100 emails delivered" },
+      { "title": "Deleted/Removed", "info": 12, "description": "90 contacts converted" }
+    ]
+  }
+}
