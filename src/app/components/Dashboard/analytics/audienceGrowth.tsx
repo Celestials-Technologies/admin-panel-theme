@@ -19,6 +19,7 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
 
   return (
     <div>
+      <h2 className="heading mt-[25px] lg:mt-[50px] font-gilroy-bold leading-5">Audience Growth</h2>
       <div className="flex flex-wrap items-center justify-between lg:gap-3 lg:w-[auto] lg:flex-nowrap xl:gap-6">
         {audienceGrowthArray.map((option) => {
           return (
