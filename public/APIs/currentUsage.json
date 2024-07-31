@@ -1,0 +1,18 @@
+{
+  "statusCode": 200,
+  "data": {
+    "currentUsage": {
+      "startDate": "12/2/24",
+      "endDate": "12/9/24",
+      "sentEmail": 250,
+      "leftEmail": 210,
+      "sentSubscribers": 250,
+      "leftSubscribers": 210
+    },
+    "setting": {
+      "messageEncoding": "Auto-detect content encoding",
+      "googleAnalytics": true,
+      "timeZone": "America - Los Angeles (GMT-07:00)"
+    }
+  }
+}

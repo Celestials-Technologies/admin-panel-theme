@@ -10,6 +10,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx,css,scss}\""
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.2.0",
     "@tanstack/react-table": "^8.17.3",
     "@types/chart.js": "^2.9.41",
     "axios": "^1.7.2",
