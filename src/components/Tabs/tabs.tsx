@@ -11,7 +11,7 @@ interface Props {
 }
 const Tabs: React.FC<Props> = ({ activeTab, setActiveTab, tabs }) => {
   return (
-    <div className={`flex gap-3 bg-white  md:px-30 flex-wrap`}>
+    <div className={`flex flex-wrap gap-3  bg-white md:px-30`}>
       {tabs.map((tab) => {
         return (
           <TabItem

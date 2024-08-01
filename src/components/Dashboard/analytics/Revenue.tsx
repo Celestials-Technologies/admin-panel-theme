@@ -8,41 +8,48 @@ interface Props {
 const Revenue: React.FC<Props> = ({ data }) => {
   return (
     <>
-      <h2 className="heading mt-[25px] lg:mt-[50px] !font-gilroy-bold leading-5">Revenue</h2>
+      <h2 className="heading mt-[25px] !font-gilroy-bold leading-5 lg:mt-[50px]">
+        Revenue
+      </h2>
 
-      <div className="mt-4 flex rounded-lg bg-white  pb-7 lg:pb-0 boxShadowDashBoard overflow-hidden flex-col lg:flex-row">
-        <div className="w-full lg:w-[32.328%] min-w-[300px]">
-          <InfoBox className='w-full sm:max-w-[375px] pt-6 px-5 sm:px-7 font-'
+      <div className="boxShadowDashBoard mt-4 flex flex-col  overflow-hidden rounded-lg bg-white pb-7 lg:flex-row lg:pb-0">
+        <div className="w-full min-w-[300px] lg:w-[32.328%]">
+          <InfoBox
+            className="font- w-full px-5 pt-6 sm:max-w-[375px] sm:px-7"
             title={'Ryzeo Return on investment'}
             info={`${data.return}X`}
           />
-          <div className="flex justify-between flex-col sm:flex-row w-full lg:max-w-[375px]">
+          <div className="flex w-full flex-col justify-between sm:flex-row lg:max-w-[375px]">
             <InfoBox
-              className="w-full sm:w-1/2 pt-4 lg:pt-6 px-5 sm:px-7"
+              className="w-full px-5 pt-4 sm:w-1/2 sm:px-7 lg:pt-6"
               title={'Total Revenue'}
               info={`$${data.total}`}
             />
             <InfoBox
-              className="w-full sm:w-1/2 pt-4 lg:pt-6 px-5 sm:px-7"
+              className="w-full px-5 pt-4 sm:w-1/2 sm:px-7 lg:pt-6"
               title={'Revenue by Ryzeo'}
               info={`$${data.ryzeo}`}
             />
           </div>
-          <div className="flex justify-between flex-col sm:flex-row w-full lg:max-w-[375px]">
+          <div className="flex w-full flex-col justify-between sm:flex-row lg:max-w-[375px]">
             <InfoBox
-              className="w-full sm:w-1/2 pt-4 lg:pt-6 px-5 sm:px-7"
+              className="w-full px-5 pt-4 sm:w-1/2 sm:px-7 lg:pt-6"
               title={'From workflows'}
               info={`$${data.workFlow}`}
             />
             <InfoBox
-              className="w-full sm:w-1/2 pt-4 lg:pt-6 px-5 sm:px-7"
+              className="w-full px-5 pt-4 sm:w-1/2 sm:px-7 lg:pt-6"
               title={'From Campaigns'}
               info={`$${data.campaign}`}
             />
           </div>
-          <InfoBox className='w-1/2 lg:max-w-[375px] pt-4 lg:pt-6 px-5 sm:px-7' title={'Spent on Ryzeo'} info={'$15,000'} />
+          <InfoBox
+            className="w-1/2 px-5 pt-4 sm:px-7 lg:max-w-[375px] lg:pt-6"
+            title={'Spent on Ryzeo'}
+            info={'$15,000'}
+          />
         </div>
-        <div className="App w-full max-w-[740px] lg:max-w-[unset] lg:w-[65%] xl:w-[67.9%] pt-4 px-5 sm:pl-7 sm:pr-7 lg:pt-6 max-h-[418px] lg:max-h-[unset]">
+        <div className="App max-h-[418px] w-full max-w-[740px] px-5 pt-4 sm:pl-7 sm:pr-7 lg:max-h-[unset] lg:w-[65%] lg:max-w-[unset] lg:pt-6 xl:w-[67.9%]">
           <BarChart
             labels={['Jan 1', 'Jan 7', 'Jan 14', 'Jan 28']}
             chartData={[1, 2, 3, 100]}

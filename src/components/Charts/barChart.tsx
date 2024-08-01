@@ -20,7 +20,13 @@ export type BarChartProps = {
   width?: number;
 };
 
-const BarChart = ({ labels, chartData, barColor, height, width }: BarChartProps) => {
+const BarChart = ({
+  labels,
+  chartData,
+  barColor,
+  height,
+  width,
+}: BarChartProps) => {
   const options = {
     plugins: {
       title: {
@@ -89,7 +95,7 @@ const BarChart = ({ labels, chartData, barColor, height, width }: BarChartProps)
   return (
     <Bar
       height={`${height}px` || 112}
-      width={`${width}px`||305}
+      width={`${width}px` || 305}
       className="w-full"
       options={options}
       data={data}

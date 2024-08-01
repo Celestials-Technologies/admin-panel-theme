@@ -1,9 +1,11 @@
 @font-face {
-    font-family: 'Glory';
-    src: url('Gilroy-Black.woff2') format('woff2'),  url('Gilroy-Bold.woff2') format('woff2'), 
+  font-family: 'Glory';
+  src:
+    url('Gilroy-Black.woff2') format('woff2'),
+    url('Gilroy-Bold.woff2') format('woff2'),
     url('Gilroy-Extrabold.woff2') format('woff2'),
     url('Gilroy-Medium.woff2') format('woff2'),
     url('Gilroy-Regular.woff2') format('woff2'),
     url('Gilroy-Semibold.woff2') format('woff2'),
-    url('Gilroy-UltraLight.woff2') format('woff2'),
+    url('Gilroy-UltraLight.woff2') format('woff2');
 }

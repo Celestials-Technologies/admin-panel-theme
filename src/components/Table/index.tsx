@@ -51,11 +51,13 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
   } = useTable({ columns, data: filteredData }, useFilters, usePagination);
 
   return (
-    <div className='w-full'>
-      <div className='lg:flex items-center lg:gap-12 w-full lg:mb-4'>
-        <h2 className='!text-xl font-gilroy-bold leading-5 text-drak800 font-bold whitespace-nowrap mb-3 lg:mb-0'>All Activities</h2>
-        <div className='mb-5 lg:mb-0 md:flex w-full gap-4 lg:gap-[42px] relative'>
-          <div className='absolute ml-4  mt-3 w-[18px] h-[18px] cursor-pointer'>
+    <div className="w-full">
+      <div className="w-full items-center lg:mb-4 lg:flex lg:gap-12">
+        <h2 className="mb-3 whitespace-nowrap font-gilroy-bold !text-xl font-bold leading-5 text-drak800 lg:mb-0">
+          All Activities
+        </h2>
+        <div className="relative mb-5 w-full gap-4 md:flex lg:mb-0 lg:gap-[42px]">
+          <div className="absolute ml-4  mt-3 h-[18px] w-[18px] cursor-pointer">
             <SearchIcon />
           </div>
           {showSearchBar && (
@@ -64,16 +66,21 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
               placeholder="Search..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              className='border w-full p-3 pl-[46px] border-gray-200 rounded h-[42px] mb-3 md:mb-0 text-grey600 font-interMedium font-medium text-[13px]'
+              className="mb-3 h-[42px] w-full rounded border border-gray-200 p-3 pl-[46px] font-interMedium text-[13px] font-medium text-grey600 md:mb-0"
             />
           )}
-          <div className='inline-flex md:flex whitespace-nowrap px-4 py-2 bg-white border border-gray-200 rounded h-[42px] leading-[13px] text-[13px] font-medium font-inter text-grey600 font-[inter]'>
+          <div className="font-inter inline-flex h-[42px] whitespace-nowrap rounded border border-gray-200 bg-white px-4 py-2 font-[inter] text-[13px] font-medium leading-[13px] text-grey600 md:flex">
             {showFilter &&
               headerGroups.map((headerGroup) =>
                 headerGroup.headers.map((column) =>
                   column.Filter ? (
-                    <div key={column.id} className='flex items-center justify-center '>
-                      <label htmlFor={column.id}>{column.render('Header')}: </label>
+                    <div
+                      key={column.id}
+                      className="flex items-center justify-center "
+                    >
+                      <label htmlFor={column.id}>
+                        {column.render('Header')}:{' '}
+                      </label>
                       {column.render('Filter')}
                     </div>
                   ) : null
@@ -82,8 +89,9 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
           </div>
         </div>
       </div>
-      <div className='w-full overflow-auto tableShadow'>
-        <table className='rounded-t-lg min-w-[700px] overflow-auto'
+      <div className="tableShadow w-full overflow-auto">
+        <table
+          className="min-w-[700px] overflow-auto rounded-t-lg"
           {...getTableProps()}
           style={{ width: '100%' }}
         >
@@ -92,7 +100,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
               <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
                 {headerGroup.headers.map((column) => (
                   <th
-                    className='border-b border-gray400 p-2.5 text-start bg-grey100 text-13 font-medium text-grey600'
+                    className="border-b border-gray400 bg-grey100 p-2.5 text-start text-13 font-medium text-grey600"
                     {...column.getHeaderProps()}
                     key={column.id}
                   >
@@ -109,12 +117,11 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
                 <tr {...row.getRowProps()} key={row.id}>
                   {row.cells.map((cell) => (
                     <td
-                      className='border-l-0 border-b border-gray400 p-3 h-[74px]  text-13 font-medium text-grey300 '
+                      className="h-[74px] border-b border-l-0 border-gray400 p-3  text-13 font-medium text-grey300 "
                       {...cell.getCellProps()}
-
                       key={cell.column.id}
                     >
-                      <p className='flex h-full'> {cell.render('Cell')}</p>
+                      <p className="flex h-full"> {cell.render('Cell')}</p>
                     </td>
                   ))}
                 </tr>

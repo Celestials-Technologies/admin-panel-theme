@@ -1,4 +1,4 @@
-import UserTable from "./userTable";
+import UserTable from './userTable';
 
 const AccountUsers = () => {
   return (

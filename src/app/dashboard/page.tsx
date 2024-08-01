@@ -21,11 +21,7 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState<ITabs>(initialTab);
   return (
     <div>
-      <Tabs
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        tabs={tabs}
-      />
+      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
       <DashboardActiveTab activeTab={activeTab} />
     </div>
   );

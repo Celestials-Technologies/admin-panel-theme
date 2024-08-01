@@ -53,10 +53,9 @@ body {
   list-style: none;
 }
 
-.boxShadowDashBoard{
+.boxShadowDashBoard {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
 }
-
 
 @layer utilities {
   .text-balance {
@@ -68,67 +67,79 @@ body {
   font-family: 'gilroyMedium';
   font-style: normal;
   font-weight: 500;
-  src: local('Gilroy Medium'), url('/public/fonts/gilroy_font/Gilroy-Medium.woff2') format('woff2');
+  src:
+    local('Gilroy Medium'),
+    url('/public/fonts/gilroy_font/Gilroy-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'gilroyRegular';
   font-style: normal;
   font-weight: 400;
-  src: local('Gilroy Regular'), url('/public/fonts/gilroy_font/Gilroy-Regular.woff2') format('woff2');
+  src:
+    local('Gilroy Regular'),
+    url('/public/fonts/gilroy_font/Gilroy-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'gilroySemiBold';
   font-style: normal;
   font-weight: 600;
-  src: local('Gilroy SemiBold'), url('/public/fonts/gilroy_font/Gilroy-Semibold.woff2') format('woff2');
+  src:
+    local('Gilroy SemiBold'),
+    url('/public/fonts/gilroy_font/Gilroy-Semibold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'gilroyBold';
   font-style: normal;
   font-weight: 700;
-  src: local('Gilroy Bold'), url('/public/fonts/gilroy_font/Gilroy-Bold.woff2') format('woff2');
+  src:
+    local('Gilroy Bold'),
+    url('/public/fonts/gilroy_font/Gilroy-Bold.woff2') format('woff2');
 }
-
-
 
 @font-face {
   font-family: 'interRegular';
   font-style: normal;
   font-weight: 400;
-  src: local('interRegular'), url('/public/fonts/inter-cdnfonts/Inter-Regular.otf') format('otf');
-} 
+  src:
+    local('interRegular'),
+    url('/public/fonts/inter-cdnfonts/Inter-Regular.otf') format('otf');
+}
 @font-face {
   font-family: 'interSemiBold';
   font-style: normal;
   font-weight: 600;
-  src: local('interSemiBold'), url('/public/fonts/inter-cdnfonts/Inter-SemiBold.otf') format('otf');
-} 
+  src:
+    local('interSemiBold'),
+    url('/public/fonts/inter-cdnfonts/Inter-SemiBold.otf') format('otf');
+}
 @font-face {
   font-family: 'interBold';
   font-style: normal;
   font-weight: 700;
-  src: local('interBold'), url('/public/fonts/inter-cdnfonts/Inter-Bold.otf') format('otf');
-} 
+  src:
+    local('interBold'),
+    url('/public/fonts/inter-cdnfonts/Inter-Bold.otf') format('otf');
+}
 @font-face {
   font-family: 'interMedium';
   font-style: normal;
   font-weight: 500;
-  src: local('interMedium'), url('/public/fonts/inter-cdnfonts/Inter-SemiBold.otf') format('otf');
-} 
+  src:
+    local('interMedium'),
+    url('/public/fonts/inter-cdnfonts/Inter-SemiBold.otf') format('otf');
+}
 
-.tableActiveShadow{
+.tableActiveShadow {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
 }
 
-.pagination-text{
-  color: #BDBDBD;
+.pagination-text {
+  color: #bdbdbd;
   font-size: 12px;
-  font-family: "inter";
+  font-family: 'inter';
   font-weight: 600;
   line-height: 14px;
 }
-
-

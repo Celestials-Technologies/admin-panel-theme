@@ -2,7 +2,6 @@
 
 'use client';
 
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 import { filterMenus } from '@/helpers/filterMenu';
@@ -12,7 +11,7 @@ import SidebarBody from './body';
 import SidebarHeader from './header';
 import SearchBar from './searchBar';
 import type { sidebarProps } from './sidebarProps';
-import ArrowIcon from '../../../public/svgs/ArrowIcon';
+import ArrowIcon from '~/svgs/ArrowIcon';
 
 const Sidebar: React.FC<sidebarProps> = ({
   header,
@@ -52,7 +51,7 @@ const Sidebar: React.FC<sidebarProps> = ({
           variant="toggle"
           onClick={toggleSidebar}
         >
-          <ArrowIcon/>
+          <ArrowIcon />
         </Button>
         <SidebarBody menuBody={filteredMenuBody} isCollapsed={isCollapsed} />
       </div>

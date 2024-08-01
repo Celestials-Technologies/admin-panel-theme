@@ -7,7 +7,7 @@ interface Props {
 }
 
 const ReactProgressBar: React.FC<Props> = ({ completed }) => {
-  return <ProgressBar completed={completed} isLabelVisible={false}/>;
+  return <ProgressBar completed={completed} isLabelVisible={false} />;
 };
 
 export default ReactProgressBar;

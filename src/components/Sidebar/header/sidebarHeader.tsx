@@ -13,11 +13,11 @@ const SidebarSubHeader: React.FC<Props> = ({ header, isCollapsed }) => {
     <>
       {!!header.image && (
         <div
-          className={` flex h-[72px] ${isCollapsed ? 'justify-center items-center' : 'pl-[22px]'}  border-b border-borderGrey`}
+          className={` flex h-[72px] ${isCollapsed ? 'items-center justify-center' : 'pl-[22px]'}  border-b border-borderGrey`}
         >
           {isCollapsed ? (
-            <div className='w-10 h-10 flex'>
-              <MobileLogo/>
+            <div className="flex h-10 w-10">
+              <MobileLogo />
             </div>
           ) : (
             <Image

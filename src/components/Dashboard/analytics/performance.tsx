@@ -1,6 +1,5 @@
 'use client';
 
-
 import type { IAnalyticsPerformance } from '@/interface/dashboard';
 
 import ArrowIcon from '~/svgs/ArrowIcon';
@@ -17,26 +16,30 @@ const AnalyticsPerformance: React.FC<Props> = ({
   data,
 }) => {
   return (
-    <div className="mt-4 w-full rounded-lg bg-white px-5 sm:px-7 py-7 lg:p-[22px] shadow-stripeShadow300 lg:w-1/2">
-      <div className="flex justify-between items-center gap-1">
-        <p className="cardSubTitle uppercase font-interSemiBold">{heading}</p>
+    <div className="mt-4 w-full rounded-lg bg-white px-5 py-7 shadow-stripeShadow300 sm:px-7 lg:w-1/2 lg:p-[22px]">
+      <div className="flex items-center justify-between gap-1">
+        <p className="cardSubTitle font-interSemiBold uppercase">{heading}</p>
         <button className="flex items-center gap-2">
-          <p className="text-13 font-medium text-textGrey whitespace-nowrap sm:whitespace-normal font-interMedium">View Report</p>
-          <div className='w-[18px] h-[18px]'>
-            <ArrowRight/>
+          <p className="whitespace-nowrap font-interMedium text-13 font-medium text-textGrey sm:whitespace-normal">
+            View Report
+          </p>
+          <div className="h-[18px] w-[18px]">
+            <ArrowRight />
           </div>
         </button>
       </div>
       <div className="mt-6 flex justify-between bg-grey100 px-2 py-2.5">
         <div className="flex items-center gap-1">
-          <p className="flex items-center text-sm font-semibold text-titleGrey font-interSemiBold">
+          <p className="flex items-center font-interSemiBold text-sm font-semibold text-titleGrey">
             {subHeading}
           </p>
-          <ArrowIcon/>
+          <ArrowIcon />
         </div>
         <div className="flex items-center gap-1">
-          <p className="text-sm font-semibold text-titleGrey font-interSemiBold">Revenue</p>
-          <ArrowIcon/>
+          <p className="font-interSemiBold text-sm font-semibold text-titleGrey">
+            Revenue
+          </p>
+          <ArrowIcon />
         </div>
       </div>
       <div>
@@ -47,10 +50,10 @@ const AnalyticsPerformance: React.FC<Props> = ({
                 className="flex h-[52px] items-center justify-between px-2"
                 key={`${option.name}${index}`}
               >
-                <p className="text-13 font-medium text-textGrey font-interMedium">
+                <p className="font-interMedium text-13 font-medium text-textGrey">
                   {option.name}
                 </p>
-                <p className="text-13 font-medium text-textGrey font-interMedium">
+                <p className="font-interMedium text-13 font-medium text-textGrey">
                   {option.revenue}
                 </p>
               </div>

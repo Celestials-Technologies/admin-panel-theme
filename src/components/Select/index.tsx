@@ -15,7 +15,7 @@ const Select = <T extends string | number>({
   options,
   setValue,
   placeholder = '',
-  className
+  className,
 }: SelectProps<T>) => {
   return (
     <select
