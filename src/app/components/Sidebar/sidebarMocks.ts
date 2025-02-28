@@ -28,6 +28,19 @@ const sideMenusBody: IMenu[] = [
     link: '/campaigns',
     text: 'Campaigns',
     image: '/svgs/CampaignsIcon.svg',
+
+    subMenus: [
+      {
+        link: '/campaigns/blast',
+        text: 'Blasts',
+        image: '',
+      },
+      {
+        link: '/Evergreens',
+        text: 'Evergreens',
+        image: '',
+      },
+    ],
   },
   {
     link: '/main',

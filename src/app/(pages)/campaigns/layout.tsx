@@ -1,8 +1,8 @@
 'use client';
 
-import DashboardHeader from '@/app/components/Dashboard/header';
+import DashboardHeader from '@/app/components/Campaigns/header';
 
-export default function DashboardLayout({
+export default function CampaignsLayout({
   children, // will be a page or nested layout
 }: {
   children: React.ReactNode;

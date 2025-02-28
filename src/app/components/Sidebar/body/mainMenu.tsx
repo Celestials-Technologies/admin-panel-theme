@@ -7,12 +7,20 @@ import type { IMenu } from '@/app/interface/sidebar';
 interface Props {
   menu: IMenu;
   isCollapsed: boolean;
+  hasSubMenu?: boolean;
+  isOpen?: boolean;
 }
-const MainMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
+
+const MainMenu: React.FC<Props> = ({
+  menu,
+  isCollapsed,
+  hasSubMenu,
+  isOpen,
+}) => {
   return (
     <>
       <div
-        className={`flex min-h-[36px] items-center hover:bg-blue100  ${isCollapsed ? 'justify-center' : 'justify-between px-3'}  `}
+        className={`flex min-h-[36px] items-center ${isCollapsed ? 'justify-center' : 'justify-between px-3'}`}
       >
         <div className="flex items-center">
           <Image
@@ -29,7 +37,28 @@ const MainMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
           )}
         </div>
 
-        {!!menu.optionalSvg && !isCollapsed && (
+        {hasSubMenu && !isCollapsed && (
+          <div
+            className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          >
+            <svg
+              width="12"
+              height="8"
+              viewBox="0 0 12 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1.5L6 6.5L11 1.5"
+                stroke="#6B7280"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        )}
+        {!hasSubMenu && !!menu.optionalSvg && !isCollapsed && (
           <div className="">
             <Image
               className="select-none object-contain"
@@ -47,4 +76,5 @@ const MainMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
     </>
   );
 };
+
 export default MainMenu;

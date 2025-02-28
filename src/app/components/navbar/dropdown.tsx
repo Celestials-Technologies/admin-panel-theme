@@ -1,12 +1,16 @@
 import Link from 'next/link';
-import React from 'react';
 
 import type { IProfile } from '@/app/interface/navbar';
 
+import Button from '../Button';
 import Dropdown from '../DropDown';
 import NavbarProfile from './profile';
 
-const NavbarDropdown = () => {
+interface Props {
+  setShowLogoutModal: (show: boolean) => void; // Specify a more precise type
+}
+
+const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal }) => {
   const dropDownArray = [
     {
       href: '/more',
@@ -17,15 +21,17 @@ const NavbarDropdown = () => {
       label: 'Profile',
     },
   ];
+
   const profile: IProfile = {
     name: 'ABC Store',
     email: 'daniel.rist@gmail.com',
     image: 'svgs/DropdownArrow.svg',
   };
+
   return (
-    <Dropdown profile={<NavbarProfile profile={profile} />}>
-      {dropDownArray.map((option, index) => {
-        return (
+    <>
+      <Dropdown profile={<NavbarProfile profile={profile} />}>
+        {dropDownArray.map((option, index) => (
           <Link
             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
             key={index}
@@ -33,9 +39,16 @@ const NavbarDropdown = () => {
           >
             {option.label}
           </Link>
-        );
-      })}
-    </Dropdown>
+        ))}
+        <Button
+          onClick={() => setShowLogoutModal(true)}
+          className="block w-full px-4 py-2 text-start text-gray-700 hover:bg-gray-100"
+        >
+          Logout
+        </Button>
+      </Dropdown>
+    </>
   );
 };
+
 export default NavbarDropdown;

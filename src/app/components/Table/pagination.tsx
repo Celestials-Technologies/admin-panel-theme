@@ -4,15 +4,18 @@ import React from 'react';
 import Button from '../Button';
 
 interface Props {
-  canPreviousPage: any;
-  previousPage: any;
-  gotoPage: any;
-  nextPage: any;
-  canNextPage: any;
-  state: any;
-  pageCount: any;
-  pageOptions: any;
-  setPageSize: any;
+  canPreviousPage: boolean;
+  previousPage: () => void;
+  gotoPage: (page: number) => void;
+  nextPage: () => void;
+  canNextPage: boolean;
+  state: {
+    pageIndex: number;
+    pageSize: number;
+  };
+  pageCount: number;
+  pageOptions: number[];
+  setPageSize: (size: number) => void;
 }
 
 const Pagination: React.FC<Props> = ({
@@ -26,44 +29,92 @@ const Pagination: React.FC<Props> = ({
   pageOptions,
   setPageSize,
 }) => {
+  const currentPage = state.pageIndex + 1;
+  const totalPages = pageOptions.length;
+
+  const getPageNumbers = () => {
+    const pages = [];
+    const maxPagesToShow = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
+    let endPage = startPage + maxPagesToShow - 1;
+
+    if (endPage > totalPages) {
+      endPage = totalPages;
+      startPage = Math.max(1, endPage - maxPagesToShow + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+
+    return pages;
+  };
+
   return (
-    <div className="pagination w-full h-16 px-6 gap-2.5 flex items-center lg:justify-end bg-white rounded-b-lg  min-w-[700px]">
-      {/* <Button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+    <div className="pagination flex h-16 w-full min-w-[700px] items-center gap-2.5 rounded-b-lg bg-white px-6 lg:justify-end">
+      <Button
+        className="flex size-8 cursor-pointer items-center justify-center rounded-[3px] border border-grey500 bg-white text-grey300 disabled:opacity-50"
+        onClick={() => gotoPage(0)}
+        disabled={!canPreviousPage}
+      >
         {'<<'}
-      </Button>{' '} */}
-      <Button className='w-6 text-grey300 h-6 rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' onClick={() => previousPage()} disabled={!canPreviousPage}>
+      </Button>
+      <Button
+        className="flex size-8 cursor-pointer items-center justify-center rounded-[3px] border border-grey500 bg-white text-grey300 disabled:opacity-50"
+        onClick={() => previousPage()}
+        disabled={!canPreviousPage}
+      >
         {'<'}
-      </Button>{' '}
-      <a className='w-6 h-6 pagination-text rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' href="#/">1</a>
-      <a className='w-6 h-6 bg-grey600 pagination-text rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center' href="#/">2</a>
-      <a className='w-6 h-6 pagination-text rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' href="#/">3</a>
-      <a className='w-6 h-6 text-grey600 rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white relative' href="#/"><span className='absolute top-[-5px]'>...</span></a>
+      </Button>
 
+      {getPageNumbers().map((pageNumber) => (
+        <Button
+          key={pageNumber}
+          className={`border-bg-ryzeoGreen flex size-8 cursor-pointer items-center justify-center rounded-[3px] border ${
+            pageNumber === currentPage ? 'bg-ryzeoGreen text-white' : 'bg-white'
+          }`}
+          onClick={() => gotoPage(pageNumber - 1)}
+        >
+          {pageNumber}
+        </Button>
+      ))}
 
-      <Button className='w-6 h-6 text-grey300 rounded-[3px] border cursor-pointer border-grey500 flex items-center justify-center bg-white' onClick={() => nextPage()} disabled={!canNextPage}>
+      {totalPages > 5 && currentPage < totalPages - 2 && (
+        <span className="flex size-6 items-center justify-center">...</span>
+      )}
+
+      <Button
+        className="flex size-8 cursor-pointer items-center justify-center rounded-[3px] border border-grey500 bg-white text-grey300 disabled:opacity-50"
+        onClick={() => nextPage()}
+        disabled={!canNextPage}
+      >
         {'>'}
-      </Button>{' '}
-      {/* <Button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+      </Button>
+      <Button
+        className="flex size-8 cursor-pointer items-center justify-center rounded-[3px] border border-grey500 bg-white text-grey300 disabled:opacity-50"
+        onClick={() => gotoPage(pageCount - 1)}
+        disabled={!canNextPage}
+      >
         {'>>'}
-      </Button>{' '} */}
-      {/* <span>
-        Page{' '}
-        <strong>
-          {state.pageIndex + 1} of {pageOptions.length}
-        </strong>{' '}
+      </Button>
+
+      <span className="ml-4 text-sm text-grey600">
+        Page {currentPage} of {totalPages}
       </span>
+
       <select
+        className="ml-4 rounded border border-grey500 bg-transparent px-2 py-1 text-sm"
         value={state.pageSize}
         onChange={(e) => {
           setPageSize(Number(e.target.value));
         }}
       >
-        {[5, 10, 20].map((pageSize) => (
+        {[5, 10, 20, 50].map((pageSize) => (
           <option key={pageSize} value={pageSize}>
             Show {pageSize}
           </option>
         ))}
-      </select> */}
+      </select>
     </div>
   );
 };

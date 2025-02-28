@@ -2,15 +2,15 @@
 
 import { useState } from 'react';
 
-import DashboardActiveTab from '@/app/components/Dashboard';
-import DashboardTabs from '@/app/components/Dashboard/tabs';
+import DashboardActiveTab from '@/app/components/Campaigns';
+import DashboardTabs from '@/app/components/Campaigns/tabs';
 import type { ITabs } from '@/app/interface/dashboard';
 
-import ActivitySvg from '../../../../public/svgs/activitySvg';
-import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
-import CalendarSvg from '../../../../public/svgs/CalendarSvg';
+import ActivitySvg from '../../../../../public/svgs/activitySvg';
+import AynalaticsSvg from '../../../../../public/svgs/aynalaticsSvg';
+import CalendarSvg from '../../../../../public/svgs/CalendarSvg';
 
-const Campaigns = () => {
+const Blast = () => {
   const tabs: ITabs[] = [
     { id: 1, name: 'Analytics', svg: <AynalaticsSvg /> },
     { id: 2, name: 'Calendar', svg: <CalendarSvg /> },
@@ -31,4 +31,4 @@ const Campaigns = () => {
   );
 };
 
-export default Campaigns;
+export default Blast;
