@@ -3,7 +3,7 @@ import type { Column } from 'react-table';
 import { useFilters, usePagination, useSortBy, useTable } from 'react-table';
 
 import SearchIcon from '../../../../public/svgs/SearchIcon';
-import Input from '../Input';
+import { Input } from '../Input';
 import Pagination from './pagination';
 
 interface TableComponentProps {

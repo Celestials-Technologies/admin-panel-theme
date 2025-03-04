@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { Input } from '../Input';
 
 interface FormData {
   firstName: string;
@@ -37,6 +39,15 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
 
   const formik = useFormik<FormData>({
     initialValues,
+    validationSchema: Yup.object({
+      firstName: Yup.string().required('Required'),
+      lastName: Yup.string().required('Required'),
+      email: Yup.string().email('Invalid Email').required('Required'),
+      dob: Yup.string().required('Required'),
+      companyName: Yup.string().required('Required'),
+      domain: Yup.string().required('Required'),
+      message: Yup.string().required('Required'),
+    }),
     onSubmit: (values) => {
       const dataToStore = {
         ...values,
@@ -97,101 +108,97 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
             <form onSubmit={formik.handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                    First Name
-                  </label>
-                  <input
+                  <Input
+                    labelText="First Name"
                     type="text"
                     name="firstName"
                     placeholder="First Name"
                     onChange={formik.handleChange}
                     value={formik.values.firstName}
-                    className="w-full rounded-md border p-2"
+                    borderOutline
+                    className="w-full"
+                    errorMessage={formik.errors.firstName}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-                    Last Name
-                  </label>
-
-                  <input
+                  <Input
+                    labelText="Last Name"
                     type="text"
                     name="lastName"
                     placeholder="Last Name"
                     onChange={formik.handleChange}
                     value={formik.values.lastName}
-                    className="w-full rounded-md border p-2"
+                    borderOutline
+                    className="w-full"
+                    errorMessage={formik.errors.lastName}
                   />
                 </div>
               </div>
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email
-                  </label>
-
-                  <input
+                  <Input
+                    labelText="Email"
                     type="email"
                     name="email"
                     placeholder="Email"
                     onChange={formik.handleChange}
                     value={formik.values.email}
-                    className="w-full rounded-md border p-2"
+                    borderOutline
+                    className="w-full"
+                    errorMessage={formik.errors.email}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
-                    Date of Birth
-                  </label>
-
-                  <input
+                  <Input
+                    labelText="Date of Birth"
                     type="date"
                     name="dob"
                     onChange={formik.handleChange}
                     value={formik.values.dob}
-                    className="w-full rounded-md border p-2"
+                    borderOutline
+                    className="w-full"
+                    errorMessage={formik.errors.dob}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">
-                    Company Name
-                  </label>
-
-                  <input
+                  <Input
+                    labelText="Company Name"
                     type="text"
                     name="companyName"
                     placeholder="Company Name"
                     onChange={formik.handleChange}
                     value={formik.values.companyName}
-                    className="w-full rounded-md border p-2"
+                    borderOutline
+                    className="w-full"
+                    errorMessage={formik.errors.companyName}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="domain" className="block text-sm font-medium text-gray-700">
-                    Domain
-                  </label>
-
-                  <input
+                  <Input
+                    labelText="Domain"
                     type="text"
                     name="domain"
                     placeholder="Domain"
                     onChange={formik.handleChange}
                     value={formik.values.domain}
-                    className="w-full rounded-md border p-2"
+                    borderOutline
+                    className="w-full"
+                    errorMessage={formik.errors.domain}
                   />
                 </div>
               </div>
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                   Message
                 </label>
-
                 <textarea
                   name="message"
                   placeholder="Message"
@@ -199,6 +206,9 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
                   value={formik.values.message}
                   className="w-full rounded-md border p-2"
                 />
+                {formik.touched.message && formik.errors.message && (
+                  <div className="text-sm text-red-500">{formik.errors.message}</div>
+                )}
               </div>
 
               <div className="col-span-full">
@@ -212,7 +222,6 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
                       viewBox="0 0 24 24"
                       fill="currentColor"
                       aria-hidden="true"
-                      data-slot="icon"
                     >
                       <path
                         fill-rule="evenodd"
@@ -226,7 +235,7 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
                         className="focus-within:outline-hidden relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                       >
                         <span>Upload a file</span>
-                        <input
+                        <Input
                           id="file-upload"
                           name="file-upload"
                           type="file"

@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 
 import type { IMenu } from '@/app/interface/sidebar';
-import { usePathname } from 'next/navigation';
 
 import MainMenu from './mainMenu';
 import SubMenuItem from './subMenuItem';

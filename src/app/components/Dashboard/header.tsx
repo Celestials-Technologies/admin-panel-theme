@@ -27,6 +27,7 @@ const DashboardHeader: React.FC<Props> = () => {
               iconColor="#616161"
               classname="text-titleGrey flex items-center justify-center gap-3 w-[130px] h-11 text-xs font-medium"
               title="Last 30 days"
+              dropdownFullWidth
             >
               <div className="font-medium text-titleGrey">Last 10 days </div>
               <div className="font-medium text-titleGrey">Last 20 days</div>
@@ -38,6 +39,7 @@ const DashboardHeader: React.FC<Props> = () => {
             iconColor="#fff"
             classname="bg-ryzeoBlue flex items-center justify-center gap-3 w-[164px] h-[42px] text-white text-13 font-medium rounded"
             title="Create Campaign"
+            dropdownFullWidth
           >
             <div className="text-titleGrey">Create </div>
             <div className="text-titleGrey">Update</div>

@@ -19,7 +19,6 @@ const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal, setShowProfileMod
     },
   ];
 
-  // Get profile data from localStorage
   const getProfileFromStorage = () => {
     const savedData = localStorage.getItem('formData');
     if (savedData) {
@@ -27,7 +26,7 @@ const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal, setShowProfileMod
       return {
         name: `${data.firstName} ${data.lastName}`,
         email: data.email,
-        image: data.profileImage || '/svgs/user.svg', 
+        image: data.profileImage || '/svgs/user.svg',
       };
     }
     return {
@@ -41,7 +40,7 @@ const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal, setShowProfileMod
 
   return (
     <>
-      <Dropdown profile={<NavbarProfile profile={profile} />}>
+      <Dropdown dropdownFullWidth profile={<NavbarProfile profile={profile} />}>
         {dropDownArray.map((option, index) => (
           <Link
             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
