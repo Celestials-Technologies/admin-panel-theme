@@ -95,94 +95,98 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
             className="relative w-[700px] overflow-hidden rounded-lg bg-white p-8 text-left shadow-xl transition-all sm:my-8"
           >
             <form onSubmit={formik.handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  onChange={formik.handleChange}
-                  value={formik.values.firstName}
-                  className="w-full rounded-md border p-2"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    onChange={formik.handleChange}
+                    value={formik.values.firstName}
+                    className="w-full rounded-md border p-2"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                    Last Name
+                  </label>
+
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    onChange={formik.handleChange}
+                    value={formik.values.lastName}
+                    className="w-full rounded-md border p-2"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                    Email
+                  </label>
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                    className="w-full rounded-md border p-2"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
+                    Date of Birth
+                  </label>
+
+                  <input
+                    type="date"
+                    name="dob"
+                    onChange={formik.handleChange}
+                    value={formik.values.dob}
+                    className="w-full rounded-md border p-2"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-                  Last Name
-                </label>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">
+                    Company Name
+                  </label>
 
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  onChange={formik.handleChange}
-                  value={formik.values.lastName}
-                  className="w-full rounded-md border p-2"
-                />
+                  <input
+                    type="text"
+                    name="companyName"
+                    placeholder="Company Name"
+                    onChange={formik.handleChange}
+                    value={formik.values.companyName}
+                    className="w-full rounded-md border p-2"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="domain" className="block text-sm font-medium text-gray-700">
+                    Domain
+                  </label>
+
+                  <input
+                    type="text"
+                    name="domain"
+                    placeholder="Domain"
+                    onChange={formik.handleChange}
+                    value={formik.values.domain}
+                    className="w-full rounded-md border p-2"
+                  />
+                </div>
               </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                  className="w-full rounded-md border p-2"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
-                  Date of Birth
-                </label>
-
-                <input
-                  type="date"
-                  name="dob"
-                  onChange={formik.handleChange}
-                  value={formik.values.dob}
-                  className="w-full rounded-md border p-2"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">
-                  Company Name
-                </label>
-
-                <input
-                  type="text"
-                  name="companyName"
-                  placeholder="Company Name"
-                  onChange={formik.handleChange}
-                  value={formik.values.companyName}
-                  className="w-full rounded-md border p-2"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="domain" className="block text-sm font-medium text-gray-700">
-                  Domain
-                </label>
-
-                <input
-                  type="text"
-                  name="domain"
-                  placeholder="Domain"
-                  onChange={formik.handleChange}
-                  value={formik.values.domain}
-                  className="w-full rounded-md border p-2"
-                />
-              </div>
-
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                   Message
