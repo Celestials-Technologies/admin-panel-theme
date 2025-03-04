@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 
 import type { IMenu } from '@/app/interface/sidebar';
+import { usePathname } from 'next/navigation';
 
 import MainMenu from './mainMenu';
 import SubMenuItem from './subMenuItem';
@@ -14,6 +15,7 @@ interface Props {
 const SubMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+
   const handleClick = () => {
     if (menu.subMenus) {
       setIsOpen(!isOpen);
@@ -24,7 +26,7 @@ const SubMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
     <div className="relative">
       <div
         onClick={handleClick}
-        className={`cursor-pointer ${menu.subMenus ? 'hover:bg-blue100' : ''}`}
+        className={`cursor-pointer  ${menu.subMenus ? 'hover:bg-blue100' : ''}`}
       >
         <MainMenu
           menu={menu}

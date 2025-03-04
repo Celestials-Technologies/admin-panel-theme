@@ -10,13 +10,15 @@ const NavbarProfile: React.FC<Props> = ({ profile }) => {
   return (
     <div className="flex cursor-pointer cursor-pointer items-center sm:items-start">
       <div className="sm:mr- mr-1 flex items-center">
-        <Image
-          className="rounded-full object-cover"
-          src={profile.image || '/svgs/user.svg'}
-          alt="profile"
-          height={40}
-          width={40}
-        />
+        <div className="h-10 w-10">
+          <Image
+            className="h-full w-full rounded-full object-cover"
+            src={profile.image || '/svgs/user.svg'}
+            alt="profile"
+            height={100}
+            width={100}
+          />
+        </div>
         <div className="ml-3 hidden sm:block">
           <div className="flex ">
             <p className=" mr-2 text-sm font-bold text-titleBlack">{profile.name}</p>

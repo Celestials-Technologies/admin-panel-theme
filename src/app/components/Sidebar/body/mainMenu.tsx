@@ -59,7 +59,7 @@ const MainMenu: React.FC<Props> = ({ menu, isCollapsed, hasSubMenu, isOpen }) =>
           </div>
         )}
       </div>
-      {menu.lineBreak ? <div className="my-1.5 h-px w-full bg-borderGrey" /> : null}
+      {menu.lineBreak ? <div className="h-px w-full bg-borderGrey" /> : null}
     </>
   );
 };
