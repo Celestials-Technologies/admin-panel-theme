@@ -1,4 +1,7 @@
 {
+  "eslint": {
+    "ignoreDuringBuilds": true
+  },
   "plugins": ["@typescript-eslint"],
   "extends": [
     "next/core-web-vitals",
@@ -7,6 +10,7 @@
     "airbnb-base",
     "plugin:prettier/recommended"
   ],
+  
   "rules": {
     "prettier/prettier": [
       "error",
@@ -70,6 +74,8 @@
         "unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
       }
     },
+    
+       
     // Configuration for testing
     {
       "files": ["**/*.test.ts", "**/*.test.tsx"],

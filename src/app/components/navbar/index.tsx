@@ -39,14 +39,7 @@ const Navbar: FC<Prop> = ({ isCollapsed }) => {
 
       {showProfileModal && (
         <ProfileInfoModal
-          title="Confirm Logout"
-          description="Are you sure you want to logout?"
-          confirmText="Yes, logout"
-          cancelText="No, cancel"
-          onConfirm={() => {
-            // Handle logout logic here
-            setShowProfileModal(false);
-          }}
+
           onCancel={() => setShowProfileModal(false)}
           // icon={/* Your icon component */}
         />
