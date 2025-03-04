@@ -8,9 +8,17 @@ interface DropdownProps {
   profile?: React.ReactNode;
   classname?: string;
   iconColor?: string;
+  dropdownFullWidth?: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ title, children, profile, classname, iconColor }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  title,
+  children,
+  profile,
+  classname,
+  iconColor,
+  dropdownFullWidth,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -45,7 +53,9 @@ const Dropdown: React.FC<DropdownProps> = ({ title, children, profile, classname
       )}
 
       {isOpen && (
-        <div className="absolute right-0 z-20 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg sm:w-48">
+        <div
+          className={`${dropdownFullWidth ? 'w-full' : 'w-40 sm:w-48'} absolute right-0 z-20 mt-2  rounded-md border border-gray-200 bg-white shadow-lg   `}
+        >
           <div onClick={toggleDropdown} className="px-3 py-2">
             {children}
           </div>
