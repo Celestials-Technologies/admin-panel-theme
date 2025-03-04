@@ -27,7 +27,7 @@ const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal, setShowProfileMod
       return {
         name: `${data.firstName} ${data.lastName}`,
         email: data.email,
-        image: data.profileImage || 'svgs/DropdownArrow.svg', // Use the stored base64 image or fallback
+        image: data.profileImage || '/svgs/user.svg', 
       };
     }
     return {
