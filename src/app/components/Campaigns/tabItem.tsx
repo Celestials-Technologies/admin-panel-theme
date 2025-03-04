@@ -20,9 +20,7 @@ const TabItem: React.FC<Props> = ({ activeTab, setActiveTab, tab }) => {
         activeTab.id === tab.id ? 'border-ryzeoBlue' : 'border-transparent'
       }`}
     >
-      <span className={`${activeTab.id === tab.id ? 'tabIsActive' : ''} `}>
-        {tab.svg}
-      </span>
+      <span className={`${activeTab.id === tab.id ? 'tabIsActive' : ''} `}>{tab.svg}</span>
       <p
         className={`font-poppins text-sm font-medium capitalize  ${
           activeTab.id === tab.id ? 'text-ryzeoBlue' : 'text-textGrey'

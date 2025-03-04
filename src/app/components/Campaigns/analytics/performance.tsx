@@ -11,11 +11,7 @@ interface Props {
   subHeading: string;
   data: IAnalyticsPerformance[];
 }
-const AnalyticsPerformance: React.FC<Props> = ({
-  heading,
-  subHeading,
-  data,
-}) => {
+const AnalyticsPerformance: React.FC<Props> = ({ heading, subHeading, data }) => {
   return (
     <div className="mt-4 w-full rounded-lg bg-white px-5 py-7 shadow-stripeShadow300 sm:px-7 lg:w-1/2 lg:p-[22px]">
       <div className="flex items-center justify-between gap-1">
@@ -37,9 +33,7 @@ const AnalyticsPerformance: React.FC<Props> = ({
           <ArrowIcon />
         </div>
         <div className="flex items-center gap-1">
-          <p className="font-interSemiBold text-sm font-semibold text-titleGrey">
-            Revenue
-          </p>
+          <p className="font-interSemiBold text-sm font-semibold text-titleGrey">Revenue</p>
           <ArrowIcon />
         </div>
       </div>
@@ -51,9 +45,7 @@ const AnalyticsPerformance: React.FC<Props> = ({
                 className="flex h-[52px] items-center justify-between px-2"
                 key={`${option.name}${index}`}
               >
-                <p className="font-interMedium text-13 font-medium text-textGrey">
-                  {option.name}
-                </p>
+                <p className="font-interMedium text-13 font-medium text-textGrey">{option.name}</p>
                 <p className="font-interMedium text-13 font-medium text-textGrey">
                   {option.revenue}
                 </p>

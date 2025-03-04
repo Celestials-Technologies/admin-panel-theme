@@ -3,7 +3,7 @@ import React from 'react';
 import DashboardIcon from '../../../../public/svgs/DashboardIcon';
 import Dropdown from '../DropDown';
 
-interface Props { }
+interface Props {}
 
 const DashboardHeader: React.FC<Props> = () => {
   return (
@@ -20,9 +20,7 @@ const DashboardHeader: React.FC<Props> = () => {
             <div>
               <DashboardIcon />
             </div>
-            <p className="ml-1.5	text-xl font-bold text-titleBlack ">
-              Blasts Campaigns
-            </p>
+            <p className="ml-1.5	text-xl font-bold text-titleBlack ">Blasts Campaigns</p>
           </div>
           <div className="ml-3 rounded border border-grey200">
             <Dropdown

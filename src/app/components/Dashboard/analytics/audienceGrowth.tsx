@@ -19,7 +19,7 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-between lg:gap-3 lg:w-[auto] lg:flex-nowrap xl:gap-6">
+      <div className="flex flex-wrap items-center justify-between lg:w-auto lg:flex-nowrap lg:gap-3 xl:gap-6">
         {audienceGrowthArray.map((option) => {
           return (
             <InfoBox
@@ -31,7 +31,7 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
           );
         })}
       </div>
-      <div className='w-full lg:w-[49.1%] 2xl:w-[49.5%] mt-4 boxShadowDashBoard px-5 sm:px-7 py-6 rounded-lg bg-white'>
+      <div className="boxShadowDashBoard mt-4 w-full rounded-lg bg-white px-5 py-6 sm:px-7 lg:w-[49.1%] 2xl:w-[49.5%]">
         <LineChart
           chartData={[24, 22, 33]}
           labels={['Total Subscribers', 'Newly added', 'Unsubscribed']}

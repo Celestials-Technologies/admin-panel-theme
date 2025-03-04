@@ -26,7 +26,7 @@ export function SelectColumnFilter<D extends object>({
       options={options}
       setValue={setFilter}
       placeholder="All"
-      className='bg-white outline-none'
+      className="bg-white outline-none"
     />
   );
 }

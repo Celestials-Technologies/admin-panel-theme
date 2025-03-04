@@ -6,13 +6,7 @@ import Input from '../Input';
 const NavbarSearch = () => {
   return (
     <div className="flex h-[34px] items-center px-3 ">
-      <Image
-        src={'svgs/SearchIcon.svg'}
-        className=""
-        alt="SearchIcon"
-        width={13}
-        height={13}
-      />
+      <Image src={'svgs/SearchIcon.svg'} className="" alt="SearchIcon" width={13} height={13} />
       <Input
         type="text"
         name="search"

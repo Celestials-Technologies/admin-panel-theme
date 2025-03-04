@@ -10,13 +10,7 @@ interface DropdownProps {
   iconColor?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({
-  title,
-  children,
-  profile,
-  classname,
-  iconColor,
-}) => {
+const Dropdown: React.FC<DropdownProps> = ({ title, children, profile, classname, iconColor }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -25,10 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };

@@ -28,8 +28,8 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
   const filteredData = useMemo(() => {
     return data.filter((row) =>
       Object.values(row).some((value) =>
-        String(value).toLowerCase().includes(searchInput.toLowerCase())
-      )
+        String(value).toLowerCase().includes(searchInput.toLowerCase()),
+      ),
     );
   }, [data, searchInput]);
 
@@ -48,12 +48,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
     previousPage,
     setPageSize,
     state,
-  } = useTable(
-    { columns, data: filteredData },
-    useFilters,
-    useSortBy,
-    usePagination
-  );
+  } = useTable({ columns, data: filteredData }, useFilters, useSortBy, usePagination);
 
   return (
     <div className="w-full">
@@ -80,17 +75,12 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
               headerGroups.map((headerGroup) =>
                 headerGroup.headers.map((column) =>
                   column.Filter ? (
-                    <div
-                      key={column.id}
-                      className="flex items-center justify-center "
-                    >
-                      <label htmlFor={column.id}>
-                        {column.render('Header')}:{' '}
-                      </label>
+                    <div key={column.id} className="flex items-center justify-center ">
+                      <label htmlFor={column.id}>{column.render('Header')}: </label>
                       {column.render('Filter')}
                     </div>
-                  ) : null
-                )
+                  ) : null,
+                ),
               )}
           </div>
         </div>
@@ -124,11 +114,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
                     <div className="flex items-center">
                       {column.render('Header')}
                       <span className="ml-2 w-10">
-                        {column.isSorted
-                          ? column.isSortedDesc
-                            ? '▼'
-                            : '▲'
-                          : ''}
+                        {column.isSorted ? (column.isSortedDesc ? '▼' : '▲') : ''}
                       </span>
                     </div>
                   </th>

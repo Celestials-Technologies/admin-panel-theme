@@ -36,11 +36,7 @@ const SubMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
       {isOpen && menu.subMenus && (
         <div className="px-3 transition-all duration-200 ease-in-out">
           {menu.subMenus.map((subMenu, subIndex) => (
-            <SubMenuItem
-              subMenu={subMenu}
-              key={`submenu-${subIndex}`}
-              isCollapsed={isCollapsed}
-            />
+            <SubMenuItem subMenu={subMenu} key={`submenu-${subIndex}`} isCollapsed={isCollapsed} />
           ))}
         </div>
       )}

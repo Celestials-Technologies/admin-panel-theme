@@ -15,6 +15,7 @@
         "endOfLine": "auto"
       }
     ],
+    "simple-import-sort/imports": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "react-hooks/exhaustive-deps": "off",
@@ -27,12 +28,7 @@
     // Configuration for TypeScript files
     {
       "files": ["**/*.ts", "**/*.tsx"],
-      "plugins": [
-        "@typescript-eslint",
-        "unused-imports",
-        "tailwindcss",
-        "simple-import-sort"
-      ],
+      "plugins": ["@typescript-eslint", "unused-imports", "tailwindcss", "simple-import-sort"],
       "extends": [
         "plugin:tailwindcss/recommended",
         "airbnb-typescript",
@@ -71,10 +67,7 @@
         "@typescript-eslint/naming-convention": "off",
         "consistent-return": "off",
         "no-plusplus": "off",
-        "unused-imports/no-unused-vars": [
-          "error",
-          { "argsIgnorePattern": "^_" }
-        ]
+        "unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
       }
     },
     // Configuration for testing

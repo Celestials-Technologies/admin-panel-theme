@@ -21,11 +21,11 @@ const events: CalendarEvent[] = [
 
 const CalendarDashboard = () => {
   return (
-    <div className='mt-7 px-7 mx-.5'>
+    <div className="mx-.5 mt-7 px-7">
       {' '}
-      <h1 className='heading font-gilroy-bold mb-4 leading-5'>Calendar View</h1>
-      <div className="App !py-6 !px-7 bg-white rounded-lg shadow-tableShadow">
-        <MyCalendar events={events}  />
+      <h1 className="heading mb-4 font-gilroy-bold leading-5">Calendar View</h1>
+      <div className="App rounded-lg bg-white !px-7 !py-6 shadow-tableShadow">
+        <MyCalendar events={events} />
       </div>
     </div>
   );

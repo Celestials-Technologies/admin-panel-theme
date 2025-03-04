@@ -8,25 +8,36 @@ import NavbarProfile from './profile';
 
 interface Props {
   setShowLogoutModal: (show: boolean) => void; // Specify a more precise type
+  setShowProfileModal: (show: boolean) => void; // Specify a more precise type
 }
 
-const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal }) => {
+const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal, setShowProfileModal }) => {
   const dropDownArray = [
     {
       href: '/more',
       label: 'More',
     },
-    {
-      href: '/profile',
-      label: 'Profile',
-    },
   ];
 
-  const profile: IProfile = {
-    name: 'ABC Store',
-    email: 'daniel.rist@gmail.com',
-    image: 'svgs/DropdownArrow.svg',
+  // Get profile data from localStorage
+  const getProfileFromStorage = () => {
+    const savedData = localStorage.getItem('formData');
+    if (savedData) {
+      const data = JSON.parse(savedData);
+      return {
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        image: data.profileImage || 'svgs/DropdownArrow.svg', // Use the stored base64 image or fallback
+      };
+    }
+    return {
+      name: 'ABC Store',
+      email: 'daniel.rist@gmail.com',
+      image: 'svgs/DropdownArrow.svg',
+    };
   };
+
+  const profile: IProfile = getProfileFromStorage();
 
   return (
     <>
@@ -40,6 +51,12 @@ const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal }) => {
             {option.label}
           </Link>
         ))}
+        <Button
+          onClick={() => setShowProfileModal(true)}
+          className="block w-full px-4 py-2 text-start text-gray-700 hover:bg-gray-100"
+        >
+          Profile
+        </Button>
         <Button
           onClick={() => setShowLogoutModal(true)}
           className="block w-full px-4 py-2 text-start text-gray-700 hover:bg-gray-100"

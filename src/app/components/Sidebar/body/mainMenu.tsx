@@ -11,12 +11,7 @@ interface Props {
   isOpen?: boolean;
 }
 
-const MainMenu: React.FC<Props> = ({
-  menu,
-  isCollapsed,
-  hasSubMenu,
-  isOpen,
-}) => {
+const MainMenu: React.FC<Props> = ({ menu, isCollapsed, hasSubMenu, isOpen }) => {
   return (
     <>
       <div
@@ -30,17 +25,11 @@ const MainMenu: React.FC<Props> = ({
             width={isCollapsed ? 24 : 18}
             height={isCollapsed ? 24 : 18}
           />
-          {!isCollapsed && (
-            <p className="mx-3 text-13 font-medium text-textGrey">
-              {menu.text}
-            </p>
-          )}
+          {!isCollapsed && <p className="mx-3 text-13 font-medium text-textGrey">{menu.text}</p>}
         </div>
 
         {hasSubMenu && !isCollapsed && (
-          <div
-            className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-          >
+          <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
             <svg
               width="12"
               height="8"
@@ -70,9 +59,7 @@ const MainMenu: React.FC<Props> = ({
           </div>
         )}
       </div>
-      {menu.lineBreak ? (
-        <div className="my-1.5 h-px w-full bg-borderGrey" />
-      ) : null}
+      {menu.lineBreak ? <div className="my-1.5 h-px w-full bg-borderGrey" /> : null}
     </>
   );
 };

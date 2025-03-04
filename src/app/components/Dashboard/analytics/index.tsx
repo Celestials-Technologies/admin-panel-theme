@@ -13,11 +13,7 @@ import DashboardAPI from '@/app/services/dashboard';
 
 import AudienceGrowth from './audienceGrowth';
 import EmailPerformance from './EmailPerformance';
-import {
-  initialAudienceGrowth,
-  initialOrders,
-  initialRevenue,
-} from './initials';
+import { initialAudienceGrowth, initialOrders, initialRevenue } from './initials';
 import Order from './Order';
 import AnalyticsPerformance from './performance';
 import Revenue from './Revenue';
@@ -25,16 +21,11 @@ import Revenue from './Revenue';
 const AnalyticsDashboard = () => {
   const [workFlowData, setWorkFlowData] = useState<IAnalyticsPerformance[]>([]);
   const [campaignData, setCampaignData] = useState<IAnalyticsPerformance[]>([]);
-  const [revenueData, setRevenueData] =
-    useState<IAnalyticsRevenue>(initialRevenue);
+  const [revenueData, setRevenueData] = useState<IAnalyticsRevenue>(initialRevenue);
   const [ordersData, setOrdersData] = useState<IAnalyticsOrders>(initialOrders);
-  const [audienceData, setAudienceData] = useState<IAnalyticsAudienceGrowth>(
-    initialAudienceGrowth
-  );
+  const [audienceData, setAudienceData] = useState<IAnalyticsAudienceGrowth>(initialAudienceGrowth);
 
-  const [emailPerformance, setEmailPerformance] = useState<
-    IAnalyticsEmailPerformance[]
-  >([]);
+  const [emailPerformance, setEmailPerformance] = useState<IAnalyticsEmailPerformance[]>([]);
 
   const topPerformanceArray = [
     {
@@ -83,9 +74,7 @@ const AnalyticsDashboard = () => {
 
   return (
     <div className="mx-[15px] md:mx-30">
-      <h2 className="heading mt-7 font-gilroy-bold leading-5">
-        Top Performing Strategies
-      </h2>
+      <h2 className="heading mt-7 font-gilroy-bold leading-5">Top Performing Strategies</h2>
       <div className="flex flex-col lg:flex-row lg:gap-2.5 xl:gap-5">
         {topPerformanceArray.map((option) => {
           return (
@@ -98,13 +87,9 @@ const AnalyticsDashboard = () => {
           );
         })}
       </div>
-      <h2 className="heading mt-[25px] !font-gilroy-bold leading-5 lg:mt-[50px]">
-        Revenue
-      </h2>
+      <h2 className="heading mt-[25px] !font-gilroy-bold leading-5 lg:mt-[50px]">Revenue</h2>
       <Revenue data={revenueData} />
-      <h2 className="heading  mt-[25px] font-gilroy-bold leading-5 lg:mt-[50px]">
-        Orders
-      </h2>
+      <h2 className="heading  mt-[25px] font-gilroy-bold leading-5 lg:mt-[50px]">Orders</h2>
       <Order data={ordersData} />
 
       <h2 className="heading mt-[25px] font-gilroy-bold leading-5 lg:mt-[50px]">
@@ -112,9 +97,7 @@ const AnalyticsDashboard = () => {
       </h2>
       <EmailPerformance data={emailPerformance} />
 
-      <h2 className="heading mt-[25px] font-gilroy-bold leading-5 lg:mt-[50px]">
-        Audience Growth
-      </h2>
+      <h2 className="heading mt-[25px] font-gilroy-bold leading-5 lg:mt-[50px]">Audience Growth</h2>
       <AudienceGrowth data={audienceData} />
     </div>
   );

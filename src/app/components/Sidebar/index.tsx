@@ -41,10 +41,7 @@ const Sidebar: React.FC<sidebarProps> = ({
       <div>
         <SidebarHeader header={header} isCollapsed={isCollapsed} />
         {showSearchBar && !isCollapsed && (
-          <SearchBar
-            searchTerm={searchTerm}
-            handleSearchChange={handleSearchChange}
-          />
+          <SearchBar searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
         )}
         <Button
           className={`toggle-button z-40 transition duration-500  ${isCollapsed ? 'rotate-270 ' : 'rotate-90'}`}

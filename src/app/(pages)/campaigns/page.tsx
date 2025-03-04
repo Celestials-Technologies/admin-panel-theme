@@ -21,11 +21,7 @@ const Campaigns = () => {
   const [activeTab, setActiveTab] = useState<ITabs>(initialTab);
   return (
     <div>
-      <DashboardTabs
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        tabs={tabs}
-      />
+      <DashboardTabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
       <DashboardActiveTab activeTab={activeTab} />
     </div>
   );

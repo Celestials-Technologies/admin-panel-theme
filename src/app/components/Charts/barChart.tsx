@@ -89,7 +89,7 @@ const BarChart = ({ labels, chartData, barColor, height, width }: BarChartProps)
   return (
     <Bar
       height={`${height}px` || 112}
-      width={`${width}px`||305}
+      width={`${width}px` || 305}
       className="w-full"
       options={options}
       data={data}

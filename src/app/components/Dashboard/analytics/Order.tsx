@@ -8,18 +8,22 @@ interface Props {
 }
 const Order: React.FC<Props> = ({ data }) => {
   return (
-    <div className="mt-4 flex-col lg:flex-row flex rounded-lg bg-white px-3.5 sm:px-7 py-6 boxShadowDashBoard gap-4 xl:gap-0">
+    <div className="boxShadowDashBoard mt-4 flex flex-col gap-4 rounded-lg bg-white px-3.5 py-6 sm:px-7 lg:flex-row xl:gap-0">
       <div className="lg:w-[34.092%] lg:min-w-[300px]">
-        <InfoBox className=' w-full lg:max-w-[375px]' title={'Total Orders'} info={`${data.total}`} />
+        <InfoBox
+          className=" w-full lg:max-w-[375px]"
+          title={'Total Orders'}
+          info={`${data.total}`}
+        />
 
-        <div className="flex flex-col sm:flex-row justify-between  w-full lg:max-w-[375px]">
+        <div className="flex w-full flex-col justify-between  sm:flex-row lg:max-w-[375px]">
           <InfoBox
-            className="w-full sm:w-1/2 pt-4 lg:pt-6"
+            className="w-full pt-4 sm:w-1/2 lg:pt-6"
             title={'From workflows'}
             info={`${data.workFlow}`}
           />
           <InfoBox
-            className="w-full sm:w-1/2 pt-4 lg:pt-6"
+            className="w-full pt-4 sm:w-1/2 lg:pt-6"
             title={'From campaigns'}
             info={`${data.campaign}`}
           />

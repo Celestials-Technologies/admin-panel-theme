@@ -6,11 +6,7 @@ import { useEffect, useState } from 'react';
 
 import Navbar from '../components/navbar';
 import Sidebar from '../components/Sidebar';
-import {
-  header,
-  sideMenusBody,
-  sideMenusFooter,
-} from '../components/Sidebar/sidebarMocks';
+import { header, sideMenusBody, sideMenusFooter } from '../components/Sidebar/sidebarMocks';
 
 export default function RootLayout({
   children,

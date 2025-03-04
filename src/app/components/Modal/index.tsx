@@ -23,10 +23,7 @@ function Modal({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
         onCancel();
       }
     };
@@ -38,16 +35,8 @@ function Modal({
   }, [onCancel]);
 
   return (
-    <div
-      className="relative z-50"
-      aria-labelledby="modal-title"
-      role="dialog"
-      aria-modal="true"
-    >
-      <div
-        className="fixed inset-0 bg-gray-500/75 transition-opacity"
-        aria-hidden="true"
-      ></div>
+    <div className="relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div className="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -63,10 +52,7 @@ function Modal({
                   </div>
                 )}
                 <div className="mt-3 text-center sm:mt-0 sm:text-left">
-                  <h3
-                    className="text-lg font-semibold text-textGrey"
-                    id="modal-title"
-                  >
+                  <h3 className="text-lg font-semibold text-textGrey" id="modal-title">
                     {title}
                   </h3>
                   <div className="mt-2">

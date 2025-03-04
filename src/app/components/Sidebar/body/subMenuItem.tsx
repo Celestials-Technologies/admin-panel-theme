@@ -11,10 +11,7 @@ interface Props {
 }
 const SubMenuItem: React.FC<Props> = ({ subMenu, isCollapsed }) => {
   return (
-    <Link
-      href={subMenu.link}
-      className="group ml-5 flex h-9 rounded pl-[10px] hover:bg-blue100 "
-    >
+    <Link href={subMenu.link} className="group ml-5 flex h-9 rounded pl-[10px] hover:bg-blue100 ">
       {subMenu.image ? (
         <Image
           className="select-none object-contain"

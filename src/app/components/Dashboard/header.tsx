@@ -20,9 +20,7 @@ const DashboardHeader: React.FC<Props> = () => {
             <div>
               <DashboardIcon />
             </div>
-            <p className="ml-1.5	text-xl font-bold text-titleBlack ">
-              Dashboard
-            </p>
+            <p className="ml-1.5	text-xl font-bold text-titleBlack ">Dashboard</p>
           </div>
           <div className="ml-3 rounded border border-grey200">
             <Dropdown

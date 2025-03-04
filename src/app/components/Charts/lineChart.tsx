@@ -10,14 +10,7 @@ import {
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Tooltip,
-  Filler
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Filler);
 
 export type LineChartProps = {
   lineColor?: boolean;
@@ -80,11 +73,7 @@ const LineChart = ({ lineColor, labels, chartData }: LineChartProps) => {
       {
         data: chartData,
         fill: true,
-        backgroundColor: ({
-          chart: { ctx },
-        }: {
-          chart: { ctx: CanvasRenderingContext2D };
-        }) => {
+        backgroundColor: ({ chart: { ctx } }: { chart: { ctx: CanvasRenderingContext2D } }) => {
           const bg = ctx.createLinearGradient(0, 0, 0, 400);
           if (lineColor) {
             bg.addColorStop(0, 'rgba(135, 186, 137, 0.25)');
@@ -99,25 +88,13 @@ const LineChart = ({ lineColor, labels, chartData }: LineChartProps) => {
         pointRadius: 5,
         pointBorderColor: 'transparent',
         pointBackgroundColor: `${
-          chartData?.length !== 1
-            ? 'transparent'
-            : lineColor
-              ? '#87BA8980'
-              : '#EA672380'
+          chartData?.length !== 1 ? 'transparent' : lineColor ? '#87BA8980' : '#EA672380'
         }`,
       },
     ],
   };
 
-  return (
-    <Line
-      height={112}
-      width={305}
-      data={data}
-      className="mr-5 w-full"
-      options={options}
-    />
-  );
+  return <Line height={112} width={305} data={data} className="mr-5 w-full" options={options} />;
 };
 
 export default LineChart;

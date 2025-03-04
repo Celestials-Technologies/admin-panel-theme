@@ -1,17 +1,11 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 interface Props {
   fillColor?: string;
 }
 const ArrowIconSvg: FC<Props> = ({ fillColor }) => {
   return (
-    <svg
-      width="10"
-      height="6"
-      viewBox="0 0 10 6"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

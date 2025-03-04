@@ -7,6 +7,7 @@ import Modal from '../Modal';
 import NavbarDropdown from './dropdown';
 import NavbarSearch from './navbarSearch';
 import NavbarNotification from './notification';
+import ProfileInfoModal from '../ProfileInfoForm';
 
 interface Prop {
   isCollapsed?: boolean;
@@ -14,6 +15,7 @@ interface Prop {
 
 const Navbar: FC<Prop> = ({ isCollapsed }) => {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
 
   return (
     <>
@@ -27,10 +29,28 @@ const Navbar: FC<Prop> = ({ isCollapsed }) => {
           <NavbarNotification />
 
           <div className="flex space-x-4 py-3">
-            <NavbarDropdown setShowLogoutModal={setShowLogoutModal} />
+            <NavbarDropdown
+              setShowLogoutModal={setShowLogoutModal}
+              setShowProfileModal={setShowProfileModal}
+            />
           </div>
         </div>
       </nav>
+
+      {showProfileModal && (
+        <ProfileInfoModal
+          title="Confirm Logout"
+          description="Are you sure you want to logout?"
+          confirmText="Yes, logout"
+          cancelText="No, cancel"
+          onConfirm={() => {
+            // Handle logout logic here
+            setShowProfileModal(false);
+          }}
+          onCancel={() => setShowProfileModal(false)}
+          // icon={/* Your icon component */}
+        />
+      )}
 
       {showLogoutModal && (
         <Modal

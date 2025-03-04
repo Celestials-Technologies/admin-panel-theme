@@ -13,8 +13,8 @@ const EmailPerformance: React.FC<IProps> = (props) => {
   const infoBoxCommonProps =
     'bg-white border-dividerColor w-full flex justify-center items-center flex-col h-[170.5px]';
   return (
-    <div className="mt-4 flex gap-5 flex-col lg:flex-row">
-      <div className="flex w-full lg:w-1/2 flex-wrap items-center justify-between md:flex-nowrap rounded-lg	overflow-hidden boxShadowDashBoard">
+    <div className="mt-4 flex flex-col gap-5 lg:flex-row">
+      <div className="boxShadowDashBoard flex w-full flex-wrap items-center justify-between overflow-hidden rounded-lg	md:flex-nowrap lg:w-1/2">
         <div className="w-full">
           {data
             .filter((_, index) => index < 2)
@@ -22,7 +22,7 @@ const EmailPerformance: React.FC<IProps> = (props) => {
               return (
                 <InfoBox
                   key={`email_performance_${index}`}
-                  className={`${infoBoxCommonProps} ${index === 0 ? 'border-b-[0.5px] border-r-[0.5px]': ''}`}
+                  className={`${infoBoxCommonProps} ${index === 0 ? 'border-b-[0.5px] border-r-[0.5px]' : ''}`}
                   title={email.title}
                   info={email.info.toString()}
                   description={email.description}
@@ -38,7 +38,7 @@ const EmailPerformance: React.FC<IProps> = (props) => {
               return (
                 <InfoBox
                   key={`email_performance_${index}`}
-                  className={`${infoBoxCommonProps} ${index === 1 ? 'border-t-[0.5px] border-l-[0.5px]': ''}`}
+                  className={`${infoBoxCommonProps} ${index === 1 ? 'border-l-[0.5px] border-t-[0.5px]' : ''}`}
                   title={email.title}
                   info={email.info.toString()}
                   description={email.description}
@@ -47,7 +47,7 @@ const EmailPerformance: React.FC<IProps> = (props) => {
             })}
         </div>
       </div>
-      <div className="lg:size-[120px]  w-full lg:w-1/2 md:h-[330px] lg:h-[341px] bg-[#fff] py-6 px-7 rounded-lg boxShadowDashBoard overflow-hidden">
+      <div className="boxShadowDashBoard  w-full overflow-hidden rounded-lg bg-[#fff] px-7 py-6 md:h-[330px] lg:size-[120px] lg:h-[341px] lg:w-1/2">
         <DoughnutChart
           dataSet={[24, 22, 33]}
           labelSet={['Sent in workflows', 'Sent in campaigns', 'Available']}
