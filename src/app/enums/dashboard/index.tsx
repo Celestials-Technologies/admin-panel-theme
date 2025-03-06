@@ -9,6 +9,12 @@ export enum DashboardCampaignTabs {
   campaignEmails = 'Campaign Emails',
 }
 
+export enum DashboardWorkflowTabs {
+  overview = 'Overview',
+  AllWorkflows = 'All Workflows',
+}
+
+
 export enum DashboardIntegrationsTabs {
   cartIntegration = 'Cart Integration',
   scripts = 'Scripts',
@@ -23,4 +29,8 @@ export enum DashboardListsSegmentsTabs {
   Subscribers = 'Subscribers',
   Filters = 'Filters',
   SegmentsDefinition = 'Segments Definition',
+}
+export enum DashboardEmailTemplatesTabs {
+  Emails = 'Emails',
+  InsightsTemplates = 'Insights Templates',
 }

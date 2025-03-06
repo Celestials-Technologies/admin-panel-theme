@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { DashboardCampaignTabs } from '@/app/enums/dashboard';
+import { DashboardWorkflowTabs } from '@/app/enums/dashboard';
 import type { ITabs } from '@/app/interface/dashboard';
 
-import CampaignEmailsDashboard from './campaignEmails';
+import AllWorkflows from './AllWorkflows';
 import OverviewsDashboard from './overview';
 
 interface Props {
@@ -12,10 +12,10 @@ interface Props {
 
 const DashboardActiveTab: React.FC<Props> = ({ activeTab }) => {
   switch (activeTab.name) {
-    case DashboardCampaignTabs.overview:
+    case DashboardWorkflowTabs.overview:
       return <OverviewsDashboard />;
-    case DashboardCampaignTabs.campaignEmails:
-      return <CampaignEmailsDashboard />;
+    case DashboardWorkflowTabs.AllWorkflows:
+      return <AllWorkflows />;
     default:
       return <></>;
   }
