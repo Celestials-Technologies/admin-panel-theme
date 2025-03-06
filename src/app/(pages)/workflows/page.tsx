@@ -2,20 +2,19 @@
 
 import { useState } from 'react';
 
-import DashboardActiveTab from '@/app/components/Campaigns';
-import DashboardTabs from '@/app/components/Campaigns/tabs';
 import type { ITabs } from '@/app/interface/dashboard';
 
-import AynalaticsSvg from '../../../../../public/svgs/aynalaticsSvg';
-import CalendarSvg from '../../../../../public/svgs/CalendarSvg';
+import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
+import CalendarSvg from '../../../../public/svgs/CalendarSvg';
+import DashboardActiveTab from '@/app/components/Workflow';
+import DashboardTabs from '@/app/components/Workflow/tabs';
 
 const Blast = () => {
   const tabs: ITabs[] = [
     { id: 1, name: 'Overview', svg: <AynalaticsSvg /> },
-    { id: 2, name: 'Campaign Emails', svg: <CalendarSvg /> },
-									
+    { id: 2, name: 'All Workflows', svg: <CalendarSvg /> },
   ];
-  const initialTab = { id: 1, name: 'Analytics', svg: '' };
+  const initialTab = { id: 1, name: 'Overview', svg: '' };
 
   const [activeTab, setActiveTab] = useState<ITabs>(initialTab);
   return (

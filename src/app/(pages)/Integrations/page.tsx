@@ -1,0 +1,33 @@
+'use client';
+
+import { useState } from 'react';
+
+import type { ITabs } from '@/app/interface/dashboard';
+
+import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
+import CalendarSvg from '../../../../public/svgs/CalendarSvg';
+import DashboardTabs from '@/app/components/Workflow/tabs';
+import DashboardActiveTab from '@/app/components/Integrations';
+
+const Blast = () => {
+  const tabs: ITabs[] = [
+    { id: 1, name: 'Cart Integration', svg: <AynalaticsSvg /> },
+    { id: 2, name: 'Scripts', svg: <CalendarSvg /> },
+    { id: 3, name: 'Google Analytics', svg: <CalendarSvg /> },
+    { id: 4, name: 'Miscellaneous', svg: <CalendarSvg /> },
+
+  ];
+  const initialTab = { id: 1, name: 'Cart Integration', svg: '' };
+
+  const [activeTab, setActiveTab] = useState<ITabs>(initialTab);
+  return (
+    <div>
+      <DashboardTabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
+      <DashboardActiveTab activeTab={activeTab} />
+    </div>
+  );
+};
+
+
+								
+export default Blast;

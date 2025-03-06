@@ -43,7 +43,7 @@ const sideMenusBody: IMenu[] = [
     ],
   },
   {
-    link: '/work-flow',
+    link: '/workflows',
     text: 'Work Flow',
     image: '/svgs/workflowIcon.svg',
     optionalSvg: 'svgs/sidebarOption.svg',
@@ -58,9 +58,14 @@ const sideMenusBody: IMenu[] = [
   },
 
   {
-    link: '/email-templates',
+    link: '/emailTemplates',
     text: 'Email Templates',
     image: '/svgs/EmailIcon.svg',
+  },
+  {
+    link: '/Integrations',
+    text: 'Integrations',
+    image: '/svgs/integrations.svg',
   },
 
   {
@@ -70,7 +75,7 @@ const sideMenusBody: IMenu[] = [
     lineBreak: true,
   },
   {
-    link: '/lists-segments',
+    link: '/ListsSegments',
     text: 'Lists & Segments',
     image: '/svgs/storeIcon.svg',
   },
@@ -80,11 +85,7 @@ const sideMenusBody: IMenu[] = [
     image: '/svgs/subscriberProfile.svg',
     lineBreak: true,
   },
-  {
-    link: '/integrations',
-    text: 'Integrations',
-    image: '/svgs/integrations.svg',
-  },
+
   {
     link: '/data-feeds',
     text: 'Data Feeds',
