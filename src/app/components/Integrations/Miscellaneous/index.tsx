@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 const Miscellaneous = () => {
   return (
     <div className="md:px-6 px-3 pt-4 pb-6 rounded bg-white">

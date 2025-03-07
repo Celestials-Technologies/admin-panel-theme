@@ -35,11 +35,6 @@ const sideMenusBody: IMenu[] = [
         text: 'Blasts',
         image: '',
       },
-      {
-        link: '/Evergreens',
-        text: 'Evergreens',
-        image: '',
-      },
     ],
   },
   {
@@ -47,14 +42,6 @@ const sideMenusBody: IMenu[] = [
     text: 'Work Flow',
     image: '/svgs/workflowIcon.svg',
     optionalSvg: 'svgs/sidebarOption.svg',
-  },
-
-  {
-    link: '/store',
-    text: 'Store',
-    image: '/svgs/storeIcon.svg',
-    optionalSvg: 'svgs/sidebarOption.svg',
-    lineBreak: true,
   },
 
   {
@@ -80,8 +67,8 @@ const sideMenusBody: IMenu[] = [
     image: '/svgs/storeIcon.svg',
   },
   {
-    link: '/subscriber-profiles',
-    text: 'Subscriber Profiles',
+    link: '/profiles',
+    text: 'Profiles',
     image: '/svgs/subscriberProfile.svg',
     lineBreak: true,
   },
@@ -96,7 +83,7 @@ const sideMenusBody: IMenu[] = [
 
 const sideMenusFooter: IMenu[] = [
   {
-    link: '/faq',
+    link: '/settings',
     text: 'Settings',
     image: '/svgs/settingIcon.svg',
   },

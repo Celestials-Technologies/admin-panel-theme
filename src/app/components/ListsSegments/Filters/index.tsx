@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 const Filters = () => {
   return (
     <div className="font-inter bg-f6f7f9 px-3 py-5 md:px-6">

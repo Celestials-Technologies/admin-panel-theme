@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 const GoogleAnalytics = () => {
   return (
     <div className="rounded bg-white px-3 pb-6 pt-4 md:px-6">

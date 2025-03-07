@@ -1,9 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-import TableComponent from '../../Table';
-import { SelectColumnFilter } from '../../Table/filter';
-
 const AllWorkflows = () => {
   
   return (

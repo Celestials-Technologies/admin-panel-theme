@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 const SegmentsDefinition = () => {
   return (
     <div className="bg-f6f7f9 font-inter h-screen px-3 pb-16 pt-7 md:px-6">
