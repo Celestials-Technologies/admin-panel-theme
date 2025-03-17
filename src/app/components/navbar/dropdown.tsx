@@ -32,7 +32,7 @@ const NavbarDropdown: React.FC<Props> = ({ setShowLogoutModal, setShowProfileMod
     return {
       name: 'ABC Store',
       email: 'daniel.rist@gmail.com',
-      image: 'svgs/DropdownArrow.svg',
+      image: '/svgs/user.svg',
     };
   };
 
