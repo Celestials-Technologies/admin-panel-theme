@@ -6,8 +6,8 @@ import type { ITabs } from '@/app/interface/dashboard';
 
 import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
 import CalendarSvg from '../../../../public/svgs/CalendarSvg';
-import DashboardTabs from '@/app/components/Workflow/tabs';
 import DashboardActiveTab from '@/app/components/Integrations';
+import DashboardTabs from '@/app/utils/ui/TabsUI/tabs';
 
 const Blast = () => {
   const tabs: ITabs[] = [
@@ -15,7 +15,6 @@ const Blast = () => {
     { id: 2, name: 'Scripts', svg: <CalendarSvg /> },
     { id: 3, name: 'Google Analytics', svg: <CalendarSvg /> },
     { id: 4, name: 'Miscellaneous', svg: <CalendarSvg /> },
-
   ];
   const initialTab = { id: 1, name: 'Cart Integration', svg: '' };
 
@@ -28,6 +27,4 @@ const Blast = () => {
   );
 };
 
-
-								
 export default Blast;

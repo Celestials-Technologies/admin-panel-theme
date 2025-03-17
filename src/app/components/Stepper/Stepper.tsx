@@ -22,14 +22,16 @@ export function Stepper({ activeStep, children, isLastStep, isFirstStep }: Stepp
           <React.Fragment key={index}>
             {React.cloneElement(step as React.ReactElement, {
               isActive: activeStep === index,
-              isCompleted: activeStep > index
+              isCompleted: activeStep > index,
             })}
             {index < steps.length - 1 && (
-              <div className={`h-px w-full ${activeStep > index ? 'bg-green-500' : 'bg-gray-300 '}`} />
+              <div
+                className={`h-px w-full ${activeStep > index ? 'bg-green-500' : 'bg-gray-300 '}`}
+              />
             )}
           </React.Fragment>
         );
       })}
     </div>
   );
-} 
+}

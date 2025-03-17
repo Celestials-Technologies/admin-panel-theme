@@ -21,72 +21,77 @@ export type LineChartProps = {
   xAxisValues?: string[];
   yAxisValues?: number[];
 };
-// yAxisValues = [0, 20, 40, 60, 80, 100] 
-const LineChart = ({ datasets, }: LineChartProps) => {
-  // const options = {
-  //   plugins: {
-  //     title: {
-  //       display: false,
-  //     },
-  //     legend: {
-  //       display: true,
-  //       position: 'bottom' as const,
-  //       align: 'center' as const,
-  //       labels: {
-  //         boxWidth: 8,
-  //         padding: 20,
-  //         usePointStyle: true,
-  //         pointStyle: 'circle',
-  //         font: {
-  //           family: 'Poppins',
-  //           size: 12,
-  //         },
-  //       },
-  //     },
-  //   },
-  //   scales: {
-  //     x: {
-  //       display: true,
-  //       grid: {
-  //         display: true,
-  //         color: '#F0F0F0',
-  //         drawBorder: false,
-  //         drawTicks: false,
-  //       },
-  //       ticks: {
-  //         color: '#8A8F9C',
-  //         font: {
-  //           family: 'Poppins',
-  //           size: 12,
-  //         },
-  //       },
-  //     },
-  //     y: {
-  //       display: true,
-  //       position: 'left' as const,
-  //       grid: {
-  //         display: true,
-  //         color: '#F0F0F0',
-  //         drawBorder: false,
-  //       },
-  //       ticks: {
-  //         color: '#8A8F9C',
-  //         font: {
-  //           family: 'Poppins',
-  //           size: 12,
-  //         },
-  //         callback: function(value: number) {
-  //           return value + '%';
-  //         },
-  //         stepSize: Math.ceil((Math.max(...yAxisValues) - Math.min(...yAxisValues)) / 5),
-  //       },
-  //       min: Math.min(...yAxisValues),
-  //       max: Math.max(...yAxisValues),
-  //     },
-  //   },
-  //   responsive: true,
-  //   maintainAspectRatio: false,
-  // };
+
+const LineChart = ({ datasets, yAxisValues = [0, 20, 40, 60, 80, 100] }: LineChartProps) => {
+  // Calculate min and max once to avoid recursive calculations
+  const minValue = Math.min(...yAxisValues);
+  const maxValue = Math.max(...yAxisValues);
+  const stepSize = Math.ceil((maxValue - minValue) / 5);
+  
+  const options = {
+    plugins: {
+      title: {
+        display: false,
+      },
+      legend: {
+        display: true,
+        position: 'bottom' as const,
+        align: 'center' as const,
+        labels: {
+          boxWidth: 8,
+          padding: 20,
+          usePointStyle: true,
+          pointStyle: 'circle',
+          font: {
+            family: 'Poppins',
+            size: 12,
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        display: true,
+        grid: {
+          display: true,
+          color: '#F0F0F0',
+          drawBorder: false,
+          drawTicks: false,
+        },
+        ticks: {
+          color: '#8A8F9C',
+          font: {
+            family: 'Poppins',
+            size: 12,
+          },
+        },
+      },
+      y: {
+        display: true,
+        position: 'left' as const,
+        grid: {
+          display: true,
+          color: '#F0F0F0',
+          drawBorder: false,
+        },
+        ticks: {
+          color: '#8A8F9C',
+          font: {
+            family: 'Poppins',
+            size: 12,
+          },
+          callback: function (value: number) {
+            return value + '%';
+          },
+          stepSize: stepSize,
+        },
+        min: minValue,
+        max: maxValue,
+      },
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+  };
 
   const data = {
     labels: ['Jan', 'Feb', 'Mar'],
@@ -103,8 +108,7 @@ const LineChart = ({ datasets, }: LineChartProps) => {
     })),
   };
 
-  return <Line height={200} data={data}  />;
-  // options={options}
+  return <Line height={200} data={data} options={options as any} />;
 };
 
 export default LineChart;

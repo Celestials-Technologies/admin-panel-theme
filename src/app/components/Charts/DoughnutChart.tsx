@@ -46,7 +46,11 @@ const DoughnutChart: React.FC<Props> = ({ dataSet, labelSet }) => {
               <div className="flex items-center">
                 <div
                   className="h-4 w-4 rounded-sm"
-                  style={{ backgroundColor: data?.datasets[0] ? data?.datasets[0].backgroundColor?.[index] : ''  }}
+                  style={{
+                    backgroundColor: data?.datasets[0]
+                      ? data?.datasets[0].backgroundColor?.[index]
+                      : '',
+                  }}
                 />
                 <span className="text-616161 ml-2 text-xs font-normal leading-3">{label}</span>
               </div>

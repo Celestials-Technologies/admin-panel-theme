@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
-import Button from '../Button';
+import Button from '../../utils/ui/Button';
 
 interface Props {
   canPreviousPage: boolean;

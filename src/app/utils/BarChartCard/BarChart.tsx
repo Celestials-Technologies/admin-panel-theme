@@ -1,115 +1,114 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {
-    BarElement,
-    CategoryScale,
-    Chart as ChartJS,
-    Filler,
-    LinearScale,
-    Tooltip,
-  } from 'chart.js';
-  import React from 'react';
-  import { Bar } from 'react-chartjs-2';
-  
-  ChartJS.register(CategoryScale, LinearScale, BarElement, Filler, Tooltip);
-  
-  export type BarChartProps = {
-    labels?: string[];
-    chartData?: number[];
-    barColor?: string | undefined;
-    height?: number;
-    width?: number;
-    label?: string;
-  };
-  
-  const BarChart = ({ labels, chartData, barColor, height, width, label }: BarChartProps) => {
-    const options = {
-      plugins: {
-        title: {
-          display: false,
-        },
-        legend: {
-          display: true,
-          position: 'bottom' as const,
-          align: 'center' as const,
-          labels: {
-            boxWidth: 8,
-            padding: 20,
-            usePointStyle: true,
-            pointStyle: 'circle',
-            font: {
-              family: 'Poppins',
-              size: 12,
-            },
-          },
-        },
-        tooltip: {
-          backgroundColor: '#0D2326',
-          titleFontColor: '#1C1E21',
-          bodyFontColor: '#1C1E21',
-          borderColor: '#ffffff20',
-          borderWidth: 1,
-        },
+  BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Filler,
+  LinearScale,
+  Tooltip,
+} from 'chart.js';
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Filler, Tooltip);
+
+export type BarChartProps = {
+  labels?: string[];
+  chartData?: number[];
+  barColor?: string | undefined;
+  height?: number;
+  width?: number;
+  label?: string;
+};
+
+const BarChart = ({ labels, chartData, barColor, height, width, label }: BarChartProps) => {
+  const options = {
+    plugins: {
+      title: {
+        display: false,
       },
-      responsive: true,
-  
-      x: {
+      legend: {
         display: true,
-        grid: {
-          display: false,
-        },
-        border: { color: 'transparent', dash: [3, 5] },
-        ticks: {
-          color: `${'#8A8F9C'}`,
+        position: 'bottom' as const,
+        align: 'center' as const,
+        labels: {
+          boxWidth: 8,
+          padding: 20,
+          usePointStyle: true,
+          pointStyle: 'circle',
           font: {
             family: 'Poppins',
-            size: 10,
-            weight: '500',
+            size: 12,
           },
         },
       },
-      y: {
+      tooltip: {
+        backgroundColor: '#0D2326',
+        titleFontColor: '#1C1E21',
+        bodyFontColor: '#1C1E21',
+        borderColor: '#ffffff20',
+        borderWidth: 1,
+      },
+    },
+    responsive: true,
+
+    x: {
+      display: true,
+      grid: {
+        display: false,
+      },
+      border: { color: 'transparent', dash: [3, 5] },
+      ticks: {
+        color: `${'#8A8F9C'}`,
+        font: {
+          family: 'Poppins',
+          size: 10,
+          weight: '500',
+        },
+      },
+    },
+    y: {
+      display: true,
+      grid: {
         display: true,
-        grid: {
-          display: true,
-          color: '#DBDDDF',
-        },
-        border: { color: 'transparent', dash: [3, 5] },
-        ticks: {
-          color: `${'#8A8F9C'}`,
-          font: {
-            family: 'Poppins',
-            size: 10,
-            weight: '500',
-          },
-          min: 0,
-          max: 30,
-          stepSize: 1,
-        },
+        color: '#DBDDDF',
       },
-    };
-  
-    const data = {
-      labels,
-      datasets: [
-        {
-          label: label || 'Data',
-          data: chartData,
-          backgroundColor: barColor || '#DD506A',
-          borderRadius: 1,
+      border: { color: 'transparent', dash: [3, 5] },
+      ticks: {
+        color: `${'#8A8F9C'}`,
+        font: {
+          family: 'Poppins',
+          size: 10,
+          weight: '500',
         },
-      ],
-    };
-  
-    return (
-      <Bar
-        height={`${height}px` || '100%'}
-        width={`${width}px` || `100%`}
-        className="w-full"
-        options={options}
-        data={data}
-      />
-    );
+        min: 0,
+        max: 30,
+        stepSize: 1,
+      },
+    },
   };
-  
-  export default BarChart;
-  
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: label || 'Data',
+        data: chartData,
+        backgroundColor: barColor || '#DD506A',
+        borderRadius: 1,
+      },
+    ],
+  };
+
+  return (
+    <Bar
+      height={`${height}px` || '100%'}
+      width={`${width}px` || `100%`}
+      className="w-full"
+      options={options}
+      data={data}
+    />
+  );
+};
+
+export default BarChart;

@@ -5,7 +5,6 @@ import type { ITabs } from '@/app/interface/dashboard';
 import Emails from './Emails';
 import InsightsTemplates from './InsightsTemplates';
 
-
 interface Props {
   activeTab: ITabs;
 }

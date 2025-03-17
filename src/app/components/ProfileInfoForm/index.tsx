@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Input } from '../Input';
+import Button from '@/app/utils/ui/Button';
 
 interface FormData {
   firstName: string;
@@ -257,12 +258,12 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
                 </div>
               )}
 
-              <button
+              <Button
                 type="submit"
                 className="w-full rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
               >
                 Save
-              </button>
+              </Button>
             </form>
           </div>
         </div>

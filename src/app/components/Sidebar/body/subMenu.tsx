@@ -14,7 +14,6 @@ interface Props {
 const SubMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-
   const handleClick = () => {
     if (menu.subMenus) {
       setIsOpen(!isOpen);

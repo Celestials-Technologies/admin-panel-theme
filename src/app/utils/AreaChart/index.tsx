@@ -17,6 +17,7 @@ interface SubscribersCardProps {
   percentage: number;
   data: { value: number }[];
   barColor: string;
+  growthType?: string;
 }
 
 const SubscribersCard = ({
@@ -25,6 +26,7 @@ const SubscribersCard = ({
   percentage,
   data,
   barColor,
+  growthType,
 }: SubscribersCardProps) => {
   return (
     <div className="border-eeeeee border-md boxShadow rounded-lg border bg-white pl-3.5 pt-6 lg:pl-7">
@@ -38,7 +40,11 @@ const SubscribersCard = ({
           <h2 className="fs-28 font-gilroyBold text-424242 leading-7">{actualValue}</h2>
           <div className="mt-2.5 flex items-center">
             <span>
-              <img src="images/unsubscribe-down-arrow.png" />
+              <img
+                src={
+                  growthType === '+' ? '/images/up-arrow.png' : '/images/unsubscribe-down-arrow.png'
+                }
+              />
             </span>
             <span className="fs-15 font-gilroySemibold text-fd445f ml-1 leading-4">
               {percentage}

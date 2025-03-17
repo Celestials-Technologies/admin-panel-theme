@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import type { IProfile } from '@/app/interface/navbar';
 
-import Button from '../Button';
+import Button from '../../utils/ui/Button';
 import Dropdown from '../DropDown';
 import NavbarProfile from './profile';
 

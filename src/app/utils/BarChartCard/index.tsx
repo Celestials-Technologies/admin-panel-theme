@@ -34,7 +34,6 @@ function BarChartCard({ title, actualValue, percentage, data, label }: BarChartC
           label={label}
         />
       </div>
-      
     </div>
   );
 }

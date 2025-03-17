@@ -2,6 +2,7 @@
 import React from 'react';
 
 import type { ITabs } from '@/app/interface/dashboard';
+import Button from '../Button';
 
 interface Props {
   activeTab: ITabs;
@@ -10,7 +11,7 @@ interface Props {
 }
 const TabItem: React.FC<Props> = ({ activeTab, setActiveTab, tab }) => {
   return (
-    <button
+    <Button
       type="button"
       onClick={() => {
         setActiveTab(tab);
@@ -28,7 +29,7 @@ const TabItem: React.FC<Props> = ({ activeTab, setActiveTab, tab }) => {
       >
         {tab.name}
       </p>
-    </button>
+    </Button>
   );
 };
 export default TabItem;

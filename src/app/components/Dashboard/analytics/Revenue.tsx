@@ -1,7 +1,8 @@
 import type { IAnalyticsRevenue } from '@/app/interface/dashboard';
 
-import BarChart from '../../Charts/barChart';
+// import BarChart from '../../Charts/barChart';
 import InfoBox from './infoBox';
+import BarChart from '@/app/utils/BarChartCard/BarChart';
 
 interface Props {
   data: IAnalyticsRevenue;
@@ -50,9 +51,8 @@ const Revenue: React.FC<Props> = ({ data }) => {
         <BarChart
           labels={['Jan 1', 'Jan 7', 'Jan 14', 'Jan 28']}
           chartData={[1, 2, 3, 100]}
-          barColor={undefined}
-          height={456}
-          width={795}
+          barColor={'#A292D8'}
+          label={'Revenue'}
         />
       </div>
     </div>

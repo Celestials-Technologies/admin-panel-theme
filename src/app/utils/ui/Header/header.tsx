@@ -1,19 +1,21 @@
 import React from 'react';
 
-import DashboardIcon from '../../../../public/svgs/DashboardIcon';
-import Dropdown from '../DropDown';
+import DashboardIcon from '../../../../../public/svgs/DashboardIcon';
+import Dropdown from '../../../components/DropDown';
 
-interface Props {}
+interface Props {
+  title: string;
+}
 
-const DashboardHeader: React.FC<Props> = () => {
+const DashboardHeader: React.FC<Props> = ({ title }) => {
   return (
     <div className="bg-white px-[15px] pt-5 md:px-30">
-      <div className="mb-4 flex items-center">
+      {/* <div className="mb-4 flex items-center">
         <div className="flex items-center">
           <span className="text-616161 pl-1.5 text-sm font-medium leading-3">Campaigns /</span>
           <span className="fs-13 text-bdbdbd pl-2 font-medium leading-3">Blasts</span>
         </div>
-      </div>
+      </div> */}
       <div className="flex ">
         <div className="mb-6 flex w-full flex-wrap items-center justify-between gap-5 md:flex-nowrap md:gap-0">
           <div className="flex w-full flex-wrap justify-between gap-5 sm:flex-nowrap sm:gap-0 md:w-auto">
@@ -27,7 +29,7 @@ const DashboardHeader: React.FC<Props> = () => {
               <div>
                 <DashboardIcon />
               </div>
-              <p className="ml-1.5	text-xl font-bold text-titleBlack ">Blasts Campaigns</p>
+              <p className="ml-1.5	text-xl font-bold text-titleBlack ">{title}</p>
             </div>
             <div className="relative ml-3 rounded border border-grey200">
               <Dropdown

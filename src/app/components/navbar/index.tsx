@@ -39,7 +39,6 @@ const Navbar: FC<Prop> = ({ isCollapsed }) => {
 
       {showProfileModal && (
         <ProfileInfoModal
-
           onCancel={() => setShowProfileModal(false)}
           // icon={/* Your icon component */}
         />

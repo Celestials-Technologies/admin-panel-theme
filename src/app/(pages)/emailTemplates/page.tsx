@@ -6,8 +6,8 @@ import type { ITabs } from '@/app/interface/dashboard';
 
 import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
 import CalendarSvg from '../../../../public/svgs/CalendarSvg';
-import DashboardTabs from '@/app/components/EmailTemplates/tabs';
 import DashboardActiveTab from '@/app/components/EmailTemplates';
+import DashboardTabs from '@/app/utils/ui/TabsUI/tabs';
 
 const Blast = () => {
   const tabs: ITabs[] = [

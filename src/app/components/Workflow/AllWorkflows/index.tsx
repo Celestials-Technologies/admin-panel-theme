@@ -1,7 +1,8 @@
 'use client';
 
+import Button from '@/app/utils/ui/Button';
+
 const AllWorkflows = () => {
-  
   return (
     <div className="px-5 py-30 md:px-7">
       <div className="mt-10 flex flex-col">
@@ -9,14 +10,14 @@ const AllWorkflows = () => {
           <div className="mt-11 items-center justify-between sm:flex">
             <h1 className="font-gilroyBold text-424242 m-0 text-xl leading-5">All Workflows</h1>
             <div className="mt-5 items-start justify-end sm:mt-0 sm:flex">
-              <button className="border-eeeeee border-md fs-13 font-inter border-lg text-616161 border-bdbdbd ml-auto flex items-center rounded-md border bg-white p-2 font-medium leading-4 shadow sm:py-3 sm:pl-4 sm:pr-3">
+              <Button className="border-eeeeee border-md fs-13 font-inter border-lg text-616161 border-bdbdbd ml-auto flex items-center rounded-md border bg-white p-2 font-medium leading-4 shadow sm:py-3 sm:pl-4 sm:pr-3">
                 <img className="mr-1.5 sm:mr-2.5" src="images/export.png" />
                 Export as CVS
-              </button>
-              <button className="border-eeeeee border-md fs-13 font-inter border-lg text-616161 border-bdbdbd ml-auto mt-3 flex items-center rounded-md border bg-white p-2 font-medium leading-4 shadow sm:ml-2.5 sm:mt-0 sm:py-3 sm:pl-4 sm:pr-3">
+              </Button>
+              <Button className="border-eeeeee border-md fs-13 font-inter border-lg text-616161 border-bdbdbd ml-auto mt-3 flex items-center rounded-md border bg-white p-2 font-medium leading-4 shadow sm:ml-2.5 sm:mt-0 sm:py-3 sm:pl-4 sm:pr-3">
                 <img className="mr-1.5 sm:mr-2.5" src="images/export.png" />
                 Export as CVS (Group by months)
-              </button>
+              </Button>
             </div>
           </div>
           <div id="allWorkflows" className="mt-6 flex flex-col">

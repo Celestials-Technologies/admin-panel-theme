@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import DashboardActiveTab from '@/app/components/Campaigns';
-import DashboardTabs from '@/app/components/Campaigns/tabs';
+import DashboardTabs from '@/app/utils/ui/TabsUI/tabs';
 import type { ITabs } from '@/app/interface/dashboard';
 
 import AynalaticsSvg from '../../../../../public/svgs/aynalaticsSvg';
@@ -13,9 +13,8 @@ const Blast = () => {
   const tabs: ITabs[] = [
     { id: 1, name: 'Overview', svg: <AynalaticsSvg /> },
     { id: 2, name: 'Campaign Emails', svg: <CalendarSvg /> },
-									
   ];
-  const initialTab = { id: 1, name: 'Analytics', svg: '' };
+  const initialTab = { id: 1, name: 'Overview', svg: '' };
 
   const [activeTab, setActiveTab] = useState<ITabs>(initialTab);
   return (

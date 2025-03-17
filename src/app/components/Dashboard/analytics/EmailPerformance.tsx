@@ -1,7 +1,6 @@
 import type { IAnalyticsEmailPerformance } from '@/app/interface/dashboard';
-
-import DoughnutChart from '../../Charts/DoughnutChart';
 import InfoBox from './infoBox';
+import DoughnutChartCard from '@/app/utils/DoughnutChartCard';
 
 interface IProps {
   data: IAnalyticsEmailPerformance[];
@@ -47,10 +46,13 @@ const EmailPerformance: React.FC<IProps> = (props) => {
             })}
         </div>
       </div>
-      <div className="boxShadowDashBoard  w-full overflow-hidden rounded-lg bg-[#fff] px-7 py-6 md:h-[330px] lg:size-[120px] lg:h-[341px] lg:w-1/2">
-        <DoughnutChart
-          dataSet={[24, 22, 33]}
-          labelSet={['Sent in workflows', 'Sent in campaigns', 'Available']}
+      <div className="w-full overflow-hidden rounded-lg bg-[#fff] md:h-[330px] lg:size-[120px] lg:h-[341px] lg:w-1/2">
+        <DoughnutChartCard
+          title="Ryzeo Total Number of Sales"
+          total={'1979'}
+          percentage={20}
+          dataSet={[24, 22, 33, 20]}
+          labelSet={['Sent in workflows', 'Sent in campaigns', 'Available', 'Sales']}
         />
       </div>
     </div>

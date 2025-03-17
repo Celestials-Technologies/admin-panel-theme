@@ -1,6 +1,6 @@
 'use client';
 
-import DashboardHeader from '@/app/components/Dashboard/header';
+import DashboardHeader from '@/app/utils/ui/Header/header';
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
@@ -9,7 +9,7 @@ export default function DashboardLayout({
 }) {
   return (
     <section className="mb-[137px] mt-[65px]">
-      <DashboardHeader />
+      <DashboardHeader title={'Dashboard'} />
       {children}
     </section>
   );

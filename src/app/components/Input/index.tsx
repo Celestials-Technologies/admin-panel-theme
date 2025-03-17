@@ -59,7 +59,6 @@ const SubTitleInput: React.FC<InputProps> = ({
 
   return (
     <div className={`${icon ? 'flex items-center' : ''}`}>
-      
       <input
         id={inputId}
         type={type}

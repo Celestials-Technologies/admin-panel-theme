@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@/app/utils/ui/Button';
+
 const CartIntegration = () => {
   return (
     <div className="rounded-t-lg bg-white px-3 py-4 pb-10 md:px-6">
@@ -76,18 +78,18 @@ const CartIntegration = () => {
                   </label>
                 </div>
                 <div className="mt-4 flex flex-wrap items-center">
-                  <button
+                  <Button
                     type="button"
                     className="ryeo-blue-bg mr-4 mt-4 rounded px-4 py-2 text-[13px] font-medium leading-5 text-white"
                   >
                     Save
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     type="button"
                     className="mr-4 mt-4 rounded bg-[#B31E33] px-4 py-2 text-[13px] font-medium leading-5 text-white"
                   >
                     Remove
-                  </button>
+                  </Button>
                   <a href="#/" className="mt-4 text-sm leading-4 text-[#cb5b57]">
                     All fields are required
                   </a>

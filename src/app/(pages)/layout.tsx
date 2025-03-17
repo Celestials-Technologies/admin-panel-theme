@@ -18,7 +18,7 @@ export default function RootLayout({
     console.log('layout landed');
     setIsCollapsed(false);
   }, []);
-  console.log({ isCollapsed });
+  
   return (
     <html lang="en">
       <body>

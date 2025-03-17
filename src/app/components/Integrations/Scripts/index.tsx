@@ -1,5 +1,6 @@
 'use client';
 
+import Button from '@/app/utils/ui/Button';
 
 const Scripts = () => {
   return (
@@ -60,12 +61,12 @@ const Scripts = () => {
                 ></textarea>
               </div>
               <div className="mt-4 w-full">
-                <button
+                <Button
                   type="button"
                   className="ryeo-blue-bg rounded px-4 py-2 text-[13px] font-medium leading-5 text-white"
                 >
                   Save
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -124,12 +125,12 @@ const Scripts = () => {
                 ></textarea>
               </div>
               <div className="mt-4 w-full">
-                <button
+                <Button
                   type="button"
                   className="ryeo-blue-bg rounded px-4 py-2 text-[13px] font-medium leading-5 text-white"
                 >
                   Save
-                </button>
+                </Button>
               </div>
             </form>
           </div>

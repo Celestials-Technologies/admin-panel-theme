@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@/app/utils/ui/Button';
+
 const GoogleAnalytics = () => {
   return (
     <div className="rounded bg-white px-3 pb-6 pt-4 md:px-6">
@@ -56,12 +58,12 @@ const GoogleAnalytics = () => {
               />
             </div>
             <div className="mt-4 w-full">
-              <button
+              <Button
                 type="button"
                 className="ryeo-blue-bg rounded px-4 py-2 text-[13px] font-medium leading-5 text-white"
               >
                 Update
-              </button>
+              </Button>
             </div>
           </form>
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import DropdownIcon from './DropdownIcon';
+import Button from '@/app/utils/ui/Button';
 
 interface DropdownProps {
   title?: string;
@@ -44,12 +45,12 @@ const Dropdown: React.FC<DropdownProps> = ({
       {profile ? (
         <div onClick={toggleDropdown}>{profile}</div>
       ) : (
-        <button onClick={toggleDropdown} className={` ${classname}`}>
+        <Button onClick={toggleDropdown} className={` ${classname}`}>
           {title}
           <span>
             <DropdownIcon iconColor={iconColor} />
           </span>
-        </button>
+        </Button>
       )}
 
       {isOpen && (

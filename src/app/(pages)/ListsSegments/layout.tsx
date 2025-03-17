@@ -1,6 +1,6 @@
 'use client';
 
-import DashboardHeader from '@/app/components/Campaigns/header';
+import DashboardHeader from '@/app/utils/ui/Header/header';
 
 export default function CampaignsLayout({
   children, // will be a page or nested layout
@@ -9,7 +9,7 @@ export default function CampaignsLayout({
 }) {
   return (
     <section className="mb-[137px] mt-[65px]">
-      <DashboardHeader />
+      <DashboardHeader title={'Lists & Segments'} />
       {children}
     </section>
   );

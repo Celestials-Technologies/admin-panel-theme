@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@/app/utils/ui/Button';
+
 const Filters = () => {
   return (
     <div className="font-inter bg-f6f7f9 px-3 py-5 md:px-6">
@@ -10,9 +12,9 @@ const Filters = () => {
               <h2 className="text-212121 font-gilroyBold text-xl leading-3 sm:leading-5">
                 Filters
               </h2>
-              <button className="text-616161 border-bdbdbd hover:bg-ryeo-blue rounded border bg-white p-2 text-[13px] font-medium leading-4 sm:px-4 sm:py-3">
+              <Button className="text-616161 border-bdbdbd hover:bg-ryeo-blue rounded border bg-white p-2 text-[13px] font-medium leading-4 sm:px-4 sm:py-3">
                 Create Filter
-              </button>
+              </Button>
             </div>
           </div>
           <div className="mt-6">
@@ -120,12 +122,12 @@ const Filters = () => {
                           Loyals at risk subscribers
                         </td>
                         <td className="fs-13 text-616161 whitespace-nowrap py-3 pl-3 pr-3 text-left">
-                          <button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
+                          <Button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
                             Edit
-                          </button>
-                          <button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
+                          </Button>
+                          <Button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
                             Delete
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                       <tr className="align-center divide-x divide-gray-200 xl:h-[70px]">
@@ -146,12 +148,12 @@ const Filters = () => {
                           Loyals at risk subscribers
                         </td>
                         <td className="fs-13 text-616161 whitespace-nowrap py-3 pl-3 pr-3 text-left">
-                          <button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
+                          <Button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
                             Edit
-                          </button>
-                          <button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
+                          </Button>
+                          <Button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
                             Delete
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                       <tr className="align-center divide-x divide-gray-200 xl:h-[70px]">
@@ -172,12 +174,12 @@ const Filters = () => {
                           Loyals at risk subscribers
                         </td>
                         <td className="fs-13 text-616161 whitespace-nowrap py-3 pl-3 pr-3 text-left">
-                          <button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
+                          <Button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
                             Edit
-                          </button>
-                          <button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
+                          </Button>
+                          <Button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
                             Delete
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                       <tr className="align-center divide-x divide-gray-200 xl:h-[70px]">
@@ -198,12 +200,12 @@ const Filters = () => {
                           Loyals at risk subscribers
                         </td>
                         <td className="fs-13 text-616161 whitespace-nowrap py-3 pl-3 pr-3 text-left">
-                          <button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
+                          <Button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
                             Edit
-                          </button>
-                          <button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
+                          </Button>
+                          <Button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
                             Delete
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                       <tr className="align-center divide-x divide-gray-200 xl:h-[70px]">
@@ -224,12 +226,12 @@ const Filters = () => {
                           Loyals at risk subscribers
                         </td>
                         <td className="fs-13 text-616161 whitespace-nowrap py-3 pl-3 pr-3 text-left">
-                          <button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
+                          <Button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
                             Edit
-                          </button>
-                          <button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
+                          </Button>
+                          <Button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
                             Delete
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                       <tr className="align-center divide-x divide-gray-200 xl:h-[70px]">
@@ -250,12 +252,12 @@ const Filters = () => {
                           Loyals at risk subscribers
                         </td>
                         <td className="fs-13 text-616161 whitespace-nowrap py-3 pl-3 pr-3 text-left">
-                          <button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
+                          <Button className="inline-block p-2 text-sm font-medium leading-5 text-ryzeoBlue">
                             Edit
-                          </button>
-                          <button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
+                          </Button>
+                          <Button className="text-9e9e9e inline-block p-1 text-sm font-medium leading-5 hover:text-[#3575d5]">
                             Delete
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                     </tbody>

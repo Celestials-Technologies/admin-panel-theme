@@ -5,7 +5,6 @@ import React from 'react';
 import type { IMenu } from '@/app/interface/sidebar';
 import { usePathname } from 'next/navigation';
 
-
 import MainMenu from './mainMenu';
 import SubMenu from './subMenu';
 
@@ -23,7 +22,10 @@ const SidebarMenu: React.FC<Props> = ({ menu, isCollapsed }) => {
       {menu.subMenus ? (
         <SubMenu menu={menu} isCollapsed={isCollapsed} />
       ) : (
-        <Link className={` block hover:bg-blue100 ${isActive ? 'bg-blue100' : ''} `} href={menu.link || '#'}>
+        <Link
+          className={` block hover:bg-blue100 ${isActive ? 'bg-blue100' : ''} `}
+          href={menu.link || '#'}
+        >
           <MainMenu menu={menu} isCollapsed={isCollapsed} />
         </Link>
       )}

@@ -179,6 +179,7 @@ const OverviewDashboard = () => {
                   { value: 100 },
                 ]}
                 barColor="#60A5FA"
+                growthType="+"
               />
             </div>
             <div className="mx-auto mt-5 w-full md:mx-0 md:mt-0 md:w-6/12 md:pl-5 lg:mx-6 lg:w-4/12 lg:pl-0">

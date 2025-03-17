@@ -7,7 +7,7 @@ import type { ITabs } from '@/app/interface/dashboard';
 import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
 import CalendarSvg from '../../../../public/svgs/CalendarSvg';
 import DashboardActiveTab from '@/app/components/Workflow';
-import DashboardTabs from '@/app/components/Workflow/tabs';
+import DashboardTabs from '@/app/utils/ui/TabsUI/tabs';
 
 const Blast = () => {
   const tabs: ITabs[] = [

@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@/app/utils/ui/Button';
+
 const SegmentsDefinition = () => {
   return (
     <div className="bg-f6f7f9 font-inter h-screen px-3 pb-16 pt-7 md:px-6">
@@ -9,10 +11,10 @@ const SegmentsDefinition = () => {
             Segment List
           </h1>
           <div className="relative mt-5 w-full sm:mt-0" id="create-list-segment">
-            <button className="fs-13 font-inter ryeo-blue-bg ml-auto flex items-center rounded px-2.5 py-2 font-medium leading-5 text-white sm:py-3 sm:pl-4 sm:pr-3.5">
+            <Button className="fs-13 font-inter ryeo-blue-bg ml-auto flex items-center rounded px-2.5 py-2 font-medium leading-5 text-white sm:py-3 sm:pl-4 sm:pr-3.5">
               Create List or Segment
               <img className="ml-3" src="images/down-arrow-white.png" alt="Arrow" />
-            </button>
+            </Button>
             <div className="dropdown-show-hide absolute right-0 w-[195px] rounded-b-lg bg-white">
               <a
                 href="create-new-list.html"
@@ -96,16 +98,16 @@ const SegmentsDefinition = () => {
                       </td>
 
                       <td className="fs-13 text-616161 flex w-[200px] min-w-[200px] flex-wrap items-center whitespace-nowrap py-3 pl-3 pr-3 align-middle sm:align-top md:w-[400px] md:min-w-[400px]">
-                        <button type="button" className="mb-1.5 mr-4">
+                        <Button type="button" className="mb-1.5 mr-4">
                           <img src="images/edit.png" alt="Edit" className="mr-1.5 inline" />
                           <span>Edit</span>
-                        </button>
-                        <button type="button" className="mb-1.5 mr-3 flex items-center">
+                        </Button>
+                        <Button type="button" className="mb-1.5 mr-3 flex items-center">
                           <img className="mr-2" src="images/delete.png" alt="Delete" />
                           <span>Delete</span>
-                        </button>
+                        </Button>
                         <span className="my-1.5 mr-3 flex items-center">
-                          <button
+                          <Button
                             type="button"
                             className="relative inline-flex h-4 w-8 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             role="switch"
@@ -117,12 +119,12 @@ const SegmentsDefinition = () => {
                               aria-hidden="true"
                               className="pointer-events-none -mt-px inline-block h-3.5 w-3.5 translate-x-0 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
                             ></span>
-                          </button>
+                          </Button>
                           <span className="ml-2">Disable</span>
                         </span>
-                        <button type="button" className="my-1.5 mr-4">
+                        <Button type="button" className="my-1.5 mr-4">
                           <span>Duplicate</span>
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                     <tr className="divide-x divide-gray-200 align-top">
@@ -144,16 +146,16 @@ const SegmentsDefinition = () => {
                         104
                       </td>
                       <td className="fs-13 text-616161 flex w-[200px] min-w-[200px] flex-wrap items-center whitespace-nowrap py-3 pl-3 pr-3 align-middle sm:align-top md:w-[400px] md:min-w-[400px]">
-                        <button type="button" className="mb-1.5 mr-4">
+                        <Button type="button" className="mb-1.5 mr-4">
                           <img src="images/edit.png" alt="Edit" className="mr-1.5 inline" />
                           <span>Edit</span>
-                        </button>
-                        <button type="button" className="mb-1.5 mr-3 flex items-center">
+                        </Button>
+                        <Button type="button" className="mb-1.5 mr-3 flex items-center">
                           <img className="mr-2" src="images/delete.png" alt="Delete" />
                           <span>Delete</span>
-                        </button>
+                        </Button>
                         <span className="my-1.5 mr-3 flex items-center">
-                          <button
+                          <Button
                             type="button"
                             className="relative inline-flex h-4 w-8 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             role="switch"
@@ -165,12 +167,12 @@ const SegmentsDefinition = () => {
                               aria-hidden="true"
                               className="pointer-events-none -mt-px inline-block h-3.5 w-3.5 translate-x-0 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
                             ></span>
-                          </button>
+                          </Button>
                           <span className="ml-2">Disable</span>
                         </span>
-                        <button type="button" className="my-1.5 mr-4">
+                        <Button type="button" className="my-1.5 mr-4">
                           <span>Duplicate</span>
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                     <tr className="divide-x divide-gray-200 align-top">
@@ -192,16 +194,16 @@ const SegmentsDefinition = () => {
                         104
                       </td>
                       <td className="fs-13 text-616161 flex w-[200px] min-w-[200px] flex-wrap items-center whitespace-nowrap py-3 pl-3 pr-3 align-middle sm:align-top md:w-[400px] md:min-w-[400px]">
-                        <button type="button" className="mb-1.5 mr-4">
+                        <Button type="button" className="mb-1.5 mr-4">
                           <img src="images/edit.png" alt="Edit" className="mr-1.5 inline" />
                           <span>Edit</span>
-                        </button>
-                        <button type="button" className="mb-1.5 mr-3 flex items-center">
+                        </Button>
+                        <Button type="button" className="mb-1.5 mr-3 flex items-center">
                           <img className="mr-2" src="images/delete.png" alt="Delete" />
                           <span>Delete</span>
-                        </button>
+                        </Button>
                         <span className="my-1.5 mr-3 flex items-center">
-                          <button
+                          <Button
                             type="button"
                             className="relative inline-flex h-4 w-8 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             role="switch"
@@ -212,12 +214,12 @@ const SegmentsDefinition = () => {
                               aria-hidden="true"
                               className="pointer-events-none -mt-px inline-block h-3.5 w-3.5 translate-x-0 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
                             ></span>
-                          </button>
+                          </Button>
                           <span className="ml-2">Disable</span>
                         </span>
-                        <button type="button" className="my-1.5 mr-4">
+                        <Button type="button" className="my-1.5 mr-4">
                           <span>Duplicate</span>
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                   </tbody>

@@ -6,15 +6,18 @@ import type { ITabs } from '@/app/interface/dashboard';
 
 import AynalaticsSvg from '../../../../public/svgs/aynalaticsSvg';
 import CalendarSvg from '../../../../public/svgs/CalendarSvg';
-import DashboardTabs from '@/app/components/EmailTemplates/tabs';
-import DashboardActiveTab from '@/app/components/EmailTemplates';
+import DashboardTabs from '@/app/utils/ui/TabsUI/tabs';
+import DashboardActiveTab from '@/app/components/settingsMenu';
 
-const Blast = () => {
+const Settings = () => {
   const tabs: ITabs[] = [
-    { id: 1, name: 'Emails', svg: <AynalaticsSvg /> },
-    { id: 2, name: 'Insights Templates', svg: <CalendarSvg /> },
+    { id: 1, name: 'Overview', svg: <AynalaticsSvg /> },
+    { id: 2, name: 'Users', svg: <CalendarSvg /> },
+    { id: 3, name: 'Billing', svg: <CalendarSvg /> },
+    { id: 4, name: 'Stores', svg: <CalendarSvg /> },
+    { id: 5, name: 'Profile', svg: <CalendarSvg /> },
   ];
-  const initialTab = { id: 1, name: 'Emails', svg: '' };
+  const initialTab = { id: 1, name: 'Overview', svg: '' };
 
   const [activeTab, setActiveTab] = useState<ITabs>(initialTab);
   return (
@@ -25,4 +28,4 @@ const Blast = () => {
   );
 };
 
-export default Blast;
+export default Settings;
