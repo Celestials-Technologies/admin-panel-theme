@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { DashboardEmailTemplatesTabs } from '@/app/enums/dashboard';
+import { DashboardEmailSettingsTemplatesTabs } from '@/app/enums/dashboard';
 import type { ITabs } from '@/app/interface/dashboard';
-import Emails from './Emails';
-import InsightsTemplates from './InsightsTemplates';
-
+import ProfileSettings from './ProfileSettings';
 
 interface Props {
   activeTab: ITabs;
@@ -12,10 +10,16 @@ interface Props {
 
 const DashboardActiveTab: React.FC<Props> = ({ activeTab }) => {
   switch (activeTab.name) {
-    case DashboardEmailTemplatesTabs.Emails:
-      return <Emails />;
-    case DashboardEmailTemplatesTabs.InsightsTemplates:
-      return <InsightsTemplates />;
+    case DashboardEmailSettingsTemplatesTabs.Overview:
+      return <ProfileSettings />;
+    case DashboardEmailSettingsTemplatesTabs.User:
+      return <ProfileSettings />;
+    case DashboardEmailSettingsTemplatesTabs.Billing:
+      return <ProfileSettings />;
+    case DashboardEmailSettingsTemplatesTabs.Stores:
+      return <ProfileSettings />;
+    case DashboardEmailSettingsTemplatesTabs.Profile:
+      return <ProfileSettings />;
     default:
       return <></>;
   }

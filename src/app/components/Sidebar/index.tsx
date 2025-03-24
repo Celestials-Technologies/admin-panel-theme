@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { filterMenus } from '@/app/helpers/filterMenu';
 
 import ArrowIcon from '../../../../public/svgs/ArrowIcon';
-import Button from '../Button';
+import Button from '../../utils/ui/Button';
 import SidebarBody from './body';
 import SidebarHeader from './header';
 import SearchBar from './searchBar';

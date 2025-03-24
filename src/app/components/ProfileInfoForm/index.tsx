@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Input } from '../Input';
+import { Input } from '../../utils/ui/Input';
 
 interface FormData {
   firstName: string;
@@ -47,6 +47,7 @@ const ProfileInfoForm = ({ onCancel }: ModalProps) => {
       companyName: Yup.string().required('Required'),
       domain: Yup.string().required('Required'),
       message: Yup.string().required('Required'),
+      file: Yup.mixed().nullable().required('A file is required'),
     }),
     onSubmit: (values) => {
       const dataToStore = {

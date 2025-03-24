@@ -15,7 +15,7 @@ const Blast = () => {
     { id: 2, name: 'Campaign Emails', svg: <CalendarSvg /> },
 									
   ];
-  const initialTab = { id: 1, name: 'Analytics', svg: '' };
+  const initialTab = { id: 1, name: 'Overview', svg: <AynalaticsSvg /> };
 
   const [activeTab, setActiveTab] = useState<ITabs>(initialTab);
   return (

@@ -1,7 +1,6 @@
 import type { IAnalyticsAudienceGrowth } from '@/app/interface/dashboard';
-
-import LineChart from '../../Charts/lineChart';
 import InfoBox from './infoBox';
+import LineChartCard from '@/app/utils/charts/lineChartCard';
 
 interface Props {
   data: IAnalyticsAudienceGrowth;
@@ -32,10 +31,24 @@ const AudienceGrowth: React.FC<Props> = ({ data }) => {
         })}
       </div>
       <div className="boxShadowDashBoard mt-4 w-full rounded-lg bg-white px-5 py-6 sm:px-7 lg:w-[49.1%] 2xl:w-[49.5%]">
-        <LineChart
-          chartData={[24, 22, 33]}
-          labels={['Total Subscribers', 'Newly added', 'Unsubscribed']}
+        <LineChartCard
+          title={'Total Subscribers'}
+          actualValue={24}
+          percentage={20}
+          data={[
+            {
+              data: [10, 20, 70],
+              lineColor: '#FBB846',
+              label: 'Current Period',
+            },
+            {
+              data: [80, 40, 20],
+              lineColor: '#A292D8',
+              label: 'Previous Period',
+            },
+          ]}
         />
+      
       </div>
     </div>
   );

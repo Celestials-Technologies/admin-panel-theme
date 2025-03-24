@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 import React, { useState } from 'react';
 
-import Modal from '../Modal';
+import Modal from '../../utils/ui/Modal';
 import NavbarDropdown from './dropdown';
 import NavbarSearch from './navbarSearch';
 import NavbarNotification from './notification';

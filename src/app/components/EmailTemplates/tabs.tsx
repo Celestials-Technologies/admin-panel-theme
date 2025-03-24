@@ -2,7 +2,8 @@ import React from 'react';
 
 import type { ITabs } from '@/app/interface/dashboard';
 
-import TabItem from './tabItem';
+import TabItem from '@/app/utils/ui/TabItem';
+
 
 interface Props {
   activeTab: ITabs;

@@ -1,7 +1,6 @@
 import type { IAnalyticsOrders } from '@/app/interface/dashboard';
-
-import BarChart from '../../Charts/barChart';
 import InfoBox from './infoBox';
+import BarChartCard from '@/app/utils/charts/BarChartCard';
 
 interface Props {
   data: IAnalyticsOrders;
@@ -30,13 +29,14 @@ const Order: React.FC<Props> = ({ data }) => {
         </div>
       </div>
       <div className="App w-fulls h-full lg:h-[unset] lg:w-[65.8%]">
-        <BarChart
-          labels={['Jan 1', 'Jan 7', 'Jan 14', 'Jan 28']}
-          chartData={[1, 2, 3, 100]}
-          barColor={undefined}
-          height={289}
-          width={785}
+        <BarChartCard
+          title="Orders"
+          actualValue={18}
+          percentage={20}
+          data={{ data: [1, 2, 3, 100] }}
+          label="Current Period"
         />
+
       </div>
     </div>
   );

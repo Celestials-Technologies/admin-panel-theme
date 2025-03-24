@@ -14,7 +14,7 @@ import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 interface SubscribersCardProps {
   title: string;
   actualValue: number;
-  percentage: number;
+  percentage: number | string;
   data: { value: number }[];
   barColor: string;
 }
@@ -38,7 +38,7 @@ const SubscribersCard = ({
           <h2 className="fs-28 font-gilroyBold text-424242 leading-7">{actualValue}</h2>
           <div className="mt-2.5 flex items-center">
             <span>
-              <img src="images/unsubscribe-down-arrow.png" />
+            <img src="/images/up-arrow.png" />
             </span>
             <span className="fs-15 font-gilroySemibold text-fd445f ml-1 leading-4">
               {percentage}

@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import type { Column } from 'react-table';
 import { useFilters, usePagination, useSortBy, useTable } from 'react-table';
 
-import SearchIcon from '../../../../public/svgs/SearchIcon';
+import SearchIcon from '../../../../../public/svgs/SearchIcon';
 import { Input } from '../Input';
 import Pagination from './pagination';
 
@@ -12,6 +12,7 @@ interface TableComponentProps {
   showSearchBar?: boolean;
   showPagination?: boolean;
   showFilter?: boolean;
+  title: string;
 }
 
 const TableComponent: React.FC<TableComponentProps> = (props) => {
@@ -21,6 +22,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
     showSearchBar = false,
     showPagination = false,
     showFilter = false,
+    title= ''
   } = props;
 
   const [searchInput, setSearchInput] = useState('');
@@ -54,7 +56,7 @@ const TableComponent: React.FC<TableComponentProps> = (props) => {
     <div className="w-full">
       <div className="w-full items-center lg:mb-4 lg:flex lg:gap-12">
         <h2 className="mb-3 whitespace-nowrap font-gilroy-bold !text-xl font-bold leading-5 text-drak800 lg:mb-0">
-          All Activities
+          {title}
         </h2>
         <div className="relative mb-5 w-full gap-4 md:flex lg:mb-0 lg:gap-[42px]">
           <div className="absolute ml-4  mt-3 size-[18px] cursor-pointer">

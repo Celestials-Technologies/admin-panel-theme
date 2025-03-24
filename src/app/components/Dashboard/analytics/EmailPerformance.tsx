@@ -1,7 +1,6 @@
 import type { IAnalyticsEmailPerformance } from '@/app/interface/dashboard';
-
-import DoughnutChart from '../../Charts/DoughnutChart';
 import InfoBox from './infoBox';
+import DoughnutChartCard from '@/app/utils/charts/DoughnutChartCard';
 
 interface IProps {
   data: IAnalyticsEmailPerformance[];
@@ -47,11 +46,10 @@ const EmailPerformance: React.FC<IProps> = (props) => {
             })}
         </div>
       </div>
-      <div className="boxShadowDashBoard  w-full overflow-hidden rounded-lg bg-[#fff] px-7 py-6 md:h-[330px] lg:size-[120px] lg:h-[341px] lg:w-1/2">
-        <DoughnutChart
+      <div className="boxShadowDashBoard  w-full overflow-hidden rounded-lg bg-[#fff] md:h-[330px] lg:size-[120px] lg:h-[341px] lg:w-1/2">
+        <DoughnutChartCard
           dataSet={[24, 22, 33]}
-          labelSet={['Sent in workflows', 'Sent in campaigns', 'Available']}
-        />
+          labelSet={['Sent in workflows', 'Sent in campaigns', 'Available']} title={'Sent Emails'} percentage={0} total={'999'}        />
       </div>
     </div>
   );

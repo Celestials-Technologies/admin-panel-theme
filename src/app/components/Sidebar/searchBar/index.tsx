@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Input } from '../../Input';
+import { Input } from '../../../utils/ui/Input';
 
 interface Props {
   searchTerm: string;

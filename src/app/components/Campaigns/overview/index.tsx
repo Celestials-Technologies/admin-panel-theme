@@ -1,6 +1,8 @@
 'use client';
 
-import Image from 'next/image';
+import SubscribersCard from '@/app/utils/charts/AreaChart';
+import BarChartCard from '@/app/utils/charts/BarChartCard';
+import LineChartCard from '@/app/utils/charts/lineChartCard';
 
 const OverviewDashboard = () => {
   return (
@@ -12,29 +14,19 @@ const OverviewDashboard = () => {
             <h1 className="text-424242 mb-4 mt-7 font-gilroy-bold text-xl leading-5">Revenue</h1>
             <div className="font-inter flex flex-col flex-wrap items-center md:flex-row lg:flex-nowrap">
               <div className="w-full md:w-6/12 md:pr-3.5 lg:w-4/12">
-                <div className="border-md boxShadow rounded-lg border border-gray400">
-                  <div className="rounded-t-lg bg-white px-2.5 pt-6 sm:px-3.5 lg:px-7">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      REVENUE GENERATED
-                    </p>
-                    <div className="flex items-end">
-                      <h2 className="font-gilroy-bold text-3xl leading-10 text-titleBlack">
-                        $120K
-                      </h2>
-                      <div className="mb-2 ml-4 flex items-center">
-                        <span>
-                          <Image src="/images/up-arrow.png" alt="up-arrow" width={10} height={10} />
-                        </span>
-                        <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                          20%
-                        </span>
-                      </div>
-                    </div>
+                <div className="">
+                  <div className="rounded-t-lg bg-white">
+             
                     <div className="mt-4 h-48 md:mt-7">
-                      <img
-                        className="mx-auto h-full w-full"
-                        src="/images/campaign-chart.png"
-                        alt="Graph"
+                 
+                      <BarChartCard
+                        title={'Open to Work'}
+                        actualValue={90}
+                        percentage={23}
+                        label={'add'}
+                        data={{
+                          data: [22, 244, 45],
+                        }}
                       />
                     </div>
                     <div className="mt-4 flex h-10 items-start justify-center">
@@ -52,7 +44,7 @@ const OverviewDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
+                  <div className="mt-[105px] rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
                     <h4 className="mb-2.5 text-base font-semibold leading-5 text-titleBlack">
                       Stats
                     </h4>
@@ -86,24 +78,26 @@ const OverviewDashboard = () => {
                 </div>
               </div>
               <div className="mt-5 w-full md:mt-0 md:w-6/12 md:px-[7px] lg:w-4/12">
-                <div className="border-md boxShadow rounded-lg border border-gray400">
-                  <div className="rounded-t-lg bg-white px-2.5 pt-6 sm:px-3.5 lg:px-7">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      ORDERS GENERATED
-                    </p>
-                    <div className="flex items-end">
-                      <h2 className="font-gilroy-bold text-3xl leading-10 text-titleBlack">450</h2>
-                      <div className="mb-2 ml-4 flex items-center">
-                        <span>
-                          <img src="/images/up-arrow.png" />
-                        </span>
-                        <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                          20%
-                        </span>
-                      </div>
-                    </div>
+                <div>
+                  <div className="rounded-t-lg bg-white">
                     <div className="mt-4 h-48 md:mt-7">
-                      <img className="mx-auto h-full w-full" src="/images/graph.png" alt="Graph" />
+                      <LineChartCard
+                        title={'Total Subscribers'}
+                        actualValue={24}
+                        percentage={20}
+                        data={[
+                          {
+                            data: [10, 20, 70],
+                            lineColor: '#FBB846',
+                            label: 'Current Period',
+                          },
+                          {
+                            data: [80, 40, 20],
+                            lineColor: '#A292D8',
+                            label: 'Previous Period',
+                          },
+                        ]}
+                      />
                     </div>
                     <div className="mt-4 flex h-10 items-start justify-center">
                       <div className="flex items-start">
@@ -120,7 +114,7 @@ const OverviewDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
+                  <div className="mt-[105px] rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
                     <h4 className="mb-2.5 text-base font-semibold leading-5 text-titleBlack">
                       Stats
                     </h4>
@@ -154,29 +148,17 @@ const OverviewDashboard = () => {
                 </div>
               </div>
               <div className="mt-5 w-full md:w-6/12 md:pr-3.5 lg:mt-0 lg:w-4/12 lg:pl-3.5 lg:pr-0">
-                <div className="border-md boxShadow rounded-lg border border-gray400">
-                  <div className="rounded-t-lg bg-white px-2.5 pt-6 sm:px-3.5 lg:px-7">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      AVERAGE ORDER VALUE
-                    </p>
-                    <div className="flex items-end">
-                      <h2 className="font-gilroy-bold text-3xl leading-10 text-titleBlack">
-                        $120K
-                      </h2>
-                      <div className="mb-2 ml-4 flex items-center">
-                        <span>
-                          <img src="/images/up-arrow.png" />
-                        </span>
-                        <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                          20%
-                        </span>
-                      </div>
-                    </div>
+                <div>
+                  <div className="rounded-t-lg bg-white">
                     <div className="mt-4 h-48 md:mt-7">
-                      <img
-                        className="mx-auto h-full w-full"
-                        src="/images/campaign-chart.png"
-                        alt="Graph"
+                      <BarChartCard
+                        title={'Open to Work'}
+                        actualValue={90}
+                        percentage={23}
+                        label={'add'}
+                        data={{
+                          data: [22, 244, 45],
+                        }}
                       />
                     </div>
                     <div className="mt-4 flex h-10 items-start justify-center">
@@ -194,7 +176,7 @@ const OverviewDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
+                  <div className="mt-[105px] rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
                     <h4 className="mb-2.5 text-base font-semibold leading-5 text-titleBlack">
                       Stats
                     </h4>
@@ -236,23 +218,25 @@ const OverviewDashboard = () => {
             <div className="font-inter flex flex-col flex-wrap items-center md:flex-row lg:flex-nowrap">
               <div className="w-full md:w-6/12 md:pr-3.5 lg:w-4/12">
                 <div className="boxShadow border-md rounded-lg border border-gray400">
-                  <div className="rounded-t-lg bg-white px-2.5 pt-6 sm:px-3.5 lg:px-7">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      OPEN RATE
-                    </p>
-                    <div className="flex items-end">
-                      <h2 className="font-gilroy-bold text-3xl leading-10 text-titleBlack">18%</h2>
-                      <div className="mb-2 ml-4 flex items-center">
-                        <span>
-                          <img src="/images/up-arrow.png" />
-                        </span>
-                        <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                          20%
-                        </span>
-                      </div>
-                    </div>
+                  <div className="rounded-t-lg bg-white">
                     <div className="mt-4 h-48 md:mt-7">
-                      <img className="mx-auto h-full w-full" src="/images/graph.png" alt="Graph" />
+                      <LineChartCard
+                        title={'Total Subscribers'}
+                        actualValue={24}
+                        percentage={20}
+                        data={[
+                          {
+                            data: [10, 20, 70],
+                            lineColor: '#FBB846',
+                            label: 'Current Period',
+                          },
+                          {
+                            data: [80, 40, 20],
+                            lineColor: '#A292D8',
+                            label: 'Previous Period',
+                          },
+                        ]}
+                      />
                     </div>
                     <div className="mt-4 flex h-10 items-start justify-center">
                       <div className="flex items-start">
@@ -269,7 +253,7 @@ const OverviewDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
+                  <div className="mt-[105px] rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
                     <h4 className="mb-2.5 text-base font-semibold leading-5 text-titleBlack">
                       Stats
                     </h4>
@@ -304,23 +288,25 @@ const OverviewDashboard = () => {
               </div>
               <div className="mt-5 w-full md:mt-0 md:w-6/12 md:px-[7px] lg:w-4/12">
                 <div className="boxShadow border-md rounded-lg border border-gray400">
-                  <div className="rounded-t-lg bg-white px-2.5 pt-6 sm:px-3.5 lg:px-7">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      CLICK RATE
-                    </p>
-                    <div className="flex items-end">
-                      <h2 className="font-gilroy-bold text-3xl leading-10 text-titleBlack">18%</h2>
-                      <div className="mb-2 ml-4 flex items-center">
-                        <span>
-                          <img src="/images/up-arrow.png" />
-                        </span>
-                        <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                          20%
-                        </span>
-                      </div>
-                    </div>
+                  <div className="rounded-t-lg bg-white">
                     <div className="mt-4 h-48 md:mt-7">
-                      <img className="mx-auto h-full w-full" src="/images/graph.png" alt="Graph" />
+                      <LineChartCard
+                        title={'Total Subscribers'}
+                        actualValue={24}
+                        percentage={20}
+                        data={[
+                          {
+                            data: [10, 20, 70],
+                            lineColor: '#FBB846',
+                            label: 'Current Period',
+                          },
+                          {
+                            data: [80, 40, 20],
+                            lineColor: '#A292D8',
+                            label: 'Previous Period',
+                          },
+                        ]}
+                      />
                     </div>
                     <div className="mt-4 flex h-10 items-start justify-center">
                       <div className="flex items-start">
@@ -337,7 +323,7 @@ const OverviewDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
+                  <div className="mt-[105px] rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
                     <h4 className="mb-2.5 text-base font-semibold leading-5 text-titleBlack">
                       Stats
                     </h4>
@@ -372,26 +358,16 @@ const OverviewDashboard = () => {
               </div>
               <div className="mt-5 w-full md:w-6/12 md:pl-3.5 md:pr-3.5 lg:mt-0 lg:w-4/12 lg:pr-0">
                 <div className="boxShadow border-md rounded-lg border border-gray400">
-                  <div className="rounded-t-lg bg-white px-2.5 pt-6 sm:px-3.5 lg:px-7">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      REVENUE GENERTATED
-                    </p>
-                    <div className="flex items-end">
-                      <h2 className="font-gilroy-bold text-3xl leading-10 text-titleBlack">18%</h2>
-                      <div className="mb-2 ml-4 flex items-center">
-                        <span>
-                          <img src="/images/up-arrow.png" />
-                        </span>
-                        <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                          20%
-                        </span>
-                      </div>
-                    </div>
+                  <div className="rounded-t-lg bg-white ">
                     <div className="mt-4 h-48 md:mt-7">
-                      <img
-                        className="mx-auto h-full w-full"
-                        src="/images/campaign-chart.png"
-                        alt="Graph"
+                      <BarChartCard
+                        title={'Open to Work'}
+                        actualValue={90}
+                        percentage={23}
+                        label={'add'}
+                        data={{
+                          data: [22, 244, 45],
+                        }}
                       />
                     </div>
                     <div className="mt-4 flex h-10 items-start justify-center">
@@ -409,7 +385,7 @@ const OverviewDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
+                  <div className="mt-[105px] rounded-b-lg border-t border-gray400 bg-white px-3.5 py-6 lg:px-7">
                     <h4 className="mb-2.5 text-base font-semibold leading-5 text-titleBlack">
                       Stats
                     </h4>
@@ -447,95 +423,79 @@ const OverviewDashboard = () => {
           <h1 className="text-424242 mb-4 mt-12 font-gilroy-bold text-xl leading-5">Reach</h1>
           <div className="font-inter flex flex-col flex-wrap items-center md:flex-row lg:flex-nowrap">
             <div className="mx-auto w-full md:mx-0 md:w-6/12 lg:w-3/12">
-              <div className="border-md boxShadow rounded-lg border border-gray400 bg-white pl-3.5 pt-5 lg:pl-7">
-                <div className="relative flex items-end justify-between">
-                  <div className="mb-6">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      Total emails sent
-                    </p>
-                    <h2 className="fs-28 text-424242 font-gilroy-bold leading-10">120</h2>
-                    <div className="mt-2.5 flex items-center">
-                      <span>
-                        <img src="/images/up-arrow.png" />
-                      </span>
-                      <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                        20%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute right-0 pl-1.5 lg:w-24 xl:w-44">
-                    <img className="w-full" src="/images/reach-linear-graph.png" />
-                  </div>
-                </div>
+              <div className="">
+                <SubscribersCard
+                  title="Subscribers"
+                  actualValue={120}
+                  percentage={'20%'}
+                  data={[
+                    { value: 0 },
+                    { value: 60 },
+                    { value: 75 },
+                    { value: 100 },
+                    { value: 90 },
+                    { value: 95 },
+                    { value: 100 },
+                  ]}
+                  barColor="#60A5FA"
+                />
               </div>
             </div>
             <div className="mx-auto mt-5 w-full md:mx-0 md:mt-0 md:w-6/12 md:pl-2.5 lg:ml-6 lg:mr-3 lg:w-3/12 lg:pl-0">
-              <div className="border-md boxShadow rounded-lg border border-gray400 bg-white pl-3.5 pt-5 lg:pl-7">
-                <div className="relative flex items-end justify-between">
-                  <div className="mb-6">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      opens
-                    </p>
-                    <h2 className="fs-28 text-424242 font-gilroy-bold leading-10">120</h2>
-                    <div className="mt-2.5 flex items-center">
-                      <span>
-                        <img src="/images/unsubscribe-down-arrow.png" />
-                      </span>
-                      <span className="fs-15 font-gilroySemibold text-fd445f ml-1 leading-4">
-                        15%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute right-0 pl-1.5 lg:w-24 xl:w-44">
-                    <img className="w-full" src="/images/reach-linear-graph2.png" />
-                  </div>
-                </div>
+              <div className="">
+                <SubscribersCard
+                  title="Subscribers"
+                  actualValue={120}
+                  percentage={'20%'}
+                  data={[
+                    { value: 0 },
+                    { value: 60 },
+                    { value: 33 },
+                    { value: 10 },
+                    { value: 90 },
+                    { value: 93 },
+                    { value: 100 },
+                  ]}
+                  barColor="#60A3FA"
+                />
               </div>
             </div>
             <div className="mx-auto mt-5 w-full md:mx-0 md:w-6/12 lg:ml-3 lg:mr-6 lg:mt-0 lg:w-3/12">
-              <div className="border-md boxShadow rounded-lg border border-gray400 bg-white pl-3.5 pt-5 lg:pl-7">
-                <div className="relative flex items-end justify-between">
-                  <div className="mb-6">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      Clicks
-                    </p>
-                    <h2 className="fs-28 text-424242 font-gilroy-bold leading-10">120</h2>
-                    <div className="mt-2.5 flex items-center">
-                      <span>
-                        <img src="/images/up-arrow.png" />
-                      </span>
-                      <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                        20%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute right-0 pl-1.5 lg:w-24 xl:w-44">
-                    <img className="w-full" src="/images/reach-linear-graph.png" />
-                  </div>
-                </div>
+              <div className="">
+                <SubscribersCard
+                  title="Subscribers"
+                  actualValue={120}
+                  percentage={'20%'}
+                  data={[
+                    { value: 0 },
+                    { value: 90 },
+                    { value: 23 },
+                    { value: 18 },
+                    { value: 6 },
+                    { value: 91 },
+                    { value: 100 },
+                  ]}
+                  barColor="#60A3FA"
+                />
               </div>
             </div>
             <div className="mx-auto mt-5 w-full md:mx-0 md:w-6/12 md:pl-2.5 lg:mt-0 lg:w-3/12  lg:pl-0">
-              <div className="border-md boxShadow rounded-lg border border-gray400 bg-white pl-3.5 pt-5 lg:pl-7">
-                <div className="relative flex items-end justify-between">
-                  <div className="mb-6">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      deliverability
-                    </p>
-                    <h2 className="fs-28 text-424242 font-gilroy-bold leading-10">98%</h2>
-                    <div className="mt-2.5 flex items-center">
-                      <span>
-                        <img src="/images/up-arrow.png" />
-                      </span>
-                      <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                        20%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute right-0 pl-1.5 lg:w-24 xl:w-44">
-                    <img className="w-full" src="/images/reach-linear-graph.png" />
-                  </div>
-                </div>
+              <div className="">
+                <SubscribersCard
+                  title="Subscribers"
+                  actualValue={120}
+                  percentage={'20%'}
+                  data={[
+                    { value: 0 },
+                    { value: 30 },
+                    { value: 23 },
+                    { value: 348 },
+                    { value: 6 },
+                    { value: 91 },
+                    { value: 43 },
+                  ]}
+                  barColor="#60A3FA"
+                />
               </div>
             </div>
           </div>
@@ -544,73 +504,55 @@ const OverviewDashboard = () => {
           </h1>
           <div className="font-inter flex flex-col flex-wrap items-center md:flex-row lg:flex-nowrap">
             <div className="mx-auto w-full md:mx-0 md:w-6/12 md:pr-2.5 lg:w-4/12  lg:pr-0">
-              <div className="border-md boxShadow rounded-lg border border-gray400 bg-white pl-3.5 pt-5 lg:pl-7">
-                <div className="relative flex items-end justify-between">
-                  <div className="mb-6">
-                    <p className="mb-2.5 text-xs font-semibold uppercase leading-4 tracking-wide text-grey600">
-                      Subscribers
-                    </p>
-                    <h2 className="fs-28 text-424242 font-gilroy-bold leading-10">120%</h2>
-                    <div className="mt-2.5 flex items-center">
-                      <span>
-                        <img src="/images/up-arrow.png" />
-                      </span>
-                      <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                        20%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute right-0 lg:w-40 xl:w-60">
-                    <img className="w-full" src="/images/subscriber-graph.png" />
-                  </div>
-                </div>
-              </div>
+              <SubscribersCard
+                title="Subscribers"
+                actualValue={120}
+                percentage={'20%'}
+                data={[
+                  { value: 0 },
+                  { value: 30 },
+                  { value: 23 },
+                  { value: 348 },
+                  { value: 6 },
+                  { value: 51 },
+                  { value: 43 },
+                ]}
+                barColor="#60A3FA"
+              />
             </div>
             <div className="mx-auto mt-5 w-full md:mx-0 md:mt-0 md:w-6/12 md:pl-2.5 lg:mx-6 lg:w-4/12 lg:pl-0">
-              <div className="border-md boxShadow rounded-lg border border-gray400 bg-white pl-3.5 pt-5 lg:pl-7">
-                <div className="relative flex items-end justify-between">
-                  <div className="mb-6">
-                    <p className="mb-2.5 text-xs font-semibold uppercase uppercase leading-4 tracking-wide text-grey600">
-                      Unsubscribers
-                    </p>
-                    <h2 className="fs-28 text-424242 font-gilroy-bold leading-10">120%</h2>
-                    <div className="mt-2.5 flex items-center">
-                      <span>
-                        <img src="/images/unsubscribe-down-arrow.png" />
-                      </span>
-                      <span className="fs-15 font-gilroySemibold text-fd445f ml-1 leading-4">
-                        5.1%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute right-0 lg:w-40 xl:w-60">
-                    <img className="w-full" src="/images/unsubscriber-graph.png" />
-                  </div>
-                </div>
-              </div>
+              <SubscribersCard
+                title="Subscribers"
+                actualValue={120}
+                percentage={'20%'}
+                data={[
+                  { value: 0 },
+                  { value: 30 },
+                  { value: 53 },
+                  { value: 33 },
+                  { value: 63 },
+                  { value: 51 },
+                  { value: 73 },
+                ]}
+                barColor="#60A3FA"
+              />
             </div>
             <div className="mx-auto mt-5 w-full md:mx-0 md:w-6/12 md:pr-2.5 lg:mt-0 lg:w-4/12 lg:pr-0">
-              <div className="border-md boxShadow rounded-lg border border-gray400 bg-white pl-3.5 pt-5 lg:pl-7">
-                <div className="relative flex items-end justify-between">
-                  <div className="mb-6">
-                    <p className="mb-2.5 text-xs font-semibold uppercase uppercase leading-4 tracking-wide text-grey600">
-                      spam complaints
-                    </p>
-                    <h2 className="fs-28 text-424242 font-gilroy-bold leading-10">18%</h2>
-                    <div className="mt-2.5 flex items-center">
-                      <span>
-                        <img src="/images/up-arrow.png" />
-                      </span>
-                      <span className="fs-15 font-gilroySemibold text-18a558 ml-1 leading-4">
-                        20%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute right-0 lg:w-40 xl:w-60">
-                    <img className="w-full" src="/images/subscriber-graph.png" />
-                  </div>
-                </div>
-              </div>
+              <SubscribersCard
+                title="Subscribers"
+                actualValue={120}
+                percentage={'20%'}
+                data={[
+                  { value: 0 },
+                  { value: 80 },
+                  { value: 53 },
+                  { value: 33 },
+                  { value: 93 },
+                  { value: 51 },
+                  { value: 73 },
+                ]}
+                barColor="#60A3FA"
+              />
             </div>
           </div>
           <div className="mt-11 flex items-center justify-between">

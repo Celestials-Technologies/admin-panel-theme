@@ -1,7 +1,8 @@
 import React from 'react';
 
 import DashboardIcon from '../../../../public/svgs/DashboardIcon';
-import Dropdown from '../DropDown';
+import Dropdown from '@/app/utils/ui/DropDown';
+
 
 interface Props {}
 
@@ -22,7 +23,7 @@ const DashboardHeader: React.FC<Props> = () => {
               src={'svgs/DashboardIcon.svg'}
               alt="Dashboard"
               height={24}
-              width={24}
+              width={24
             /> */}
               <div>
                 <DashboardIcon />

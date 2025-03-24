@@ -1,9 +1,9 @@
 'use client';
 
-import SubscribersCard from '@/app/utils/AreaChart';
-import BarChartCard from '@/app/utils/BarChartCard';
-import DoughnutChartCard from '@/app/utils/DoughnutChartCard';
-import LineChartCard from '@/app/utils/lineChartCard';
+import SubscribersCard from '@/app/utils/charts/AreaChart';
+import BarChartCard from '@/app/utils/charts/BarChartCard';
+import DoughnutChartCard from '@/app/utils/charts/DoughnutChartCard';
+import LineChartCard from '@/app/utils/charts/lineChartCard';
 
 const OverviewDashboard = () => {
   return (

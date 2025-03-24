@@ -1,8 +1,122 @@
 'use client';
 
 import Image from 'next/image';
+import { useMemo } from 'react';
+
+// Reusable components
+const TableHeader = ({ title, showArrow = true }: { title: string; showArrow?: boolean })  => (
+  <th
+    scope="col"
+    className="fs-13 text-757575 min-w-[100px] py-3 pl-3 pr-3 text-left font-medium"
+  >
+    {title}{' '}
+    {showArrow && (
+      <Image
+        src="/svg-images/down-arrow.svg"
+        className="float-right inline-block"
+        alt="arrow"
+        width={12}
+        height={12}
+      />
+    )}
+  </th>
+);
+
+const ActionButton =  ({ icon, label, href = "#/" }: { icon: string; label: string; href?: string }) => (
+  <a href={href} className="group relative ml-6 first:ml-0 inline-block">
+    <Image
+      className="w-3.5"
+      src={`/svg-images/${icon}.svg`}
+      alt={label}
+      width={14}
+      height={14}
+    />
+    <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
+      {label}
+    </span>
+  </a>
+);
+
+const StatusBadge = ({ label, rounded = false } : { label: string; rounded?: boolean }) => (
+  <a
+    href="#"
+    className={`ryzeo-blue block ${
+      rounded ? 'rounded-full' : 'rounded'
+    } px-2.5 py-1 text-xs font-light leading-3 text-white`}
+  >
+    {label}
+  </a>
+);
+
+const CampaignRow = ({ campaign, index }: { campaign: { name: string; date: string; time: string }; index: number }) => {
+  return (
+    <tr key={index} className="divide-gray-200 xl:divide-x">
+      <td className="fs-13 min-w-[293px] whitespace-nowrap py-3 pl-3 pr-3 align-top font-medium text-grey300">
+        {campaign.name}
+        <div className="mt-4 lg:hidden">
+          <div className="flex items-center justify-between">
+            <div className="mb-1.5">{campaign.date}</div>
+            <div className="text-757575 text-xs">{campaign.time}</div>
+          </div>
+          <div className="mt-4 flex items-center justify-between md:hidden">
+            <StatusBadge label="HTML" rounded={true} />
+            <StatusBadge label="New Editor" />
+          </div>
+          <div className="mt-4 flex items-center justify-center sm:hidden">
+            <ActionButton icon="edit-table" label="Edit" />
+            <ActionButton icon="delete" label="Delete" />
+            <ActionButton icon="export-table" label="Share" />
+            <ActionButton 
+              icon="union" 
+              label="Send" 
+              href="campaign-blasts/create-campaign.html" 
+            />
+          </div>
+        </div>
+      </td>
+
+      <td className="fs-13 hidden min-w-[125px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right text-grey300 lg:table-cell">
+        <div className="mb-1.5">{campaign.date}</div>
+        <div className="text-757575 text-xs">{campaign.time}</div>
+      </td>
+
+      <td className="fs-13 hidden min-w-[140px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right align-top text-grey300 md:table-cell">
+        <div className="flex items-center justify-end">
+          <StatusBadge label="HTML" rounded={true} />
+          <div className="ml-3">
+            <StatusBadge label="New Editor" />
+          </div>
+        </div>
+      </td>
+
+      <td className="fs-13 hidden min-w-[255px] whitespace-nowrap py-3 pl-3 pr-3 text-grey300 sm:table-cell">
+        <div className="flex items-center">
+          <ActionButton 
+            icon="edit-table" 
+            label="Edit" 
+            href="create-blasts/setup-blast.html" 
+          />
+          <ActionButton icon="delete" label="Delete" />
+          <ActionButton icon="export-table" label="Share" />
+          <ActionButton 
+            icon="union" 
+            label="Send" 
+            href="campaign-blasts/create-campaign.html" 
+          />
+        </div>
+      </td>
+    </tr>
+  );
+};
 
 const ActivityDashboard = () => {
+  // Mock data - in a real app, this would come from props or API
+  const campaignData = useMemo(() => [
+    { name: "NEW Cotton-Blends to Brighten Up Winter", date: "06.01.2022", time: "4:00PM" },
+    { name: "NEW Cotton-Blends to Brighten Up Winter", date: "06.01.2022", time: "4:00PM" },
+    { name: "NEW Cotton-Blends to Brighten Up Winter", date: "06.01.2022", time: "4:00PM" },
+  ], []);
+
   return (
     <div className="px-5 py-30 md:px-7">
       <div className="mt-10 flex flex-col">
@@ -12,20 +126,7 @@ const ActivityDashboard = () => {
               <table className="fs-13 min-w-full divide-y divide-gray-300 font-medium text-grey300">
                 <thead className="bg-gray-50">
                   <tr className="divide-gray-200 xl:divide-x">
-                    <th
-                      scope="col"
-                      className="fs-13 text-757575 min-w-[293px] py-3 pl-3 pr-3 text-left font-medium"
-                    >
-                      Name{' '}
-                      <Image
-                        src="/svg-images/down-arrow.svg"
-                        className="float-right inline-block"
-                        alt="arrow"
-                        width={12}
-                        height={12}
-                      />
-                    </th>
-
+                    <TableHeader title="Name" />
                     <th
                       scope="col"
                       className="fs-13 text-757575 hidden min-w-[100px] border-r-0 border-none py-3 pl-3 pr-3 text-left font-medium lg:table-cell"
@@ -39,507 +140,14 @@ const ActivityDashboard = () => {
                         height={12}
                       />
                     </th>
-
-                    <th
-                      scope="col"
-                      className="fs-13 text-757575 hidden min-w-[125px] border-r-0 border-none py-3 pl-3 pr-3 text-left font-medium md:table-cell"
-                    >
-                      Status{' '}
-                      <Image
-                        src="/svg-images/down-arrow.svg"
-                        className="float-right inline-block"
-                        alt="arrow"
-                        width={12}
-                        height={12}
-                      />
-                    </th>
-
-                    <th
-                      scope="col"
-                      className="fs-13 text-757575 hidden min-w-[255px] py-3 pl-3 pr-3 text-left font-medium sm:table-cell sm:pr-6"
-                    >
-                      Actions
-                    </th>
+                    <TableHeader title="Status" />
+                    <TableHeader title="Actions" showArrow={false} />
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  <tr className="divide-gray-200 xl:divide-x">
-                    <td className="fs-13 min-w-[293px] whitespace-nowrap py-3 pl-3 pr-3 align-top font-medium text-grey300">
-                      NEW Cotton-Blends to Brighten Up Winter
-                      <div className="mt-4 lg:hidden">
-                        <div className="flex items-center justify-between">
-                          <div className="mb-1.5">06.01.2022 </div>
-                          <div className="text-757575 text-xs">4:00PM</div>
-                        </div>
-                        <div className="mt-4 flex items-center justify-between md:hidden">
-                          <a
-                            href="#/"
-                            className="ryzeo-blue block rounded-full px-2.5 py-1 text-xs font-light leading-3 text-white"
-                          >
-                            HTML
-                          </a>
-                          <a
-                            href="#"
-                            className="ryzeo-blue ml-3 block rounded px-2.5 py-1.5 text-xs font-light leading-3 text-white"
-                          >
-                            New Editor
-                          </a>
-                        </div>
-                        <div className="mt-4 flex items-center justify-center sm:hidden">
-                          <a href="#/" className="group relative inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/edit-table.svg"
-                              alt="Edit"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-7 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Edit
-                            </span>
-                          </a>
-                          <a href="#/" className="group relative ml-6 inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/delete.svg"
-                              alt="Delete"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Delete
-                            </span>
-                          </a>
-                          <a href="#/" className="group relative ml-6 inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/export-table.svg"
-                              alt="Export"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Share
-                            </span>
-                          </a>
-                          <a
-                            href="campaign-blasts/create-campaign.html"
-                            className="group relative ml-6 inline-block"
-                          >
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/union.svg"
-                              alt="Union"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Send
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[125px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right text-grey300 lg:table-cell">
-                      <div className="mb-1.5">06.01.2022 </div>
-                      <div className="text-757575 text-xs">4:00PM</div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[140px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right align-top text-grey300 md:table-cell">
-                      <div className="flex items-center justify-end">
-                        <a
-                          href="#"
-                          className="ryzeo-blue block rounded-full px-2.5 py-1 text-xs font-light leading-3 text-white"
-                        >
-                          HTML
-                        </a>
-                        <a
-                          href="#"
-                          className="ryzeo-blue ml-3 block rounded px-2.5 py-1.5 text-xs font-light leading-3 text-white"
-                        >
-                          New Editor
-                        </a>
-                      </div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[255px] whitespace-nowrap py-3 pl-3 pr-3 text-grey300 sm:table-cell">
-                      <div className="flex items-center">
-                        <a
-                          href="create-blasts/setup-blast.html"
-                          className="group relative inline-block"
-                        >
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/edit-table.svg"
-                            alt="Edit"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-7 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Edit
-                          </span>
-                        </a>
-                        <a href="#/" className="group relative ml-6 inline-block">
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/delete.svg"
-                            alt="Delete"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Delete
-                          </span>
-                        </a>
-                        <a href="#/" className="group relative ml-6 inline-block">
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/export-table.svg"
-                            alt="Export"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Share
-                          </span>
-                        </a>
-                        <a
-                          href="campaign-blasts/create-campaign.html"
-                          className="group relative ml-6 inline-block"
-                        >
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/union.svg"
-                            alt="Union"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Send
-                          </span>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="divide-gray-200 xl:divide-x">
-                    <td className="fs-13 min-w-[293px] whitespace-nowrap py-3 pl-3 pr-3 align-top font-medium text-grey300">
-                      NEW Cotton-Blends to Brighten Up Winter
-                      <div className="mt-4 lg:hidden">
-                        <div className="flex items-center justify-between">
-                          <div className="mb-1.5">06.01.2022 </div>
-                          <div className="text-757575 text-xs">4:00PM</div>
-                        </div>
-                        <div className="mt-4 flex items-center justify-between md:hidden">
-                          <a
-                            href="#/"
-                            className="ryzeo-blue block rounded-full px-2.5 py-1 text-xs font-light leading-3 text-white"
-                          >
-                            HTML
-                          </a>
-                          <a
-                            href="#"
-                            className="ryzeo-blue ml-3 block rounded px-2.5 py-1.5 text-xs font-light leading-3 text-white"
-                          >
-                            New Editor
-                          </a>
-                        </div>
-                        <div className="mt-4 flex items-center justify-center sm:hidden">
-                          <a href="#/" className="group relative inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/edit-table.svg"
-                              alt="Edit"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-7 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Edit
-                            </span>
-                          </a>
-                          <a href="#/" className="group relative ml-6 inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/delete.svg"
-                              alt="Delete"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Delete
-                            </span>
-                          </a>
-                          <a href="#/" className="group relative ml-6 inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/export-table.svg"
-                              alt="Export"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Share
-                            </span>
-                          </a>
-                          <a
-                            href="campaign-blasts/create-campaign.html"
-                            className="group relative ml-6 inline-block"
-                          >
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/union.svg"
-                              alt="Union"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Send
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[125px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right text-grey300 lg:table-cell">
-                      <div className="mb-1.5">06.01.2022 </div>
-                      <div className="text-757575 text-xs">4:00PM</div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[140px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right align-top text-grey300 md:table-cell">
-                      <div className="flex items-center justify-end">
-                        <a
-                          href="#"
-                          className="ryzeo-blue block rounded-full px-2.5 py-1 text-xs font-light leading-3 text-white"
-                        >
-                          HTML
-                        </a>
-                        <a
-                          href="#"
-                          className="ryzeo-blue ml-3 block rounded px-2.5 py-1.5 text-xs font-light leading-3 text-white"
-                        >
-                          New Editor
-                        </a>
-                      </div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[255px] whitespace-nowrap py-3 pl-3 pr-3 text-grey300 sm:table-cell">
-                      <div className="flex items-center">
-                        <a
-                          href="create-blasts/setup-blast.html"
-                          className="group relative inline-block"
-                        >
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/edit-table.svg"
-                            alt="Edit"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-7 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Edit
-                          </span>
-                        </a>
-                        <a href="#/" className="group relative ml-6 inline-block">
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/delete.svg"
-                            alt="Delete"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Delete
-                          </span>
-                        </a>
-                        <a href="#/" className="group relative ml-6 inline-block">
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/export-table.svg"
-                            alt="Export"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Share
-                          </span>
-                        </a>
-                        <a
-                          href="campaign-blasts/create-campaign.html"
-                          className="group relative ml-6 inline-block"
-                        >
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/union.svg"
-                            alt="Union"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Send
-                          </span>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="divide-gray-200 xl:divide-x">
-                    <td className="fs-13 min-w-[293px] whitespace-nowrap py-3 pl-3 pr-3 align-top font-medium text-grey300">
-                      NEW Cotton-Blends to Brighten Up Winter
-                      <div className="mt-4 lg:hidden">
-                        <div className="flex items-center justify-between">
-                          <div className="mb-1.5">06.01.2022 </div>
-                          <div className="text-757575 text-xs">4:00PM</div>
-                        </div>
-                        <div className="mt-4 flex items-center justify-between md:hidden">
-                          <a
-                            href="#/"
-                            className="ryzeo-blue block rounded-full px-2.5 py-1 text-xs font-light leading-3 text-white"
-                          >
-                            HTML
-                          </a>
-                          <a
-                            href="#"
-                            className="ryzeo-blue ml-3 block rounded px-2.5 py-1.5 text-xs font-light leading-3 text-white"
-                          >
-                            New Editor
-                          </a>
-                        </div>
-                        <div className="mt-4 flex items-center justify-center sm:hidden">
-                          <a href="#/" className="group relative inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/edit-table.svg"
-                              alt="Edit"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-7 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Edit
-                            </span>
-                          </a>
-                          <a href="#/" className="group relative ml-6 inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/delete.svg"
-                              alt="Delete"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Delete
-                            </span>
-                          </a>
-                          <a href="#/" className="group relative ml-6 inline-block">
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/export-table.svg"
-                              alt="Export"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Share
-                            </span>
-                          </a>
-                          <a
-                            href="campaign-blasts/create-campaign.html"
-                            className="group relative ml-6 inline-block"
-                          >
-                            <Image
-                              className="w-3.5"
-                              src="/svg-images/union.svg"
-                              alt="Union"
-                              width={14}
-                              height={14}
-                            />
-                            <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                              Send
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[125px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right text-grey300 lg:table-cell">
-                      <div className="mb-1.5">06.01.2022 </div>
-                      <div className="text-757575 text-xs">4:00PM</div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[140px] whitespace-nowrap border-r-0 border-none py-3 pl-3 pr-3 text-right align-top text-grey300 md:table-cell">
-                      <div className="flex items-center justify-end">
-                        <a
-                          href="#"
-                          className="ryzeo-blue block rounded-full px-2.5 py-1 text-xs font-light leading-3 text-white"
-                        >
-                          HTML
-                        </a>
-                        <a
-                          href="#"
-                          className="ryzeo-blue ml-3 block rounded px-2.5 py-1.5 text-xs font-light leading-3 text-white"
-                        >
-                          New Editor
-                        </a>
-                      </div>
-                    </td>
-
-                    <td className="fs-13 hidden min-w-[255px] whitespace-nowrap py-3 pl-3 pr-3 text-grey300 sm:table-cell">
-                      <div className="flex items-center">
-                        <a
-                          href="create-blasts/setup-blast.html"
-                          className="group relative inline-block"
-                        >
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/edit-table.svg"
-                            alt="Edit"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-7 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Edit
-                          </span>
-                        </a>
-                        <a href="#/" className="group relative ml-6 inline-block">
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/delete.svg"
-                            alt="Delete"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Delete
-                          </span>
-                        </a>
-                        <a href="#/" className="group relative ml-6 inline-block">
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/export-table.svg"
-                            alt="Export"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Share
-                          </span>
-                        </a>
-                        <a
-                          href="campaign-blasts/create-campaign.html"
-                          className="group relative ml-6 inline-block"
-                        >
-                          <Image
-                            className="w-3.5"
-                            src="/svg-images/union.svg"
-                            alt="Union"
-                            width={14}
-                            height={14}
-                          />
-                          <span className="ryzeo-blue invisible absolute -left-3 -top-8 z-10 rounded-md px-2.5 py-1.5 text-center text-xs text-white group-hover:visible">
-                            Send
-                          </span>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
+                  {campaignData.map((campaign, index) => (
+                    <CampaignRow key={index} campaign={campaign} index={index} />
+                  ))}
                 </tbody>
               </table>
             </div>

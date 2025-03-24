@@ -1,7 +1,7 @@
 'use client';
 
-import TableComponent from '../../Table';
-import { SelectColumnFilter } from '../../Table/filter';
+import TableComponent from '../../../utils/ui/Table';
+import { SelectColumnFilter } from '../../../utils/ui/Table/filter';
 
 const ActivityDashboard = () => {
   const columns = [
@@ -18,6 +18,11 @@ const ActivityDashboard = () => {
       accessor: 'role',
       Filter: SelectColumnFilter,
       filter: 'includes',
+    },
+    {
+      Header: 'Actions',
+      accessor: 'actions',
+      // filter: 'includes',
     },
   ];
 
@@ -82,6 +87,7 @@ const ActivityDashboard = () => {
       sent: '06.01.2022',
       role: 'Admin',
     },
+    
     // Add more data here...
   ];
 
@@ -91,6 +97,7 @@ const ActivityDashboard = () => {
         columns={columns}
         data={data}
         showFilter={true}
+        title='All Activity'
         showPagination={true}
         showSearchBar={true}
       />

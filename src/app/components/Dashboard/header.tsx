@@ -1,7 +1,7 @@
 import React from 'react';
 
 import DashboardIcon from '../../../../public/svgs/DashboardIcon';
-import Dropdown from '../DropDown';
+import Dropdown from '../../utils/ui/DropDown';
 
 interface Props {}
 

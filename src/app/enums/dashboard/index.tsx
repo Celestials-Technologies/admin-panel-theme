@@ -14,15 +14,12 @@ export enum DashboardWorkflowTabs {
   AllWorkflows = 'All Workflows',
 }
 
-
 export enum DashboardIntegrationsTabs {
   cartIntegration = 'Cart Integration',
   scripts = 'Scripts',
   googleAnalytics = 'Google Analytics',
   miscellaneous = 'Miscellaneous',
 }
-
-
 
 export enum DashboardListsSegmentsTabs {
   ListsSegments = 'Lists & Segments',
@@ -31,6 +28,19 @@ export enum DashboardListsSegmentsTabs {
   SegmentsDefinition = 'Segments Definition',
 }
 export enum DashboardEmailTemplatesTabs {
+  Emails = 'Emails',
+  InsightsTemplates = 'Insights Templates',
+}
+
+export enum DashboardEmailSettingsTemplatesTabs {
+  Overview = 'Overview',
+  User = 'User',
+  Billing = 'Billing',
+  Stores = 'Stores',
+  Profile = 'Profile',
+}
+
+export enum DashboardSettingTabs {
   Emails = 'Emails',
   InsightsTemplates = 'Insights Templates',
 }
